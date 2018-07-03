@@ -17,8 +17,7 @@ class AtmsContainer extends Component {
     super(props);
 
     this.state = {
-      geolocation: null,
-      geolocationError: null
+      geolocation: null
     };
   }
 
@@ -44,9 +43,7 @@ class AtmsContainer extends Component {
     if (this.props.location.state) {
       let { name, url } = this.props.location.state;
       if (url) {
-        getGeolocation()
-          .then(geolocation => this.setState({ geolocation }))
-          .catch(geolocationError => this.setState({ geolocationError }));
+        getGeolocation().then(geolocation => this.setState({ geolocation }));
 
         this.props.dispatch(AtmsActions.getAtms(name, url));
 
@@ -84,7 +81,7 @@ class AtmsContainer extends Component {
 
   render() {
     const { name, atms, error, isFetching } = this.props;
-    const { geolocation, geolocationError } = this.state;
+    const { geolocation } = this.state;
 
     if (error) {
       return (
