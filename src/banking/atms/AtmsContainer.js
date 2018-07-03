@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bool, func, string } from 'prop-types';
 import { getAtms, getError, getName, isFetching } from './AtmsSelectors';
 import AtmsComponent from './AtmsComponent';
 import AtmsActions from './AtmsActions';
+import { atmsType } from './AtmsPropTypes';
 import LoadingComponent from '../../shared/loading/LoadingComponent';
 import calculateDistance from '../../shared/utils/calculateDistance';
 import getGeolocation from '../../shared/utils/getGeolocation';
@@ -19,6 +21,20 @@ class AtmsContainer extends Component {
       geolocationError: null
     };
   }
+
+  static propTypes = {
+    atms: atmsType,
+    name: string,
+    error: string,
+    isFetching: bool.isRequired,
+    dispatch: func.isRequired
+  };
+
+  static defaultProps = {
+    atms: null,
+    name: null,
+    error: null
+  };
 
   static get NEAREST_ATM_QUANTITY() {
     return 10;
