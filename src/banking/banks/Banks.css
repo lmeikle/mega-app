@@ -1,0 +1,12 @@
+.banks {
+  display: flex;
+  align-items: center;
+  border: 1px solid #002742;
+  border-radius: 3px;
+  margin: 5px;
+  background-color: #fafafa;
+}
+
+.banks-logo {
+  height: 60px;
+}
