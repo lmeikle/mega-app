@@ -1,6 +1,7 @@
 import BanksActions from './BanksActions';
 
 const BANKS_INITIAL_STATE = {
+  isFetching: true,
   banksWithAtmAPI: null
 };
 

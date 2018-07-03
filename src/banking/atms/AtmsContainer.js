@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getAtms, getError, getName } from './AtmsSelectors';
+import { getAtms, getError, getName, isFetching } from './AtmsSelectors';
 import AtmsComponent from './AtmsComponent';
 import AtmsActions from './AtmsActions';
 import LoadingComponent from '../../shared/loading/LoadingComponent';
@@ -67,7 +67,7 @@ class AtmsContainer extends Component {
   }
 
   render() {
-    const { name, atms, error } = this.props;
+    const { name, atms, error, isFetching } = this.props;
     const { geolocation, geolocationError } = this.state;
 
     if (error) {
@@ -80,7 +80,7 @@ class AtmsContainer extends Component {
 
     // filter the atm data
     let nearestAtms = AtmsContainer.findNearestATMs(geolocation, atms, AtmsContainer.NEAREST_ATM_QUANTITY);
-    if (!nearestAtms) {
+    if (isFetching || !nearestAtms) {
       return <LoadingComponent />;
     }
 
@@ -99,7 +99,8 @@ const mapStateToProps = state => {
   return {
     atms: getAtms(state),
     name: getName(state),
-    error: getError(state)
+    error: getError(state),
+    isFetching: isFetching(state)
   };
 };
 

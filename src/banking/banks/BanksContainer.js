@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getBanksWithAtmAPI } from './BanksSelectors';
+import { getBanksWithAtmAPI, isFetching } from './BanksSelectors';
 import BanksActions from './BanksActions';
 import BanksComponent from './BanksComponent';
 import LoadingComponent from '../../shared/loading/LoadingComponent';
@@ -14,9 +14,9 @@ class BanksContainer extends Component {
   }
 
   render() {
-    const { banksWithAtmAPI } = this.props;
+    const { banksWithAtmAPI, isFetching } = this.props;
 
-    if (!banksWithAtmAPI) {
+    if (isFetching) {
       return <LoadingComponent />;
     }
 
@@ -31,7 +31,8 @@ class BanksContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    banksWithAtmAPI: getBanksWithAtmAPI(state)
+    banksWithAtmAPI: getBanksWithAtmAPI(state),
+    isFetching: isFetching(state)
   };
 };
 

@@ -1,6 +1,7 @@
 import AtmsActions from './AtmsActions';
 
 const ATMS_INITIAL_STATE = {
+  isFetching: true,
   geolocation: null,
   name: null,
   url: null,
