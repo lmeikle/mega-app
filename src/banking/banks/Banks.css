@@ -10,3 +10,8 @@
 .banks-logo {
   height: 60px;
 }
+
+.banks-name {
+  width: 100%;
+  text-align: left;
+}

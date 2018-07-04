@@ -47,9 +47,7 @@ class NewsContainer extends Component {
     return (
       <div className="news-container">
         <div className="news-title">News</div>
-        <div className="news-headlines-container">
-          {headlines.map(headline => <NewsHeadlineComponent key={headline.title} {...headline} />)}
-        </div>
+        <div className="news-headlines-container">{headlines.map(headline => <NewsHeadlineComponent key={headline.title} {...headline} />)}</div>
         {headlines.length < totalResults && (
           <div className="news-show-more-button" onClick={this.showMore}>
             Show More

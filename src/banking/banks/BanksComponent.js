@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { string } from 'prop-types';
+import { Icon } from 'semantic-ui-react';
 import logo from './icon.svg';
 import './Banks.css';
 
@@ -12,7 +13,8 @@ const BanksComponent = ({ name, url }) => (
   <Link to={{ pathname: '/banking/atms', state: { name, url } }}>
     <div className="banks">
       <img src={logo} className="banks-logo" alt="logo" />
-      <div>{name}</div>
+      <div className="banks-name">{name}</div>
+      <Icon name="angle right" color="grey" size="large" className="banks-arrow" />
     </div>
   </Link>
 );
