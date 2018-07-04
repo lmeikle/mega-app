@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { string } from 'prop-types';
 import bankingImage from './images/banking.png';
 import reactImage from './images/react.png';
+import newsImage from './images/news.jpg';
 import styled, { css } from 'styled-components';
 
 const HomeTileWrapper = styled.div`
@@ -31,6 +32,9 @@ const HomeTileWrapper = styled.div`
       case 'react-playground': {
         return reactPlaygroundMixin;
       }
+      case 'news': {
+        return newsMixin;
+      }
       default:
         break;
     }
@@ -47,6 +51,10 @@ const reactPlaygroundMixin = css`
   background-image: url(${reactImage});
   background-size: 110%;
   background-position: center 0px;
+`;
+
+const newsMixin = css`
+  background-image: url(${newsImage});
 `;
 
 const HomeTile = ({ path, name, className }) => {

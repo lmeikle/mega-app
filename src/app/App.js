@@ -15,6 +15,11 @@ const ReactPlayground = Loadable({
   loading: LoadingComponent
 });
 
+const News = Loadable({
+  loader: () => import('../news/NewsContainer'),
+  loading: LoadingComponent
+});
+
 class App extends Component {
   render() {
     return (
@@ -23,6 +28,7 @@ class App extends Component {
           <Switch>
             <Route path="/banking" component={Banking} />
             <Route path="/reactplayground" component={ReactPlayground} />
+            <Route path="/news" component={News} />
             <Route path="/" component={Home} />
           </Switch>
         </Router>

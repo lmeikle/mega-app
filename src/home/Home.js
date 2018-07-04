@@ -11,6 +11,7 @@ const HomeTitle = styled.div`
 const HomeTilesWrapper = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 class Home extends Component {
@@ -21,6 +22,7 @@ class Home extends Component {
         <HomeTilesWrapper>
           <HomeTile path="/banking" name="Banking" className="banking" />
           <HomeTile path="/reactplayground" name="React Playground" className="react-playground" />
+          <HomeTile path="/news" name="News" className="news" />
         </HomeTilesWrapper>
       </div>
     );
