@@ -33,9 +33,6 @@
   },
   "proxy": "http://localhost:3001/",
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/*.js"
-    ]
+    "collectCoverageFrom": ["src/**/*.{js,jsx}", "!src/*.js"]
   }
 }

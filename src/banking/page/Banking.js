@@ -5,19 +5,20 @@ import BanksContainer from '../banks/BanksContainer';
 import logo from './logo.svg';
 import './Banking.css';
 
-class BankingApp extends Component {
+class Banking extends Component {
   render() {
     return (
       <div>
         <div className="banking-topbar">
           <img src={logo} className="banking-topbar-logo" alt="logo" />
         </div>
-
-        <Route path="banking/atms" component={AtmsContainer} />
-        <Route path="banking" component={BanksContainer} />
+        <Switch>
+          <Route path={`${this.props.match.url}/atms`} component={AtmsContainer} />
+          <Route path={`${this.props.match.url}/`} component={BanksContainer} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default BankingApp;
+export default Banking;

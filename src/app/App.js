@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import BankingApp from '../banking/page/BankingApp';
-import './App.css';
+import React, { Component } from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Banking from "../banking/page/Banking"
+import Home from "../home/Home"
+import "./App.css"
 
 class App extends Component {
   render() {
@@ -9,13 +10,13 @@ class App extends Component {
       <div className="app">
         <Router>
           <Switch>
-            <Route path="/banking" component={BankingApp} />
-            <Route path="/" component={BankingApp} />
+            <Route path="/banking" component={Banking} />
+            <Route path="/" component={Home} />
           </Switch>
         </Router>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
