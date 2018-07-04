@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
+import Loadable from 'react-loadable';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Banking from '../banking/page/Banking';
-import ReactPlayground from '../reactplayground/page/ReactPlayground';
 import Home from '../home/Home';
+import LoadingComponent from '..//shared/loading/LoadingComponent';
 import './App.css';
+
+const Banking = Loadable({
+  loader: () => import('../banking/page/Banking'),
+  loading: LoadingComponent
+});
+
+const ReactPlayground = Loadable({
+  loader: () => import('../reactplayground/page/ReactPlayground'),
+  loading: LoadingComponent
+});
 
 class App extends Component {
   render() {
