@@ -1,0 +1,9 @@
+.banking-topbar {
+  height: 70px;
+  background-color: #ffffff;
+}
+
+.banking-topbar-logo {
+  margin-top: 20px;
+  width: 40%;
+}
