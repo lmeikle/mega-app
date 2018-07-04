@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Banking from '../banking/page/Banking';
-import ReactPlayground from '../react/page/ReactPlayground';
+import ReactPlayground from '../reactplayground/page/ReactPlayground';
 import Home from '../home/Home';
 import './App.css';
 
