@@ -17,6 +17,7 @@
   width: 200px;
   height: 200px;
   padding: 5px;
+  margin: 10px;
   background-color: #fafafa;
   border: 2px solid #002742;
   border-radius: 10px;
@@ -31,4 +32,10 @@
   background-image: url('./images/banking.png');
   background-size: 60%;
   background-position: center 20px;
+}
+
+.react-playground {
+  background-image: url('./images/react.png');
+  background-size: 110%;
+  background-position: center 0px;
 }

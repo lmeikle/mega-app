@@ -1,0 +1,17 @@
+.react-playground-title {
+  font-size: 20px;
+}
+
+.react-playground-icon {
+  width: 100px;
+}
+
+.react-playground-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #002742;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #fafafa;
+}

@@ -16,7 +16,7 @@ const HomeTileComponent = ({ path, name, className }) => {
 HomeTileComponent.propTypes = {
   path: string.isRequired,
   name: string.isRequired,
-  logo: string.isRequired
+  className: string.isRequired
 };
 
 HomeTileComponent.defaultProps = {};
