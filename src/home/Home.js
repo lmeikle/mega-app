@@ -17,7 +17,7 @@ const HomeTilesWrapper = styled.div`
 class Home extends Component {
   render() {
     return (
-      <div className="home">
+      <div>
         <HomeTitle>What would you like to do today?</HomeTitle>
         <HomeTilesWrapper>
           <HomeTile path="/banking" name="Banking" className="banking" />

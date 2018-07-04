@@ -8,4 +8,4 @@ Redux Saga
 Centralized Prop Types
 Selectors
 Cached API responses
-Styled Components
+Styled Components (not sure if I like it yet, also need to eject to be able to get readable class names)
