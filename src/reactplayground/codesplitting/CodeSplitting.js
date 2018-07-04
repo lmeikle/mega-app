@@ -1,12 +1,24 @@
 import React from 'react';
 import Loadable from 'react-loadable';
+import AsyncComponent from './AsyncComponent';
 import LoadingComponent from '../../shared/loading/LoadingComponent';
 
-const LoadableOtherComponent = Loadable({
+// using react-loadable library
+const MyLoadableComponent = Loadable({
   loader: () => import('./OtherComponent'),
   loading: () => <LoadingComponent />
 });
 
-const CodeSplitting = () => <LoadableOtherComponent />;
+// using a HOC
+const MyAsyncComponent = AsyncComponent(() => {
+  return import('./OtherComponent');
+});
+
+const CodeSplitting = () => (
+  <div>
+    <MyLoadableComponent msg="Loaded using react-loadable library" />
+    <MyAsyncComponent msg="Loaded using HOC" />
+  </div>
+);
 
 export default CodeSplitting;
