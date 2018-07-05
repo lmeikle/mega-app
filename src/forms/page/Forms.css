@@ -1,13 +1,9 @@
-.react-playground-title {
+.forms-title {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
-.react-playground-icon {
-  width: 100px;
-}
-
-.react-playground-item {
+.forms-item {
   display: flex;
   align-items: center;
   border: 1px solid #002742;
