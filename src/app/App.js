@@ -10,6 +10,11 @@ const Banking = Loadable({
   loading: LoadingComponent
 });
 
+const Forms = Loadable({
+  loader: () => import('../forms/page/Forms'),
+  loading: LoadingComponent
+});
+
 const ReactPlayground = Loadable({
   loader: () => import('../reactplayground/page/ReactPlayground'),
   loading: LoadingComponent
@@ -27,6 +32,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path="/banking" component={Banking} />
+            <Route path="/forms" component={Forms} />
             <Route path="/reactplayground" component={ReactPlayground} />
             <Route path="/news" component={News} />
             <Route path="/" component={Home} />

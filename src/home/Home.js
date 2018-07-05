@@ -21,6 +21,7 @@ class Home extends Component {
         <HomeTitle>What would you like to do today?</HomeTitle>
         <HomeTilesWrapper>
           <HomeTile path="/banking" name="Banking" className="banking" />
+          <HomeTile path="/forms" name="Forms" className="forms" />
           <HomeTile path="/reactplayground" name="React Playground" className="react-playground" />
           <HomeTile path="/news" name="News" className="news" />
         </HomeTilesWrapper>

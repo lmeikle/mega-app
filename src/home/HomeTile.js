@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { string } from 'prop-types';
 import bankingImage from './images/banking.png';
+import formsImage from './images/forms.png';
 import reactImage from './images/react.png';
 import newsImage from './images/news.jpg';
 import styled, { css } from 'styled-components';
@@ -29,6 +30,9 @@ const HomeTileWrapper = styled.div`
       case 'banking': {
         return bankingMixin;
       }
+      case 'forms': {
+        return formsMixin;
+      }
       case 'react-playground': {
         return reactPlaygroundMixin;
       }
@@ -45,6 +49,12 @@ const bankingMixin = css`
   background-image: url(${bankingImage});
   background-size: 60%;
   background-position: center 20px;
+`;
+
+const formsMixin = css`
+  background-image: url(${formsImage});
+  background-size: 70%;
+  background-position: center 15px;
 `;
 
 const reactPlaygroundMixin = css`
