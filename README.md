@@ -10,3 +10,4 @@ Selectors<br/>
 Cached API responses<br/>
 Styled Components (not sure if I like it yet, also need to eject to be able to get readable class names)<br/>
 redux-forms<br/>
+Semantic UI React<br/>
