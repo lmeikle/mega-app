@@ -6,7 +6,7 @@ import './Forms.css';
 
 class Forms extends Component {
   submit = inputs => {
-    if (['rajat', 'batman'].includes(inputs.username)) {
+    if (['lmeikle'].includes(inputs.username)) {
       throw new SubmissionError({
         username: 'Username already taken'
       });
@@ -17,7 +17,7 @@ class Forms extends Component {
 
   getInitialValues() {
     return {
-      username: 'rajat',
+      username: 'lmeikle',
       password: ''
     };
   }
@@ -26,10 +26,7 @@ class Forms extends Component {
     return (
       <div>
         <Switch>
-          <Route
-            path={`${this.props.match.url}/login`}
-            render={() => <LoginForm onSubmit={this.submit} initialValues={this.getInitialValues()} />}
-          />
+          <Route path={`${this.props.match.url}/login`} render={() => <LoginForm onSubmit={this.submit} initialValues={this.getInitialValues()} />} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (

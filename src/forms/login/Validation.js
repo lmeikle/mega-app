@@ -3,7 +3,7 @@ export const validateForm = inputs => {
 
   if (!inputs.username) {
     errors.username = 'Enter your Username';
-  } else if (inputs.username !== 'rajat') {
+  } else if (inputs.username !== 'lmeikle') {
     errors.username = 'Username is incorrect';
   }
 
@@ -16,6 +16,6 @@ export const validateForm = inputs => {
 
 export const requiredInput = input => (input ? undefined : `Input is required`);
 
-export const correctInput = input => (input !== 'rajat' ? 'Incorrect Username' : undefined);
+export const correctInput = input => (input !== 'lmeikle' ? 'Incorrect Username' : undefined);
 
 export const matchInput = (input, allInputs) => (input === allInputs.password ? undefined : 'Passwords do not match');
