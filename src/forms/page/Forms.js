@@ -3,6 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import { SubmissionError } from 'redux-form';
 import LoginForm from '../login/LoginForm';
 import LoginFormUsingSemantic from '../loginusingsemantic/LoginForm';
+import FormContainer from '../vanillaasync/FormContainer';
 import './Forms.css';
 
 class Forms extends Component {
@@ -29,6 +30,7 @@ class Forms extends Component {
         <Switch>
           <Route path={`${this.props.match.url}/login`} render={() => <LoginForm onSubmit={this.submit} initialValues={this.getInitialValues()} />} />
           <Route path={`${this.props.match.url}/loginusingsemantic`} render={() => <LoginFormUsingSemantic onSubmit={this.submit} initialValues={this.getInitialValues()} />} />
+          <Route path={`${this.props.match.url}/vanillaasync`} render={() => <FormContainer />} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -45,6 +47,13 @@ class Forms extends Component {
                   <Link to={`${this.props.match.url}/loginusingsemantic`}>
                     <div className="forms-item">
                       <div>Login form using redux-form and semantic ui</div>
+                    </div>
+                  </Link>
+                </div>
+                <div>
+                  <Link to={`${this.props.match.url}/vanillaasync`}>
+                    <div className="forms-item">
+                      <div>Vanilla Async Form with redux</div>
                     </div>
                   </Link>
                 </div>

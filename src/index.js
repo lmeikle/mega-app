@@ -7,7 +7,7 @@ import './index.css';
 import App from './app/App';
 import registerServiceWorker from './registerServiceWorker';
 import { banking, bankingSagas } from './banking/';
-import { form } from './forms/';
+import { form, vanillaAsycnFormReducer, vanillaFormSagas } from './forms/';
 import 'semantic-ui-css/semantic.min.css';
 
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
@@ -27,12 +27,14 @@ if (process.env.NODE_ENV !== 'production') {
 const store = createStore(
   combineReducers({
     banking,
-    form
+    form,
+    vanillaAsycnFormReducer
   }),
   composeEnhancers(applyMiddleware(...middleware))
 );
 
 sagaMiddleware.run(bankingSagas);
+sagaMiddleware.run(vanillaFormSagas);
 
 ReactDOM.render(
   <Provider store={store}>
