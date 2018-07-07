@@ -1,4 +1,4 @@
-export const apiClient = {
+export const ApiClient = {
   loadPeople: function() {
     return {
       then: function(cb) {

@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import isEmail from 'validator/lib/isEmail';
+import CourseSignupActions from './CourseSignupActions.js';
 import CourseSelectContainer from './CourseSelectContainer';
-import FieldContainer from './FieldContainer';
-import { fetchPeople, savePeople } from './FormActions.js';
+import InputFieldContainer from './InputFieldContainer';
 import loadingImage from './loading.gif';
 
-class FormContainer extends Component {
+class CourseSignupContainer extends Component {
   static propTypes = {
     people: PropTypes.array.isRequired,
     isLoading: PropTypes.bool.isRequired,
@@ -31,8 +31,6 @@ class FormContainer extends Component {
   }
 
   componentWillReceiveProps(update) {
-    console.log('this.props.fields', this.props.fields, update);
-
     this.setState({ fields: update.fields });
   }
 
@@ -81,14 +79,20 @@ class FormContainer extends Component {
 
     return (
       <div>
-        <h1>Sign Up Sheet</h1>
+        <h1>Course Sign Up Sheet</h1>
 
         <form onSubmit={this.onFormSubmit}>
-          <FieldContainer placeholder="Name" name="name" value={this.state.fields.name} onChange={this.onInputChange} validate={val => (val ? false : 'Name Required')} />
+          <InputFieldContainer
+            placeholder="Name"
+            name="name"
+            value={this.state.fields.name}
+            onChange={this.onInputChange}
+            validate={val => (val ? false : 'Name Required')}
+          />
 
           <br />
 
-          <FieldContainer
+          <InputFieldContainer
             placeholder="Email"
             name="email"
             value={this.state.fields.email}
@@ -98,7 +102,11 @@ class FormContainer extends Component {
 
           <br />
 
-          <CourseSelectContainer department={this.state.fields.department} course={this.state.fields.course} onChange={this.onInputChange} />
+          <CourseSelectContainer
+            department={this.state.fields.department}
+            course={this.state.fields.course}
+            onChange={this.onInputChange}
+          />
 
           <br />
 
@@ -114,7 +122,11 @@ class FormContainer extends Component {
 
         <div>
           <h3>People</h3>
-          <ul>{this.props.people.map(({ name, email, department, course }, i) => <li key={i}>{[name, email, department, course].join(' - ')}</li>)}</ul>
+          <ul>
+            {this.props.people.map(({ name, email, department, course }, i) => (
+              <li key={i}>{[name, email, department, course].join(' - ')}</li>
+            ))}
+          </ul>
         </div>
       </div>
     );
@@ -123,22 +135,22 @@ class FormContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    isLoading: state.vanillaAsycnFormReducer.isLoading,
-    fields: state.vanillaAsycnFormReducer.person,
-    people: state.vanillaAsycnFormReducer.people,
-    saveStatus: state.vanillaAsycnFormReducer.saveStatus
+    isLoading: state.courseSignup.isLoading,
+    fields: state.courseSignup.person,
+    people: state.courseSignup.people,
+    saveStatus: state.courseSignup.saveStatus
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     fetchPeople: () => {
-      dispatch(fetchPeople());
+      dispatch(CourseSignupActions.fetchPeople());
     },
     onSubmit: people => {
-      dispatch(savePeople(people));
+      dispatch(CourseSignupActions.savePeople(people));
     }
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CourseSignupContainer);

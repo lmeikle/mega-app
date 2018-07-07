@@ -1,11 +1,11 @@
 import { reducer as reduxFormReducer } from 'redux-form';
 import { all } from 'redux-saga/effects';
-import { reducer } from './vanillaasync/FormReducer.js';
-import { watchFetchPeople, watchSavePeople } from './vanillaasync/FormSagas';
+import { courseSignupReducer } from './coursesignup/CourseSignupReducer.js';
+import { watchFetchPeople, watchSavePeople } from './coursesignup/CourseSignupSagas';
 
-export const vanillaAsycnFormReducer = reducer;
+export const courseSignup = courseSignupReducer;
 export const form = reduxFormReducer;
 
-export function* vanillaFormSagas() {
+export function* courseSignupSagas() {
   yield all([watchFetchPeople(), watchSavePeople()]);
 }

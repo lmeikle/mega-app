@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
-/* eslint no-underscore-dangle: [2, { "allow": ["_loading"] }] */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Core from './api/core.json';
 import Electives from './api/electives.json';
 import loadingImage from './loading.gif';

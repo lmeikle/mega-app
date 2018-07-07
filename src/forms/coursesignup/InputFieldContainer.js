@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class FieldContainer extends Component {
+class InputFieldContainer extends Component {
   static propTypes = {
     placeholder: PropTypes.string,
     name: PropTypes.string.isRequired,
@@ -39,4 +39,4 @@ class FieldContainer extends Component {
   }
 }
 
-export default FieldContainer;
+export default InputFieldContainer;
