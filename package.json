@@ -8,6 +8,7 @@
     "react-dom": "^16.4.0",
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
+    "react-responsive": "^4.1.0",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "redux-form": "^7.4.2",
@@ -42,6 +43,9 @@
   },
   "proxy": "http://localhost:3001/",
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}", "!src/*.js"]
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/*.js"
+    ]
   }
 }

@@ -25,6 +25,11 @@ const News = Loadable({
   loading: LoadingComponent
 });
 
+const Responsive = Loadable({
+  loader: () => import('../responsive/page/Responsive'),
+  loading: LoadingComponent
+});
+
 class App extends Component {
   render() {
     return (
@@ -35,6 +40,7 @@ class App extends Component {
             <Route path="/forms" component={Forms} />
             <Route path="/reactplayground" component={ReactPlayground} />
             <Route path="/news" component={News} />
+            <Route path="/responsive" component={Responsive} />
             <Route path="/" component={Home} />
           </Switch>
         </Router>

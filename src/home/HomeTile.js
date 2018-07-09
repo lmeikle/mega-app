@@ -4,7 +4,8 @@ import { string } from 'prop-types';
 import bankingImage from './images/banking.png';
 import formsImage from './images/forms.png';
 import reactImage from './images/react.png';
-import newsImage from './images/news.jpg';
+import newsImage from './images/news.png';
+import responsiveImage from './images/responsive.png';
 import styled, { css } from 'styled-components';
 
 const HomeTileWrapper = styled.div`
@@ -39,6 +40,9 @@ const HomeTileWrapper = styled.div`
       case 'news': {
         return newsMixin;
       }
+      case 'responsive': {
+        return responsiveMixin;
+      }
       default:
         break;
     }
@@ -54,7 +58,7 @@ const bankingMixin = css`
 const formsMixin = css`
   background-image: url(${formsImage});
   background-size: 70%;
-  background-position: center 15px;
+  background-position: 40px 15px;
 `;
 
 const reactPlaygroundMixin = css`
@@ -65,6 +69,12 @@ const reactPlaygroundMixin = css`
 
 const newsMixin = css`
   background-image: url(${newsImage});
+  background-size: 65%;
+  background-position: center 20px;
+`;
+
+const responsiveMixin = css`
+  background-image: url(${responsiveImage});
 `;
 
 const HomeTile = ({ path, name, className }) => {

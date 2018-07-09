@@ -24,6 +24,7 @@ class Home extends Component {
           <HomeTile path="/forms" name="Forms" className="forms" />
           <HomeTile path="/reactplayground" name="React Playground" className="react-playground" />
           <HomeTile path="/news" name="News" className="news" />
+          <HomeTile path="/responsive" name="Responsive" className="responsive" />
         </HomeTilesWrapper>
       </div>
     );
