@@ -17,7 +17,7 @@ export function* watchFetchPeople() {
 function* savePeopleAsync(action) {
   try {
     yield put(CourseSignupActions.savePeopleRequest());
-    const response = yield call(() => ApiClient.savePeople(action.people));
+    yield call(() => ApiClient.savePeople(action.people));
     yield put(CourseSignupActions.savePeopleSuccess(action.people));
   } catch (e) {
     yield put(CourseSignupActions.savePeopleFailure(e));

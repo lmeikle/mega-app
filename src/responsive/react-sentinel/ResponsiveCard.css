@@ -1,0 +1,35 @@
+.ResponsiveCard {
+  margin: 0 16px 16px 0;
+}
+
+.ResponsiveCard__content {
+  display: flex;
+  flex-direction: column;
+  white-space: pre-wrap;
+}
+
+.ResponsiveCard__title {
+  font-size: 1em;
+  line-height: 1;
+  margin-bottom: 0.75em;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.ResponsiveCard__subtitle {
+  font-size: 0.8em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+  font-style: italic;
+}
+
+.ResponsiveCard__tidbit {
+  font-size: 0.6em;
+  line-height: 1.1;
+  margin-top: 0.5em;
+}
+
+.ResponsiveCard__tidbit.is-bold {
+  font-weight: 600;
+}
