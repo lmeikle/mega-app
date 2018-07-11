@@ -8,7 +8,7 @@ class SideMenu extends Component {
     return (
       <Menu vertical>
         {config.map(entry => (
-          <Menu.Item as={NavLink} to={entry.path}>
+          <Menu.Item key={entry.name} as={NavLink} to={entry.path}>
             {entry.name}
           </Menu.Item>
         ))}

@@ -42,11 +42,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:3001",
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/*.js"
-    ]
+    "collectCoverageFrom": ["src/**/*.{js,jsx}", "!src/*.js"]
   }
 }
