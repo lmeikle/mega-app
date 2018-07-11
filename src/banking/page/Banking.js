@@ -8,7 +8,7 @@ import './Banking.css';
 class Banking extends Component {
   render() {
     return (
-      <div>
+      <div className="banking">
         <div className="banking-topbar">
           <img src={logo} className="banking-topbar-logo" alt="logo" />
         </div>

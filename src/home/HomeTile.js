@@ -13,8 +13,8 @@ const HomeTileWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   padding: 5px;
   margin: 10px;
   background-color: #fafafa;
@@ -52,13 +52,13 @@ const HomeTileWrapper = styled.div`
 const bankingMixin = css`
   background-image: url(${bankingImage});
   background-size: 60%;
-  background-position: center 20px;
+  background-position: center 15px;
 `;
 
 const formsMixin = css`
   background-image: url(${formsImage});
   background-size: 70%;
-  background-position: 40px 15px;
+  background-position: 30px 10px;
 `;
 
 const reactPlaygroundMixin = css`
@@ -70,11 +70,12 @@ const reactPlaygroundMixin = css`
 const newsMixin = css`
   background-image: url(${newsImage});
   background-size: 65%;
-  background-position: center 20px;
+  background-position: center 15px;
 `;
 
 const responsiveMixin = css`
   background-image: url(${responsiveImage});
+  background-position: center 4px;
 `;
 
 const HomeTile = ({ path, name, className }) => {

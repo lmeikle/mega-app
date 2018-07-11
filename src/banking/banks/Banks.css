@@ -1,3 +1,8 @@
+.banks-container {
+  height: 100%;
+  overflow: auto;
+}
+
 .banks {
   display: flex;
   align-items: center;

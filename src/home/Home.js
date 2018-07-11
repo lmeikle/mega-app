@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import HomeTile from './HomeTile';
 
+const HomeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 const HomeTitle = styled.div`
   font-weight: bold;
   font-size: 20px;
@@ -11,22 +17,22 @@ const HomeTitle = styled.div`
 const HomeTilesWrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-content: flex-start;
   flex-wrap: wrap;
+  height: 100%;
+  overflow: auto;
 `;
 
 class Home extends Component {
   render() {
+    let { config } = this.props;
     return (
-      <div>
+      <HomeContainer>
         <HomeTitle>What would you like to do today?</HomeTitle>
         <HomeTilesWrapper>
-          <HomeTile path="/banking" name="Banking" className="banking" />
-          <HomeTile path="/forms" name="Forms" className="forms" />
-          <HomeTile path="/reactplayground" name="React Playground" className="react-playground" />
-          <HomeTile path="/news" name="News" className="news" />
-          <HomeTile path="/responsive" name="Responsive" className="responsive" />
+          {config.filter(entry => entry.name !== 'Home').map(entry => <HomeTile path={entry.path} name={entry.name} className={entry.className} />)}
         </HomeTilesWrapper>
-      </div>
+      </HomeContainer>
     );
   }
 }

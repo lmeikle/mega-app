@@ -33,7 +33,7 @@ class BanksContainer extends Component {
     }
 
     return (
-      <div>
+      <div className="banks-container">
         <div>Please select a bank</div>
         {banksWithAtmAPI.map(bank => <BanksComponent key={bank.name} {...bank} />)}
       </div>

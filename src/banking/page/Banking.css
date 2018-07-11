@@ -1,3 +1,9 @@
+.banking {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .banking-topbar {
   height: 70px;
   background-color: #ffffff;
