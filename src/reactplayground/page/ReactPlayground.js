@@ -3,7 +3,6 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Portal from '../portal/Portal';
 import Context from '../context/Context';
 import CodeSplitting from '../codesplitting/CodeSplitting';
-import Canvas from '../canvas/Canvas';
 import icon from './icon.svg';
 import './ReactPlayground.css';
 
@@ -16,7 +15,6 @@ class ReactPlayground extends Component {
           <Route path={`${this.props.match.url}/portal`} component={Portal} />
           <Route path={`${this.props.match.url}/context`} component={Context} />
           <Route path={`${this.props.match.url}/codesplitting`} component={CodeSplitting} />
-          <Route path={`${this.props.match.url}/canvas`} component={Canvas} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -36,11 +34,6 @@ class ReactPlayground extends Component {
                   <Link to={`${this.props.match.url}/codesplitting`}>
                     <div className="react-playground-item">
                       <div>Code Splitting</div>
-                    </div>
-                  </Link>
-                  <Link to={`${this.props.match.url}/canvas`}>
-                    <div className="react-playground-item">
-                      <div>Canvas</div>
                     </div>
                   </Link>
                 </div>
