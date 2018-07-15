@@ -6,6 +6,7 @@ import formsImage from './images/forms.png';
 import reactImage from './images/react.png';
 import newsImage from './images/news.png';
 import responsiveImage from './images/responsive.png';
+import miscImage from './images/misc.png';
 import styled, { css } from 'styled-components';
 
 const HomeTileWrapper = styled.div`
@@ -43,6 +44,9 @@ const HomeTileWrapper = styled.div`
       case 'responsive': {
         return responsiveMixin;
       }
+      case 'misc': {
+        return miscMixin;
+      }
       default:
         break;
     }
@@ -76,6 +80,12 @@ const newsMixin = css`
 const responsiveMixin = css`
   background-image: url(${responsiveImage});
   background-position: center 4px;
+`;
+
+const miscMixin = css`
+  background-image: url(${miscImage});
+  background-size: 65%;
+  background-position: center 15px;
 `;
 
 const HomeTile = ({ path, name, className }) => {
