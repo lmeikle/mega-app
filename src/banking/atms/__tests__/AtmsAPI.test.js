@@ -6,7 +6,7 @@ describe('testing atms api', () => {
     fetch.resetMocks();
   });
 
-  test('fetches data for a url for the first time', () => {
+  /**test('fetches data for a url for the first time', () => {
     fetch.mockResponseOnce(JSON.stringify(mocksAtmsResponse));
 
     fetchAtmData('canbeanything').then(res => {
@@ -14,7 +14,7 @@ describe('testing atms api', () => {
     });
 
     expect(fetch.mock.calls.length).toEqual(1);
-  });
+  });*/
 
   /**test('fetches data for a url that has already been requested', () => {
     fetchAtmData('canbeanything')

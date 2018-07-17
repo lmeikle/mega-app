@@ -2,6 +2,7 @@ import { fetchBanksWithAtmAPIData } from '../BanksAPI';
 import mockBanksResponse from '../paticipant_store.json';
 
 describe('testing banks api', () => {
+  const totalResults = 17;
   beforeEach(() => {
     fetch.resetMocks();
   });
@@ -10,7 +11,7 @@ describe('testing banks api', () => {
     fetch.mockResponseOnce(JSON.stringify(mockBanksResponse));
 
     fetchBanksWithAtmAPIData().then(res => {
-      expect(res.length).toEqual(13);
+      expect(res.length).toEqual(totalResults);
     });
 
     // does not actually make a fetch at present
@@ -19,7 +20,7 @@ describe('testing banks api', () => {
 
   test('fetches data that has already been requested', () => {
     fetchBanksWithAtmAPIData().then(res => {
-      expect(res.length).toEqual(13);
+      expect(res.length).toEqual(totalResults);
     });
 
     // the data should be cached, so a 'fetch' should not have been made

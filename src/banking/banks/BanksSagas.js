@@ -3,10 +3,10 @@ import { fetchBanksWithAtmAPIData } from './BanksAPI';
 import { getBanksWithAtmAPI } from './BanksSelectors';
 import BanksActions from './BanksActions';
 
-function* getBanksAsync() {
+export function* getBanksAsync() {
   try {
     let banksWithAtmAPI = yield select(state => getBanksWithAtmAPI(state));
-    if (banksWithAtmAPI) {
+    if (banksWithAtmAPI && banksWithAtmAPI.length > 0) {
       return;
     }
 
