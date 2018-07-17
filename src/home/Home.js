@@ -30,11 +30,10 @@ class Home extends Component {
       <HomeContainer>
         <HomeTitle>What would you like to do today?</HomeTitle>
         <HomeTilesWrapper>
-          {config
-            .filter(entry => entry.name !== 'Home')
-            .map(entry => (
-              <HomeTile key={entry.name} path={entry.path} name={entry.name} className={entry.className} />
-            ))}
+          {config &&
+            config
+              .filter(entry => entry.name !== 'Home')
+              .map(entry => <HomeTile key={entry.name} path={entry.path} name={entry.name} className={entry.className} />)}
         </HomeTilesWrapper>
       </HomeContainer>
     );

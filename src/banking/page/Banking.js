@@ -7,14 +7,20 @@ import './Banking.css';
 
 class Banking extends Component {
   render() {
+    const { match } = this.props;
+    let url = '';
+    if (match && match.url) {
+      url = match.url;
+    }
+
     return (
       <div className="banking">
         <div className="banking-topbar">
           <img src={logo} className="banking-topbar-logo" alt="logo" />
         </div>
         <Switch>
-          <Route path={`${this.props.match.url}/atms`} component={AtmsContainer} />
-          <Route path={`${this.props.match.url}/`} component={BanksContainer} />
+          <Route path={`${url}/atms`} component={AtmsContainer} />
+          <Route path={`${url}/`} component={BanksContainer} />
         </Switch>
       </div>
     );

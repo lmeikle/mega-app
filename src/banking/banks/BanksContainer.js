@@ -10,7 +10,7 @@ import LoadingComponent from '../../shared/loading/LoadingComponent';
 /**
  * Renders a list of banks listed in the that have an ATM API
  */
-class BanksContainer extends Component {
+export class BanksContainer extends Component {
   static propTypes = {
     banksWithAtmAPI: banksWithAtmAPIType,
     isFetching: bool.isRequired,
@@ -18,7 +18,7 @@ class BanksContainer extends Component {
   };
 
   static defaultProps = {
-    banksWithAtmAPI: null
+    banksWithAtmAPI: []
   };
 
   componentDidMount() {

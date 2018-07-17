@@ -1,27 +1,19 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import AtmsContainer from '../AtmsContainer';
-import App from '../../app/App';
+import { AtmsContainer } from '../AtmsContainer';
 
-const props = {
-  location: {
-    state: {
-      name: 'Barclays Bank',
-      url: 'www.example.com'
-    }
-  },
-  history: ''
+const initialProps = {
+  isFetching: true,
+  dispatch: jest.fn()
 };
 
 const initialState = {
-  name: null,
-  geolocation: null,
-  atms: null,
-  error: null
+  geolocation: null
 };
 
-const readyState = {
-  geolocation: { coords: { latitude: 123, longitude: 456 } },
+const readyProps = {
+  ...initialProps,
+  isFetching: false,
   atms: [
     {
       identification: '456',
@@ -51,39 +43,69 @@ const readyState = {
       numOfAtms: 1
     }
   ],
+  name: 'Barclays',
   error: null
 };
 
-const errorState = {
-  geolocation: { coords: { latitude: 123, longitude: 456 } },
-  atms: null,
+const readyState = {
+  geolocation: { coords: { latitude: 123, longitude: 456 } }
+};
+
+const errorProps = {
+  ...initialProps,
+  isFetching: false,
   error: 'There was an error'
 };
 
-const atmsContainer = shallow(<AtmsContainer {...props} />);
+const errorState = {
+  geolocation: { coords: { latitude: 123, longitude: 456 } }
+};
 
 describe('AtmsContainer', () => {
-  test('renders correctly', () => {
-    expect(atmsContainer).toMatchSnapshot();
+  describe('initial', () => {
+    let atmsContainer;
+    beforeEach(() => {
+      atmsContainer = shallow(<AtmsContainer {...initialProps} />);
+    });
+
+    test('renders correctly', () => {
+      expect(atmsContainer).toMatchSnapshot();
+    });
+
+    test('initializes the `state` correctly', () => {
+      expect(atmsContainer.state()).toEqual(initialState);
+    });
+
+    test('renders the loading component when fetching', () => {
+      expect(atmsContainer.find('LoadingComponent').exists()).toBe(true);
+    });
   });
 
-  test('initializes the `state` correctly', () => {
-    expect(atmsContainer.state()).toEqual(initialState);
+  describe('with data', () => {
+    let atmsContainer;
+    beforeEach(() => {
+      atmsContainer = shallow(<AtmsContainer {...readyProps} />);
+      atmsContainer.setState(readyState);
+    });
+
+    test('sets the `state` correctly', () => {
+      expect(atmsContainer.state()).toEqual(readyState);
+    });
+
+    test('renders a list of AtmsComponents', () => {
+      expect(atmsContainer.find('AtmsComponent').exists()).toBe(true);
+    });
+
+    test('given an arrry of atms find the nearest atms', () => {
+      expect(AtmsContainer.findNearestATMs(readyState.geolocation, readyProps.atms, 1)[0].address).toBe('10 Camden High Street');
+    });
   });
 
-  test('renders a list of AtmsComponents', () => {
-    atmsContainer.setState(readyState);
-    expect(atmsContainer.find('AtmsComponent').exists()).toBe(true);
-  });
-
-  test('given an arrry of atms find the nearest atms', () => {
-    expect(AtmsContainer.findNearestATMs(readyState.geolocation, readyState.atms, 1)[0].address).toBe(
-      '10 Camden High Street'
-    );
-  });
-
-  test('displays a error message', () => {
-    atmsContainer.setState(errorState);
-    expect(atmsContainer.find('.errorMessage').exists()).toBe(true);
+  describe('with error', () => {
+    test('displays a error message', () => {
+      let atmsContainer = shallow(<AtmsContainer {...errorProps} />);
+      atmsContainer.setState(errorState);
+      expect(atmsContainer.find('.errorMessage').exists()).toBe(true);
+    });
   });
 });

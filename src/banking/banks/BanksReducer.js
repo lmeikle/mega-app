@@ -2,7 +2,7 @@ import BanksActions from './BanksActions';
 
 const BANKS_INITIAL_STATE = {
   isFetching: true,
-  banksWithAtmAPI: null
+  banksWithAtmAPI: []
 };
 
 export default function banks(state = BANKS_INITIAL_STATE, action) {
@@ -11,7 +11,7 @@ export default function banks(state = BANKS_INITIAL_STATE, action) {
       return {
         ...state,
         isFetching: true,
-        banksWithAtmAPI: null
+        banksWithAtmAPI: []
       };
     case BanksActions.GET_BANKS_SUCCESS: {
       const { response } = action.payload;
@@ -36,7 +36,7 @@ export default function banks(state = BANKS_INITIAL_STATE, action) {
       return {
         ...state,
         isFetching: false,
-        banksWithAtmAPI: null
+        banksWithAtmAPI: []
       };
     default:
       return state;

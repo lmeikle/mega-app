@@ -12,7 +12,7 @@ import getGeolocation from '../../shared/utils/getGeolocation';
 /**
  * Renders the list of nearest atms for the selected bank
  */
-class AtmsContainer extends Component {
+export class AtmsContainer extends Component {
   constructor(props) {
     super(props);
 

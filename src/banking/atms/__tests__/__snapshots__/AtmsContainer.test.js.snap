@@ -1,19 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AtmsContainer renders correctly 1`] = `
+exports[`AtmsContainer initial renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AtmsContainer
-    history=""
-    location={
-        Object {
-            "state": Object {
-              "name": "Barclays Bank",
-              "url": "www.example.com",
-            },
-          }
-    }
+    atms={null}
+    dispatch={[Function]}
+    error={null}
+    isFetching={true}
+    name={null}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

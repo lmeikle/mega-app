@@ -28,13 +28,22 @@ ShallowWrapper {
                 className="banks-logo"
                 src="icon.svg"
         />
-        <div>
+        <div
+                className="banks-name"
+        >
                 Barclays Bank
         </div>
+        <Icon
+                as="i"
+                className="banks-arrow"
+                color="grey"
+                name="angle right"
+                size="large"
+        />
 </div>,
       "replace": false,
       "to": Object {
-        "pathname": "/atms",
+        "pathname": "/banking/atms",
         "state": Object {
           "name": "Barclays Bank",
           "url": "https://www.example.com",
@@ -53,9 +62,18 @@ ShallowWrapper {
             className="banks-logo"
             src="icon.svg"
 />,
-          <div>
+          <div
+            className="banks-name"
+>
             Barclays Bank
 </div>,
+          <Icon
+            as="i"
+            className="banks-arrow"
+            color="grey"
+            name="angle right"
+            size="large"
+/>,
         ],
         "className": "banks",
       },
@@ -80,10 +98,26 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Barclays Bank",
+            "className": "banks-name",
           },
           "ref": null,
           "rendered": "Barclays Bank",
           "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "as": "i",
+            "className": "banks-arrow",
+            "color": "grey",
+            "name": "angle right",
+            "size": "large",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",
@@ -104,13 +138,22 @@ ShallowWrapper {
                     className="banks-logo"
                     src="icon.svg"
           />
-          <div>
+          <div
+                    className="banks-name"
+          >
                     Barclays Bank
           </div>
+          <Icon
+                    as="i"
+                    className="banks-arrow"
+                    color="grey"
+                    name="angle right"
+                    size="large"
+          />
 </div>,
         "replace": false,
         "to": Object {
-          "pathname": "/atms",
+          "pathname": "/banking/atms",
           "state": Object {
             "name": "Barclays Bank",
             "url": "https://www.example.com",
@@ -129,9 +172,18 @@ ShallowWrapper {
               className="banks-logo"
               src="icon.svg"
 />,
-            <div>
+            <div
+              className="banks-name"
+>
               Barclays Bank
 </div>,
+            <Icon
+              as="i"
+              className="banks-arrow"
+              color="grey"
+              name="angle right"
+              size="large"
+/>,
           ],
           "className": "banks",
         },
@@ -156,10 +208,26 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Barclays Bank",
+              "className": "banks-name",
             },
             "ref": null,
             "rendered": "Barclays Bank",
             "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "as": "i",
+              "className": "banks-arrow",
+              "color": "grey",
+              "name": "angle right",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
         ],
         "type": "div",

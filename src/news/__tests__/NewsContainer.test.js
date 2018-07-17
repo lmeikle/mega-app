@@ -10,7 +10,7 @@ const initialState = {
 };
 
 const readyState = {
-  totalResults: 2,
+  totalResults: 5,
   headlines: [
     {
       title: 'Putin ready to meet Trump over arms race concerns',
@@ -28,28 +28,79 @@ const readyState = {
   error: null
 };
 
+const readyStateNoMoreResults = {
+  ...readyState,
+  totalResults: 2
+};
+
 const errorState = {
   error: 'There was an error'
 };
 
-const newsContainer = shallow(<NewsContainer />);
-
 describe('NewsContainer', () => {
-  test('renders correctly', () => {
-    expect(newsContainer).toMatchSnapshot();
+  describe('initial', () => {
+    let newsContainer;
+    beforeEach(() => {
+      newsContainer = shallow(<NewsContainer />);
+    });
+
+    test('renders correctly', () => {
+      expect(newsContainer).toMatchSnapshot();
+    });
+
+    test('initializes the `state` correctly', () => {
+      expect(newsContainer.state()).toEqual(initialState);
+    });
+
+    test('contains no NewsHeadlineComponents', () => {
+      expect(newsContainer.find('NewsHeadlineComponent').length).toBe(0);
+    });
+
+    test('contains no show more button', () => {
+      expect(newsContainer.find('.news-show-more-button').length).toBe(0);
+    });
   });
 
-  test('initializes the `state` correctly', () => {
-    expect(newsContainer.state()).toEqual(initialState);
+  describe('with data', () => {
+    let newsContainer;
+    beforeEach(() => {
+      newsContainer = shallow(<NewsContainer />);
+      newsContainer.setState(readyState);
+    });
+
+    test('renders a list of NewsHeadlineComponents', () => {
+      expect(newsContainer.find('NewsHeadlineComponent').length).toBe(2);
+    });
+
+    test('renders the show more button when there are more results', () => {
+      expect(newsContainer.find('.news-show-more-button').length).toBe(1);
+    });
+
+    test('does not render the show more button when there are more results', () => {
+      newsContainer.setState(readyStateNoMoreResults);
+      expect(newsContainer.find('.news-show-more-button').length).toBe(0);
+    });
+
+    /**test('should call showMore when show more button is clicked', () => {
+      const showMoreSpy = jest.spyOn(NewsContainer.prototype, 'showMore');
+
+      const newsContainer = mount(<NewsContainer />);
+      newsContainer.setState(readyState);
+
+      newsContainer.find('.news-show-more-button').simulate('click');
+      expect(showMoreSpy).toHaveBeenCalledTimes(1);
+    });*/
   });
 
-  test('renders a list of NewsHeadlineComponents', () => {
-    newsContainer.setState(readyState);
-    expect(newsContainer.find('NewsHeadlineComponent').length).toBe(2);
-  });
+  describe('handles errors', () => {
+    let newsContainer;
+    beforeEach(() => {
+      newsContainer = shallow(<NewsContainer />);
+      newsContainer.setState(errorState);
+    });
 
-  test('displays an error message', () => {
-    newsContainer.setState(errorState);
-    expect(newsContainer.find('.errorMessage').exists()).toBe(true);
+    test('displays an error message', () => {
+      expect(newsContainer.find('.errorMessage').exists()).toBe(true);
+    });
   });
 });
