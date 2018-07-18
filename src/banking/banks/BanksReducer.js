@@ -9,7 +9,6 @@ export default function banks(state = BANKS_INITIAL_STATE, action) {
   switch (action.type) {
     case BanksActions.GET_BANKS_REQUESTED:
       return {
-        ...state,
         isFetching: true,
         banksWithAtmAPI: []
       };
@@ -27,14 +26,12 @@ export default function banks(state = BANKS_INITIAL_STATE, action) {
       }
 
       return {
-        ...state,
         isFetching: false,
         banksWithAtmAPI
       };
     }
     case BanksActions.GET_BANKS_FAILED:
       return {
-        ...state,
         isFetching: false,
         banksWithAtmAPI: []
       };

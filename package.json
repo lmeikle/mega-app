@@ -50,7 +50,10 @@
   "proxy": "http://localhost:3001",
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
+      "src/banking/**/*.{js,jsx}",
+      "src/news/**/*.{js,jsx}",
+      "src/shared/**/*.{js,jsx}",
+      "src/home/**/*.{js,jsx}",
       "!src/*.js"
     ]
   }

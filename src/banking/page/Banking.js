@@ -14,7 +14,7 @@ class Banking extends Component {
     }
 
     return (
-      <div className="banking">
+      <div className="banking-container">
         <div className="banking-topbar">
           <img src={logo} className="banking-topbar-logo" alt="logo" />
         </div>

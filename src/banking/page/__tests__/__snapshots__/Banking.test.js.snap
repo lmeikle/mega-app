@@ -38,7 +38,7 @@ ShallowWrapper {
           />
 </Switch>,
       ],
-      "className": "banking",
+      "className": "banking-container",
     },
     "ref": null,
     "rendered": Array [
@@ -145,7 +145,7 @@ ShallowWrapper {
             />
 </Switch>,
         ],
-        "className": "banking",
+        "className": "banking-container",
       },
       "ref": null,
       "rendered": Array [

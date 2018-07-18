@@ -1,14 +1,28 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import BanksComponent from '../BanksComponent';
 
-let props = {
+let testProps = {
   name: 'Barclays Bank',
   url: 'https://www.example.com'
 };
 
-const banksComponent = shallow(<BanksComponent {...props} />);
+const linkToProps = { pathname: '/banking/atms', state: testProps };
 
-test('renders correctly', () => {
-  expect(banksComponent).toMatchSnapshot();
+describe('BanksComponent', () => {
+  test('renders correctly', () => {
+    const banksComponent = shallow(<BanksComponent {...testProps} />);
+    expect(banksComponent).toMatchSnapshot();
+  });
+
+  test('includes link to atms page', () => {
+    const wrapper = mount(
+      <MemoryRouter>
+        <BanksComponent {...testProps} />
+      </MemoryRouter>
+    );
+
+    expect(wrapper.find('Link').props().to).toEqual(linkToProps);
+  });
 });
