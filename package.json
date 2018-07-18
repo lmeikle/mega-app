@@ -51,9 +51,9 @@
   "jest": {
     "collectCoverageFrom": [
       "src/banking/**/*.{js,jsx}",
+      "!src/banking/*.js",
       "src/news/**/*.{js,jsx}",
       "src/shared/**/*.{js,jsx}",
-      "src/home/**/*.{js,jsx}",
       "!src/*.js"
     ]
   }
