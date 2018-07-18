@@ -6,36 +6,24 @@ describe('testing atms api', () => {
     fetch.resetMocks();
   });
 
-  /**test('fetches data for a url for the first time', () => {
+  test('fetches data for a url for the first time', () => {
     fetch.mockResponseOnce(JSON.stringify(mocksAtmsResponse));
 
     fetchAtmData('canbeanything').then(res => {
-      expect(res.length).toEqual(2021);
+      expect(res.data[0].Brand[0].ATM.length).toEqual(1);
     });
 
     expect(fetch.mock.calls.length).toEqual(1);
-  });*/
+  });
 
-  /**test('fetches data for a url that has already been requested', () => {
-    fetchAtmData('canbeanything')
-      .then(res => {
-        expect(res.length).toEqual(2021);
-      })
+  test('throws error for empty response', () => {
+    const errorMessage = 'Response is empty';
+    fetch.mockResponseOnce(JSON.stringify({}));
 
-    // the data should be cached, so a 'fetch' should not have been made
-    expect(fetch.mock.calls.length).toEqual(0);
-  });*/
-
-  /**
-   * causing the tests to crash out when running on my work computer, need to investigate why
-  test('handles errors', () => {
-    const errorMessage = 'foo';
-    fetch.mockReject(errorMessage);
-
-    fetchAtmData('anotherurl').then(res => {
-      expect(res).toEqual(errorMessage);
+    fetchAtmData('canbeanything').catch(e => {
+      expect(e.message).toEqual(errorMessage);
     });
 
     expect(fetch.mock.calls.length).toEqual(1);
-  });*/
+  });
 });

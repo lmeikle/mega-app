@@ -3,7 +3,7 @@ import AtmsActions from './AtmsActions';
 import { getAtmsCache } from './AtmsSelectors';
 import { fetchAtmData } from './AtmsAPI';
 
-function* getAtmsAsync(action) {
+export function* getAtmsAsync(action) {
   try {
     let atmsCache = yield select(state => getAtmsCache(state));
     if (atmsCache[action.payload.url]) {
