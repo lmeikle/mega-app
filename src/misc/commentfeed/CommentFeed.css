@@ -1,0 +1,21 @@
+.comment-feed {
+}
+
+.comment-feed-list {
+}
+
+.comment-feed-comment {
+  margin-bottom: 10px;
+  background: #f2f2f2;
+}
+
+.comment-feed-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
