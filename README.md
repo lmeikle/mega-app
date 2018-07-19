@@ -12,3 +12,4 @@ Styled Components (not sure if I like it yet, also need to eject to be able to g
 redux-forms<br/>
 Semantic UI React<br/>
 StoryBook JS<br/>
+Jest, Enzyme, react-testing-library<br/>

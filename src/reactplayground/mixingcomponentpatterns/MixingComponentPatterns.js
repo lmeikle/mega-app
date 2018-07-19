@@ -23,7 +23,6 @@
 // Enjoy!
 
 import React from 'react';
-import { render } from 'react-dom';
 // 🦉 The toggle file is full of comments from myself and my assistants
 // that you might find insightful!
 import { Toggle, withToggle } from './toggle';
@@ -191,20 +190,50 @@ const Title = props => <strong style={{ display: 'block' }} {...props} />;
 function MixingComponentPatterns({ onToggle = (...args) => console.log('onToggle', ...args) }) {
   return (
     <div>
-      <h1>Mixing Component Patterns 🦉</h1>
-      <Title>🐻 Compound Components</Title>
+      <h1>
+        Mixing Component Patterns{' '}
+        <span role="img" aria-label="owl">
+          🦉
+        </span>
+      </h1>
+      <Title>
+        <span role="img" aria-label="bear">
+          🐻
+        </span>{' '}
+        Compound Components
+      </Title>
       <CompoundComponents onToggle={onToggle} />
       <hr />
-      <Title>🦁 Render Props</Title>
+      <Title>
+        <span role="img" aria-label="lion">
+          🦁
+        </span>{' '}
+        Render Props
+      </Title>
       <RenderProps onToggle={onToggle} />
       <hr />
-      <Title>🦆 Component Injection</Title>
+      <Title>
+        <span role="img" aria-label="duck">
+          🦆
+        </span>{' '}
+        Component Injection
+      </Title>
       <ComponentInjection onToggle={onToggle} />
       <hr />
-      <Title>🦊 Provider Pattern</Title>
+      <Title>
+        <span role="img" aria-label="fox">
+          🦊
+        </span>{' '}
+        Provider Pattern
+      </Title>
       <ProviderPattern onToggle={onToggle} />
       <hr />
-      <Title>🐸 Higher Order Component</Title>
+      <Title>
+        <span role="img" aria-label="frog">
+          🐸
+        </span>{' '}
+        Higher Order Component
+      </Title>
       <HOC onToggle={onToggle} />
     </div>
   );

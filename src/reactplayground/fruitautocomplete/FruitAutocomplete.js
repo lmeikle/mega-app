@@ -1,7 +1,6 @@
 // https://blog.kentcdodds.com/testing-%EF%B8%8F-components-using-render-props-5623ab1814c
 
 import React from 'react';
-import { render } from 'react-dom';
 import Downshift from 'downshift';
 
 const items = ['apple', 'pear', 'orange', 'grape', 'banana'];

@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 // 🐸 I'll bring this up again around the HOC :)
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { Switch } from './switch';
