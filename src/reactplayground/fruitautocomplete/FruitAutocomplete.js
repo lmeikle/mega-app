@@ -6,8 +6,7 @@ import Downshift from 'downshift';
 
 const items = ['apple', 'pear', 'orange', 'grape', 'banana'];
 
-//const FruitAutocomplete = ({ onChange }) => <Downshift onChange={onChange} render={fruitAutocompleteRender} />;
-const FruitAutocomplete = ({ onChange }) => <Downshift onChange={onChange}>{fruitAutocompleteRender}</Downshift>;
+const FruitAutocomplete = ({ onChange }) => <Downshift onChange={onChange} render={fruitAutocompleteRender} />;
 
 // NOTE: I generally don't like to do things this way. I'd rather just inline it
 // but I'm doing things this way so I can expose the render function for testing.
@@ -17,8 +16,6 @@ const FruitAutocomplete = ({ onChange }) => <Downshift onChange={onChange}>{frui
 // of implementation details and and you have to mount the component.
 // Pretty much my solution is to just do an integration test instead :)
 function fruitAutocompleteRender({ getInputProps, getItemProps, getLabelProps, isOpen, inputValue, highlightedIndex, selectedItem }) {
-  console.log('sfdsfd');
-
   return (
     <div>
       <label {...getLabelProps()}>Enter a fruit</label>

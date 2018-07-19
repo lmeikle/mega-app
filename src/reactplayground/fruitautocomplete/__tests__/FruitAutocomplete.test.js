@@ -36,7 +36,7 @@ test('when the inputValue is banana, it shows banana', () => {
   expect(hasItem(wrapper, 'banana')).toBe(true);
 });
 
-// here's the exact same test as above, except if you wanted to inline the render prop
+// here's the exact same test as above, except if you wanted to inline the children prop
 // honestly, I'd rather just do the tests that are a little more integration-ish.... :)
 test('when the inputValue is banana, it shows banana (with mount)', () => {
   const fruitAutocompleteRenderer = mount(<FruitAutocomplete />)
