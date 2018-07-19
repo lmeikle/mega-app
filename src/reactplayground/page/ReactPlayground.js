@@ -6,6 +6,7 @@ import CodeSplitting from '../codesplitting/CodeSplitting';
 import RenderProps from '../renderprops/RenderProps';
 import HigherOrderComponent from '../higherordercomponent/HigherOrderComponent';
 import MixingComponentPatterns from '../mixingcomponentpatterns/MixingComponentPatterns';
+import FruitAutocomplete from '../fruitautocomplete/FruitAutocomplete';
 import icon from './icon.svg';
 import './ReactPlayground.css';
 
@@ -21,6 +22,7 @@ class ReactPlayground extends Component {
           <Route path={`${this.props.match.url}/renderprops`} component={RenderProps} />
           <Route path={`${this.props.match.url}/higherordercomponent`} component={HigherOrderComponent} />
           <Route path={`${this.props.match.url}/mixingcomponentpatterns`} component={MixingComponentPatterns} />
+          <Route path={`${this.props.match.url}/fruitautocomplete`} component={FruitAutocomplete} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -55,6 +57,11 @@ class ReactPlayground extends Component {
                   <Link to={`${this.props.match.url}/mixingcomponentpatterns`}>
                     <div className="react-playground-item">
                       <div>Mixing Component Patterns</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/fruitautocomplete`}>
+                    <div className="react-playground-item">
+                      <div>Fruit Autocomplete showing how to test components that use render props</div>
                     </div>
                   </Link>
                 </div>
