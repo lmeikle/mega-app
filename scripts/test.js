@@ -23,4 +23,10 @@ if (!process.env.CI && argv.indexOf('--coverage') < 0) {
   argv.push('--watch');
 }
 
+if (argv.indexOf('--debug') >= 0) {
+  process.env.NODE_ENV = 'debug';
+} else {
+  process.env.NODE_ENV = 'test';
+}
+
 jest.run(argv);

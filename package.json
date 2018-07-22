@@ -68,6 +68,7 @@
     "jest-fetch-mock": "^1.6.2",
     "prettier": "^1.13.7",
     "pretty-quick": "^1.6.0",
+    "puppeteer": "^1.6.0",
     "react-addons-test-utils": "^15.6.2",
     "react-router-dom": "^4.2.2",
     "react-testing-library": "^4.1.3",
@@ -82,6 +83,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
+    "test:integration": "npm test -- --debug -c jest-integration-config.json",
+    "test:integration:ci": "npm test -- -c jest-integration-config.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "precommit": "pretty-quick --staged"
   },
@@ -101,8 +104,7 @@
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",
