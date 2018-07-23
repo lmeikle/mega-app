@@ -1,6 +1,4 @@
-﻿const puppeteer = require('puppeteer');
-const devices = require('puppeteer/DeviceDescriptors');
-const iPad = devices['iPad landscape'];
+import puppeteer from 'puppeteer';
 
 const isDebugging = () => {
   const debugging_mode = {
@@ -13,15 +11,10 @@ const isDebugging = () => {
 
 let browser;
 let page;
-let logs = [];
-let errors = [];
 
-describe('LoginForm - iPad', () => {
+describe('LoginForm', () => {
   beforeAll(async () => {
     browser = await puppeteer.launch(isDebugging());
-    page = await browser.newPage();
-    page.emulate(iPad);
-    await page.goto('http://localhost:3000/forms/login');
   });
 
   afterAll(() => {
@@ -30,7 +23,16 @@ describe('LoginForm - iPad', () => {
     }
   });
 
-  test('login form works correctly', async () => {
+  beforeEach(async () => {
+    page = await browser.newPage();
+    await page.goto('http://localhost:3000/forms/login');
+  });
+
+  afterEach(async function() {
+    await page.close();
+  });
+
+  test('login form handles duplicate user names correctly', async () => {
     const userNameEl = await page.$('[name="username"]');
     const passwordEl = await page.$('[name="password"]');
     const confirmPasswordEl = await page.$('[name="confirm-password"]');
@@ -38,7 +40,7 @@ describe('LoginForm - iPad', () => {
 
     await userNameEl.tap();
 
-    // holding down Shift in order to select and delete some text:
+    // holding down Shift in order to select and delete some text
     await page.keyboard.down('Shift');
     for (let i = 0; i < 'lmeikle'.length; i++) await page.keyboard.press('ArrowLeft');
     await page.keyboard.up('Shift');
@@ -56,11 +58,27 @@ describe('LoginForm - iPad', () => {
 
     await submitEl.tap();
 
-    let html = await page.waitForFunction(() => {
-      const html = document.querySelector('.app-page-container');
-      return html.innerText;
-    });
+    await page.waitForSelector('.login-form-error');
+    const errorText = await page.$eval('.login-form-error', e => e.innerHTML);
 
-    //expect(html).toContain('Username already taken');
+    expect(errorText).toBe('Username already taken');
+  });
+
+  test('login form handles non matching passwords', async () => {
+    const passwordEl = await page.$('[name="password"]');
+    const confirmPasswordEl = await page.$('[name="confirm-password"]');
+    const submitEl = await page.$('[type="submit"]');
+
+    await passwordEl.tap();
+    await page.type('[name="password"]', 'whatever');
+
+    await confirmPasswordEl.tap();
+    await page.type('[name="confirm-password"]', 'whatever2');
+
+    await submitEl.focus();
+
+    await page.waitForSelector('.login-form-error');
+    const errorText = await page.evaluate(() => document.querySelector('.login-form-error').textContent);
+    expect(errorText).toBe('Passwords do not match');
   });
 });

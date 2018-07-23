@@ -1,8 +1,9 @@
-const puppeteer = require('puppeteer');
-const devices = require('puppeteer/DeviceDescriptors');
+import puppeteer from 'puppeteer';
+import devices from 'puppeteer/DeviceDescriptors';
+import { getConfig } from '../App';
+
 const iPhone = devices['iPhone 5'];
 const iPad = devices['iPad landscape'];
-import { getConfig } from '../App';
 
 const isDebugging = () => {
   const debugging_mode = {
@@ -15,28 +16,26 @@ const isDebugging = () => {
 
 let browser;
 let page;
-let logs = [];
-let errors = [];
 
 describe('App - iPad', () => {
   beforeAll(async () => {
     browser = await puppeteer.launch(isDebugging());
-    page = await browser.newPage();
-    page.emulate(iPad);
-    await page.goto('http://localhost:3000/');
-    /**page.emulate({
-      viewport: {
-        width: 1024,
-        height: 672
-      },
-      userAgent: ''
-      });*/
   });
 
   afterAll(() => {
     if (isDebugging()) {
       browser.close();
     }
+  });
+
+  beforeEach(async () => {
+    page = await browser.newPage();
+    page.emulate(iPad);
+    await page.goto('http://localhost:3000/');
+  });
+
+  afterEach(async function() {
+    await page.close();
   });
 
   test('loads', async () => {
@@ -59,6 +58,10 @@ describe('App - iPad', () => {
     expect(sideMenuEls.length).toBe(1);
     expect(items.length).toBe(getConfig().length);
   });
+
+  //test('screenshot matches', async () => {
+  //  await page.screenshot({ path: 'src/app/__integration__/screenshots/App-iPad.png' });
+  //});
 });
 
 describe('App - iPhone', () => {
@@ -80,4 +83,8 @@ describe('App - iPhone', () => {
 
     expect(sideMenuEls.length).toBe(0);
   });
+
+  //test('screenshot matches', async () => {
+  //  await page.screenshot({ path: 'src/app/__integration__/screenshots/App-iPhone.png' });
+  //});
 });
