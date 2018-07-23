@@ -1,5 +1,6 @@
 import puppeteer from 'puppeteer';
 import devices from 'puppeteer/DeviceDescriptors';
+import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import { getConfig } from '../App';
 
 const iPhone = devices['iPhone 5'];
@@ -12,6 +13,17 @@ const isDebugging = () => {
     devtools: true
   };
   return process.env.NODE_ENV === 'debug' ? debugging_mode : {};
+};
+
+// jest-image-snapshot custom configuration in order to save screenshots and compare the with the baseline
+const getJestImageSnapshotConfig = filename => {
+  return {
+    failureThreshold: '0.01',
+    failureThresholdType: 'percent',
+    customSnapshotsDir: `${__dirname}/snapshots/`,
+    customSnapshotIdentifier: filename,
+    noColors: true
+  };
 };
 
 let browser;
@@ -59,9 +71,12 @@ describe('App - iPad', () => {
     expect(items.length).toBe(getConfig().length);
   });
 
-  //test('screenshot matches', async () => {
-  //  await page.screenshot({ path: 'src/app/__integration__/screenshots/App-iPad.png' });
-  //});
+  test('screenshot matches', async () => {
+    expect.extend({ toMatchImageSnapshot });
+
+    const image = await page.screenshot();
+    expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPad'));
+  });
 });
 
 describe('App - iPhone', () => {
@@ -84,7 +99,10 @@ describe('App - iPhone', () => {
     expect(sideMenuEls.length).toBe(0);
   });
 
-  //test('screenshot matches', async () => {
-  //  await page.screenshot({ path: 'src/app/__integration__/screenshots/App-iPhone.png' });
-  //});
+  test('screenshot matches', async () => {
+    expect.extend({ toMatchImageSnapshot });
+
+    const image = await page.screenshot();
+    expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPhone'));
+  });
 });
