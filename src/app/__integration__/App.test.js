@@ -53,13 +53,10 @@ describe('App - iPad', () => {
   });
 
   test('side menu items load correctly', async () => {
-    //const menuEl = await page.evaluate(() => document.getElementsByClassName('vertical menu'));
-    const sideMenu = await page.$eval('.vertical.menu', el => (el ? true : false));
-    const items = await page.$$('.vertical.menu a');
+    const sideMenuEls = await page.$$('.side-menu');
+    const items = await page.$$('.side-menu a');
 
-    // console.log("menuEl", menuEl)
-    //expect(menuEl).toEqual({});
-    expect(sideMenu).toBe(true);
+    expect(sideMenuEls.length).toBe(1);
     expect(items.length).toBe(getConfig().length);
   });
 });
@@ -79,8 +76,8 @@ describe('App - iPhone', () => {
   });
 
   test('side menu is not rendered on smaller screen sizes', async () => {
-    const menuEl = await page.evaluate(() => document.getElementsByClassName('.vertical.menu'));
+    const sideMenuEls = await page.$$('.side-menu');
 
-    expect(menuEl).toEqual({});
+    expect(sideMenuEls.length).toBe(0);
   });
 });

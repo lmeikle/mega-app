@@ -6,7 +6,7 @@ class SideMenu extends Component {
   render() {
     let { config } = this.props;
     return (
-      <Menu vertical>
+      <Menu vertical className="side-menu">
         {config.map(entry => (
           <Menu.Item key={entry.name} as={NavLink} to={entry.path}>
             {entry.name}
