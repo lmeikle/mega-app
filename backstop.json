@@ -22,15 +22,6 @@
       "delay": 1000
     },
     {
-      "label": "homepage-items",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://localhost:3000",
-      "selectors": [".app-page-container a"],
-      "expect": 6,
-      "selectorExpansion": true,
-      "delay": 1000
-    },
-    {
       "label": "homepage-to-banking",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "http://localhost:3000",
@@ -38,6 +29,17 @@
       "delay": 1000
     }
   ],
+  "LAURA_COMMENT": {
+    "LAURA_COMMENT":
+      "I wanted to keep this as screenshoting out of view items does not work properly yet. waiting to try scrollToSelector when released",
+    "label": "homepage-items",
+    "cookiePath": "backstop_data/engine_scripts/cookies.json",
+    "url": "http://localhost:3000",
+    "selectors": [".app-page-container a"],
+    "expect": 6,
+    "selectorExpansion": true,
+    "delay": 1000
+  },
   "paths": {
     "bitmaps_reference": "backstop_data/bitmaps_reference",
     "bitmaps_test": "backstop_data/bitmaps_test",
