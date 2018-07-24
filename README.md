@@ -13,3 +13,4 @@ redux-forms<br/>
 Semantic UI React<br/>
 StoryBook JS<br/>
 Jest, Enzyme, react-testing-library<br/>
+BackstopJS<br/>

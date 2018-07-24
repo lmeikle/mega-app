@@ -87,7 +87,10 @@
     "test:integration": "npm test -- --debug -c jest-integration-config.json",
     "test:integration:ci": "npm test -- -c jest-integration-config.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "backstop:reference": "backstop reference",
+    "backstop:test": "backstop test",
+    "backstop:approve": "backstop approve"
   },
   "proxy": "http://localhost:3001",
   "jest": {
