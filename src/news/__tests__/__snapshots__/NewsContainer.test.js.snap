@@ -20,26 +20,24 @@ ShallowWrapper {
       "children": Array [
         <div
           className="news-title"
->
+        >
           News
-</div>,
+        </div>,
         <div
           className="news-headlines-container"
->
-          
-</div>,
+        />,
         false,
         <div
           className="news-powered-by"
->
+        >
           <a
-                    href="https://newsapi.org"
-                    rel="noopener noreferrer"
-                    target="_blank"
+            href="https://newsapi.org"
+            rel="noopener noreferrer"
+            target="_blank"
           >
-                    Powered by News API
+            Powered by News API
           </a>
-</div>,
+        </div>,
       ],
       "className": "news-container",
     },
@@ -79,9 +77,9 @@ ShallowWrapper {
             href="https://newsapi.org"
             rel="noopener noreferrer"
             target="_blank"
->
+          >
             Powered by News API
-</a>,
+          </a>,
           "className": "news-powered-by",
         },
         "ref": null,
@@ -113,26 +111,24 @@ ShallowWrapper {
         "children": Array [
           <div
             className="news-title"
->
+          >
             News
-</div>,
+          </div>,
           <div
             className="news-headlines-container"
->
-            
-</div>,
+          />,
           false,
           <div
             className="news-powered-by"
->
+          >
             <a
-                        href="https://newsapi.org"
-                        rel="noopener noreferrer"
-                        target="_blank"
+              href="https://newsapi.org"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-                        Powered by News API
+              Powered by News API
             </a>
-</div>,
+          </div>,
         ],
         "className": "news-container",
       },
@@ -172,9 +168,9 @@ ShallowWrapper {
               href="https://newsapi.org"
               rel="noopener noreferrer"
               target="_blank"
->
+            >
               Powered by News API
-</a>,
+            </a>,
             "className": "news-powered-by",
           },
           "ref": null,

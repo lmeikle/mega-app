@@ -7,16 +7,16 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <AtmsComponent
     address="10 Camden High Street"
     coords={
-        Object {
-            "Latitude": 123,
-            "Longitude": 456,
-          }
+      Object {
+        "Latitude": 123,
+        "Longitude": 456,
+      }
     }
     countryCode="UK"
     distance={1.23}
     name="Barclays Bank"
     numOfAtms={3}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -31,29 +31,29 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="atm"
->
+      >
         <div>
-                Bank Name: 
-                Barclays Bank
+          Bank Name: 
+          Barclays Bank
         </div>
         <div>
-                Address: 
-                10 Camden High Street
+          Address: 
+          10 Camden High Street
         </div>
         <div>
-                Country: 
-                UK
+          Country: 
+          UK
         </div>
         <div>
-                Distance: 
-                1.23
-                km
+          Distance: 
+          1.23
+          km
         </div>
         <div>
-                Number of ATM's: 
-                3
+          Number of ATM's: 
+          3
         </div>
-</div>,
+      </div>,
       "href": "http://www.google.com/maps/place/123,456",
       "target": "_blank",
     },
@@ -67,24 +67,24 @@ ShallowWrapper {
           <div>
             Bank Name: 
             Barclays Bank
-</div>,
+          </div>,
           <div>
             Address: 
             10 Camden High Street
-</div>,
+          </div>,
           <div>
             Country: 
             UK
-</div>,
+          </div>,
           <div>
             Distance: 
             1.23
             km
-</div>,
+          </div>,
           <div>
             Number of ATM's: 
             3
-</div>,
+          </div>,
         ],
         "className": "atm",
       },
@@ -190,29 +190,29 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="atm"
->
+        >
           <div>
-                    Bank Name: 
-                    Barclays Bank
+            Bank Name: 
+            Barclays Bank
           </div>
           <div>
-                    Address: 
-                    10 Camden High Street
+            Address: 
+            10 Camden High Street
           </div>
           <div>
-                    Country: 
-                    UK
+            Country: 
+            UK
           </div>
           <div>
-                    Distance: 
-                    1.23
-                    km
+            Distance: 
+            1.23
+            km
           </div>
           <div>
-                    Number of ATM's: 
-                    3
+            Number of ATM's: 
+            3
           </div>
-</div>,
+        </div>,
         "href": "http://www.google.com/maps/place/123,456",
         "target": "_blank",
       },
@@ -226,24 +226,24 @@ ShallowWrapper {
             <div>
               Bank Name: 
               Barclays Bank
-</div>,
+            </div>,
             <div>
               Address: 
               10 Camden High Street
-</div>,
+            </div>,
             <div>
               Country: 
               UK
-</div>,
+            </div>,
             <div>
               Distance: 
               1.23
               km
-</div>,
+            </div>,
             <div>
               Number of ATM's: 
               3
-</div>,
+            </div>,
           ],
           "className": "atm",
         },

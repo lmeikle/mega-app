@@ -64,7 +64,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.3",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.13",
     "jest-fetch-mock": "^1.6.2",
     "jest-image-snapshot": "^2.4.3",
     "prettier": "^1.13.7",
@@ -80,19 +80,31 @@
     "why-did-you-update": "^0.1.1"
   },
   "scripts": {
+    "COMMENT": "-----------RUN AND BUILD SCRIPTS-----------",
     "dev": "concurrently --kill-others \"npm run start\" \"node ./server\"",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "COMMENT": "-----------TEST SCRIPTS-----------",
     "test": "node scripts/test.js --env=jsdom",
-    "test:integration": "npm test -- --debug -c jest-integration-config.json",
-    "test:integration:ci": "npm test -- -c jest-integration-config.json",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "precommit": "pretty-quick --staged",
+    "test:all": "npm test -- --all",
+    "test:coverage": "npm test -- --coverage",
+    "test:e2e": "npm test -- -c jest-integration-config.json",
+    "test:e2e:all": "npm test -- --all -c jest-integration-config.json",
+    "test:e2e:debug": "npm test -- --e2edebug -c jest-integration-config.json",
+    "COMMENT": "-----------BACKSTOPJS SCRIPTS-----------",
     "backstop:reference": "backstop reference",
     "backstop:test": "backstop test",
-    "backstop:approve": "backstop approve"
+    "backstop:approve": "backstop approve",
+    "COMMENT": "-----------STORYBOOK SCRIPTS-----------",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "proxy": "http://localhost:3001",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run test:all",
+      "pre-push": "npm run test:e2e:all && npm run backstop:test"
+    }
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/banking/**/*.{js,jsx}",

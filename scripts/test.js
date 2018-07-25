@@ -19,13 +19,19 @@ const jest = require('jest');
 let argv = process.argv.slice(2);
 
 // Watch unless on CI or in coverage mode
-if (!process.env.CI && argv.indexOf('--coverage') < 0) {
-  argv.push('--watch');
-}
+//if (!process.env.CI && argv.indexOf('--coverage') < 0) {
+//  argv.push('--watch');
+//}
 
-if (argv.indexOf('--debug') >= 0) {
+if (argv.indexOf('--coverage') >= 0 || argv.indexOf('--all') >= 0) {
+  // will run all tests
+  process.env.NODE_ENV = 'test';
+} else if (argv.indexOf('--e2edebug') >= 0) {
+  // runs tests on changed files only, headless = false
+  argv.push('--watch');
   process.env.NODE_ENV = 'debug';
 } else {
+  argv.push('--watch'); // only runs tests on changed files
   process.env.NODE_ENV = 'test';
 }
 

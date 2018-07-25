@@ -6,9 +6,9 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BanksContainer
     banksWithAtmAPI={Array []}
-    dispatch={[Function]}
+    dispatch={[MockFunction]}
     isFetching={true}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

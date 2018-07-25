@@ -13,4 +13,5 @@ redux-forms<br/>
 Semantic UI React<br/>
 StoryBook JS<br/>
 Jest, Enzyme, react-testing-library<br/>
-BackstopJS<br/>
+Puppeteer, jest-image-snapshot, BackstopJS<br/>
+Git Hooks using husky - prettier and unit tests on commit, e2e tests on push<br/>

@@ -6,11 +6,11 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AtmsContainer
     atms={null}
-    dispatch={[Function]}
+    dispatch={[MockFunction]}
     error={null}
     isFetching={true}
     name={null}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

@@ -7,7 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <BanksComponent
     name="Barclays Bank"
     url="https://www.example.com"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -22,25 +22,25 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="banks-item"
->
+      >
         <img
-                alt="logo"
-                className="banks-logo"
-                src="icon.svg"
+          alt="logo"
+          className="banks-logo"
+          src="icon.svg"
         />
         <div
-                className="banks-name"
+          className="banks-name"
         >
-                Barclays Bank
+          Barclays Bank
         </div>
         <Icon
-                as="i"
-                className="banks-arrow"
-                color="grey"
-                name="angle right"
-                size="large"
+          as="i"
+          className="banks-arrow"
+          color="grey"
+          name="angle right"
+          size="large"
         />
-</div>,
+      </div>,
       "replace": false,
       "to": Object {
         "pathname": "/banking/atms",
@@ -61,19 +61,19 @@ ShallowWrapper {
             alt="logo"
             className="banks-logo"
             src="icon.svg"
-/>,
+          />,
           <div
             className="banks-name"
->
+          >
             Barclays Bank
-</div>,
+          </div>,
           <Icon
             as="i"
             className="banks-arrow"
             color="grey"
             name="angle right"
             size="large"
-/>,
+          />,
         ],
         "className": "banks-item",
       },
@@ -132,25 +132,25 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="banks-item"
->
+        >
           <img
-                    alt="logo"
-                    className="banks-logo"
-                    src="icon.svg"
+            alt="logo"
+            className="banks-logo"
+            src="icon.svg"
           />
           <div
-                    className="banks-name"
+            className="banks-name"
           >
-                    Barclays Bank
+            Barclays Bank
           </div>
           <Icon
-                    as="i"
-                    className="banks-arrow"
-                    color="grey"
-                    name="angle right"
-                    size="large"
+            as="i"
+            className="banks-arrow"
+            color="grey"
+            name="angle right"
+            size="large"
           />
-</div>,
+        </div>,
         "replace": false,
         "to": Object {
           "pathname": "/banking/atms",
@@ -171,19 +171,19 @@ ShallowWrapper {
               alt="logo"
               className="banks-logo"
               src="icon.svg"
-/>,
+            />,
             <div
               className="banks-name"
->
+            >
               Barclays Bank
-</div>,
+            </div>,
             <Icon
               as="i"
               className="banks-arrow"
               color="grey"
               name="angle right"
               size="large"
-/>,
+            />,
           ],
           "className": "banks-item",
         },

@@ -9,7 +9,7 @@ ShallowWrapper {
     source="CNN"
     title="Putin ready to meet Trump over arms race concerns"
     url="https://www.cnn.com/2018/06/10/politics/putin-trump-us-russia-arms-intl/index.html"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -27,27 +27,27 @@ ShallowWrapper {
           href="https://www.cnn.com/2018/06/10/politics/putin-trump-us-russia-arms-intl/index.html"
           rel="noopener noreferrer"
           target="_blank"
->
+        >
           <div
-                    className="news-headline-title"
+            className="news-headline-title"
           >
-                    Putin ready to meet Trump over arms race concerns
+            Putin ready to meet Trump over arms race concerns
           </div>
-</a>,
+        </a>,
         <div
           className="news-headline-date-and-source-container"
->
+        >
           <div
-                    className="news-headline-date"
+            className="news-headline-date"
           >
-                    10/06/2018
+            10/06/2018
           </div>
           <div
-                    className="news-headline-source"
+            className="news-headline-source"
           >
-                    CNN
+            CNN
           </div>
-</div>,
+        </div>,
       ],
       "className": "news-headline",
     },
@@ -60,9 +60,9 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="news-headline-title"
->
+          >
             Putin ready to meet Trump over arms race concerns
-</div>,
+          </div>,
           "href": "https://www.cnn.com/2018/06/10/politics/putin-trump-us-russia-arms-intl/index.html",
           "rel": "noopener noreferrer",
           "target": "_blank",
@@ -90,14 +90,14 @@ ShallowWrapper {
           "children": Array [
             <div
               className="news-headline-date"
->
+            >
               10/06/2018
-</div>,
+            </div>,
             <div
               className="news-headline-source"
->
+            >
               CNN
-</div>,
+            </div>,
           ],
           "className": "news-headline-date-and-source-container",
         },
@@ -144,27 +144,27 @@ ShallowWrapper {
             href="https://www.cnn.com/2018/06/10/politics/putin-trump-us-russia-arms-intl/index.html"
             rel="noopener noreferrer"
             target="_blank"
->
+          >
             <div
-                        className="news-headline-title"
+              className="news-headline-title"
             >
-                        Putin ready to meet Trump over arms race concerns
+              Putin ready to meet Trump over arms race concerns
             </div>
-</a>,
+          </a>,
           <div
             className="news-headline-date-and-source-container"
->
+          >
             <div
-                        className="news-headline-date"
+              className="news-headline-date"
             >
-                        10/06/2018
+              10/06/2018
             </div>
             <div
-                        className="news-headline-source"
+              className="news-headline-source"
             >
-                        CNN
+              CNN
             </div>
-</div>,
+          </div>,
         ],
         "className": "news-headline",
       },
@@ -177,9 +177,9 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="news-headline-title"
->
+            >
               Putin ready to meet Trump over arms race concerns
-</div>,
+            </div>,
             "href": "https://www.cnn.com/2018/06/10/politics/putin-trump-us-russia-arms-intl/index.html",
             "rel": "noopener noreferrer",
             "target": "_blank",
@@ -207,14 +207,14 @@ ShallowWrapper {
             "children": Array [
               <div
                 className="news-headline-date"
->
+              >
                 10/06/2018
-</div>,
+              </div>,
               <div
                 className="news-headline-source"
->
+              >
                 CNN
-</div>,
+              </div>,
             ],
             "className": "news-headline-date-and-source-container",
           },
