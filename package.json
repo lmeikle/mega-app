@@ -104,6 +104,7 @@
     }
   },
   "jest": {
+    "verbose": false,
     "collectCoverageFrom": [
       "src/banking/**/*.{js,jsx}",
       "!src/banking/*.js",
