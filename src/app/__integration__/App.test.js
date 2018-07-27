@@ -32,22 +32,16 @@ let page;
 describe('App - iPad', () => {
   beforeAll(async () => {
     browser = await puppeteer.launch(isDebugging());
-  });
-
-  afterAll(() => {
-    if (isDebugging()) {
-      browser.close();
-    }
-  });
-
-  beforeEach(async () => {
     page = await browser.newPage();
     page.emulate(iPad);
     await page.goto('http://localhost:3000/');
   });
 
-  afterEach(async function() {
-    await page.close();
+  afterAll(() => {
+    //page.close();
+    if (isDebugging()) {
+      browser.close();
+    }
   });
 
   test('loads', async () => {
@@ -82,22 +76,16 @@ describe('App - iPad', () => {
 describe('App - iPhone', () => {
   beforeAll(async () => {
     browser = await puppeteer.launch(isDebugging());
-  });
-
-  afterAll(() => {
-    if (isDebugging()) {
-      browser.close();
-    }
-  });
-
-  beforeEach(async () => {
     page = await browser.newPage();
     page.emulate(iPhone);
     await page.goto('http://localhost:3000/');
   });
 
-  afterEach(async function() {
-    await page.close();
+  afterAll(() => {
+    //page.close();
+    if (isDebugging()) {
+      browser.close();
+    }
   });
 
   test('side menu is not rendered on smaller screen sizes', async () => {
