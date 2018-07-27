@@ -75,7 +75,7 @@ describe('App - iPad', () => {
     expect.extend({ toMatchImageSnapshot });
 
     const image = await page.screenshot();
-    expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPad'));
+    //expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPad'));
   });
 });
 
@@ -110,6 +110,6 @@ describe('App - iPhone', () => {
     expect.extend({ toMatchImageSnapshot });
 
     const image = await page.screenshot();
-    expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPhone'));
+    //expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPhone'));
   });
 });
