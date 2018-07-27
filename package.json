@@ -78,6 +78,7 @@
     "redux-diff-logger": "0.0.9",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.3",
+    "start-server-and-test": "^1.7.0",
     "why-did-you-update": "^0.1.1"
   },
   "scripts": {
@@ -90,6 +91,8 @@
     "test:e2e": "npm test -- -c jest-integration-config.json",
     "test:e2e:all": "npm test -- --all -c jest-integration-config.json",
     "test:e2e:debug": "npm test -- --e2edebug -c jest-integration-config.json",
+    "ci": "npm run test:all && npm run test:e2e:all && npm run backstop:test",
+    "test:ci": "start-server-and-test dev http-get://localhost:3000 ci",
     "backstop:reference": "backstop reference",
     "backstop:test": "backstop test",
     "backstop:approve": "backstop approve",
@@ -97,9 +100,7 @@
   },
   "proxy": "http://localhost:3001",
   "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run test:all"
-    }
+    "hooks": {}
   },
   "jest": {
     "verbose": false,
@@ -112,13 +113,9 @@
       "src/shared/**/*.{js,jsx}",
       "!src/*.js"
     ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}"
-    ],
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}"],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
@@ -126,26 +123,14 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node",
-      "mjs"
-    ]
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node", "mjs"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "eslintConfig": {
     "extends": "react-app"

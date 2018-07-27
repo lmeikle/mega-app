@@ -12,4 +12,4 @@ addons:
  chrome: stable
 
 script:
-  - npm run test:all && npm run test:e2e:all && npm run backstop:test
+  - npm run test:ci
