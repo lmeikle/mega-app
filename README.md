@@ -14,4 +14,5 @@ Semantic UI React<br/>
 StoryBook JS<br/>
 Jest, Enzyme, react-testing-library<br/>
 Puppeteer, jest-image-snapshot, BackstopJS<br/>
-Git Hooks using husky - prettier and unit tests on commit, e2e tests on push<br/>
+Git Hooks using husky - prettier and unit tests on commit<br/>
+Travis CI - runs all units tests and e2e tests<br/>
