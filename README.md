@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lmeikle/mega-app.svg?branch=master)](https://travis-ci.org/lmeikle/mega-app)
+
 After installing the app use 'npm run dev' to run it. (not 'npm start').
 
 The app will launch on http://localhost:3000
