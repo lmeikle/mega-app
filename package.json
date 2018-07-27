@@ -98,8 +98,7 @@
   "proxy": "http://localhost:3001",
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run test:all",
-      "pre-push": "npm run test:e2e:all && npm run backstop:test"
+      "pre-commit": "pretty-quick --staged && npm run test:all"
     }
   },
   "jest": {
