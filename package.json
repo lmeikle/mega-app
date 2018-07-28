@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.5.1",
+    "backstopjs": "^3.5.2",
     "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -93,9 +94,9 @@
     "test:e2e:debug": "npm test -- --e2edebug -c jest-integration-config.json",
     "ci": "npm run test:all && npm run test:e2e:all && npm run backstop:test",
     "test:ci": "start-server-and-test dev http-get://localhost:3000 ci",
-    "backstop:reference": "backstop reference",
-    "backstop:test": "backstop test",
-    "backstop:approve": "backstop approve",
+    "backstop:reference": "node ./node_modules/backstopjs/cli/index.js reference",
+    "backstop:test": "node ./node_modules/backstopjs/cli/index.js test",
+    "backstop:approve": "node ./node_modules/backstopjs/cli/index.js approve",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "proxy": "http://localhost:3001",
