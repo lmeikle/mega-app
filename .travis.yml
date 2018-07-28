@@ -6,6 +6,9 @@ node_js:
 install:
   - npm install
 
+before_install:
+  - google-chrome-stable --headless
+
 sudo: required
 
 addons:
