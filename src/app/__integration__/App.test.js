@@ -54,10 +54,10 @@ describe('App - iPad', () => {
   });
 
   test('main page items load correctly', async () => {
-    //const appPageContainer = await page.$eval('.app-page-container', el => (el ? true : false));
-    //const items = await page.$$('.app-page-container a');
-    //expect(appPageContainer).toBe(true);
-    //expect(items.length).toBe(6);
+    const appPageContainer = await page.$eval('.app-page-container', el => (el ? true : false));
+    const items = await page.$$('.app-page-container a');
+    expect(appPageContainer).toBe(true);
+    expect(items.length).toBe(6);
   });
 
   test('side menu items load correctly', async () => {
@@ -72,7 +72,7 @@ describe('App - iPad', () => {
     expect.extend({ toMatchImageSnapshot });
 
     const image = await page.screenshot();
-    //expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPad'));
+    expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPad'));
   });
 });
 
@@ -110,6 +110,6 @@ describe('App - iPhone', () => {
     expect.extend({ toMatchImageSnapshot });
 
     const image = await page.screenshot();
-    //expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPhone'));
+    expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPhone'));
   });
 });
