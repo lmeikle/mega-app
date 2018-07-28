@@ -17,10 +17,8 @@ describe('LoginForm', () => {
     browser = await puppeteer.launch(isDebugging());
   });
 
-  afterAll(() => {
-    if (isDebugging()) {
-      browser.close();
-    }
+  afterAll(async () => {
+    await browser.close();
   });
 
   beforeEach(async () => {

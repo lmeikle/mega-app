@@ -26,18 +26,16 @@ const getJestImageSnapshotConfig = filename => {
   };
 };
 
-let browser;
-let page;
-
 describe('App - iPad', () => {
+  let browser;
+  let page;
+
   beforeAll(async () => {
     browser = await puppeteer.launch(isDebugging());
   });
 
-  afterAll(() => {
-    if (isDebugging()) {
-      browser.close();
-    }
+  afterAll(async () => {
+    await browser.close();
   });
 
   beforeEach(async () => {
@@ -79,6 +77,9 @@ describe('App - iPad', () => {
 });
 
 describe('App - iPhone', () => {
+  let browser;
+  let page;
+
   beforeAll(async () => {
     browser = await puppeteer.launch(isDebugging());
   });
