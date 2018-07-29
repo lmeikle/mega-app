@@ -40,7 +40,7 @@ describe('App - iPad', () => {
 
   beforeEach(async () => {
     page = await browser.newPage();
-    page.emulate(iPad);
+    await page.emulate(iPad);
     await page.goto('http://localhost:3000/');
   });
 
@@ -84,20 +84,18 @@ describe('App - iPhone', () => {
     browser = await puppeteer.launch(isDebugging());
   });
 
-  afterAll(() => {
-    if (isDebugging()) {
-      browser.close();
-    }
+  afterAll(async () => {
+    await browser.close();
   });
 
   beforeEach(async () => {
     page = await browser.newPage();
-    page.emulate(iPhone);
+    await page.emulate(iPhone);
     await page.goto('http://localhost:3000/');
   });
 
-  afterEach(() => {
-    page.close();
+  afterEach(async () => {
+    await page.close();
   });
 
   test('side menu is not rendered on smaller screen sizes', async () => {
