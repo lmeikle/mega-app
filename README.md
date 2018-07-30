@@ -19,3 +19,6 @@ Puppeteer, jest-image-snapshot<br/>
 BackstopJS (Not part of Travis yet as need to get it running in a Docker container to avoid issues with different environments/machines<br/>
 Git Hooks using husky - prettier on commit<br/>
 Travis CI - runs all units tests and e2e tests<br/>
+Deployed to Firebase:<br/>
+https://mega-app-99f08.firebaseapp.com/news<br/>
+https://console.firebase.google.com/project/mega-app-99f08/hosting/main<br/>

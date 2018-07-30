@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
@@ -22,7 +22,20 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Mega App</title>
-  </head>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDCThM_odru0fKoulbqcGBRINZqDqJkP_g",
+        authDomain: "mega-app-99f08.firebaseapp.com",
+        databaseURL: "https://mega-app-99f08.firebaseio.com",
+        projectId: "mega-app-99f08",
+        storageBucket: "",
+        messagingSenderId: "420130981890"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
