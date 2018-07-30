@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "totalResults": 20,
+  "articles": [
+    {
+      "source": { "id": "the-wall-street-journal", "name": "The Wall Street Journal" },
+      "author": "Raja Abdulrahim",
+      "title": "Iran-Backed Fighters Switch to Syrian Uniforms to Avoid Israeli Strikes, Rebels Say",
+      "description":
+        "The Syrian regime is disguising Iran-allied militias as its own fighters, according to rebels, a battlefield feint that appears calculated to try to avoid further Israeli air strikes.",
+      "url": "https://www.wsj.com/articles/iran-backed-fighters-switch-to-syrian-uniforms-to-avoid-israeli-strikes-rebels-say-1528478351",
+      "urlToImage": "https://si.wsj.net/public/resources/images/B3-AS764_syria0_SOC_20180608131005.jpg",
+      "publishedAt": "2018-06-08T17:19:51Z"
+    },
+    {
+      "source": { "id": null, "name": "Hollywoodreporter.com" },
+      "author": "Jeremy Barr",
+      "title": "Fox News' Charles Krauthammer Reveals He Has Weeks to Live",
+      "description": "Fox News contributor Charles Krauthammer announced in a letter that his cancer has returned.",
+      "url": "https://www.hollywoodreporter.com/news/fox-news-charles-krauthammer-reveals-he-has-weeks-live-1118460",
+      "urlToImage": "https://cdn1.thr.com/sites/default/files/2018/06/ap_936294023922-h_2018.jpg",
+      "publishedAt": "2018-06-08T16:37:57Z"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchTopHeadlines } from './NewsAPI';
 import NewsHeadlineComponent from './NewsHeadlineComponent';
+import LoadingComponent from '../shared/loading/LoadingComponent';
 
 /**
  * Renders a list of top news headlines
@@ -26,7 +27,7 @@ class NewsContainer extends Component {
 
   showMore = () => {
     let { totalResults, headlines } = this.state;
-    let page = headlines.length / totalResults * totalResults / NewsContainer.PAGE_SIZE;
+    let page = ((headlines.length / totalResults) * totalResults) / NewsContainer.PAGE_SIZE;
     fetchTopHeadlines(page + 1, NewsContainer.PAGE_SIZE)
       .then(result =>
         this.setState({
@@ -42,6 +43,10 @@ class NewsContainer extends Component {
 
     if (error) {
       return <div className="errorMessage">Failed to get top headlines due to: {error.toString()}</div>;
+    }
+
+    if (totalResults === 0) {
+      return <LoadingComponent />;
     }
 
     return (

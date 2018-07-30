@@ -5,7 +5,7 @@ test('fetches headline data successfully', () => {
   fetch.mockResponseOnce(JSON.stringify(mockResponse));
 
   fetchTopHeadlines('canbeanything').then(result => {
-    expect(result.headlines.length).toEqual(20);
+    expect(result.headlines.length).toEqual(mockResponse.articles.length);
   });
 });
 

@@ -1,4 +1,5 @@
 {
+  "verbose": false,
   "collectCoverageFrom": [
     "src/banking/**/*.{js,jsx}",
     "!src/banking/*.js",
@@ -10,7 +11,7 @@
   ],
   "setupFiles": ["<rootDir>/config/polyfills.js"],
   "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
-  "testMatch": ["<rootDir>/src/**/__integration__/**/*.{js,jsx,mjs}"],
+  "testMatch": ["<rootDir>/src/**/__e2e__/**/*.{js,jsx,mjs}"],
   "testEnvironment": "node",
   "testURL": "http://localhost",
   "transform": {

@@ -2,6 +2,8 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import NewsContainer from '../NewsContainer';
 import App from '../../app/App';
+import mockResponse from './mockResponse.json';
+import mockResponse2 from './mockResponse2.json';
 
 const initialState = {
   totalResults: 0,
@@ -10,7 +12,7 @@ const initialState = {
 };
 
 const readyState = {
-  totalResults: 5,
+  totalResults: 20,
   headlines: [
     {
       title: 'Putin ready to meet Trump over arms race concerns',
@@ -52,6 +54,10 @@ describe('NewsContainer', () => {
       expect(newsContainer.state()).toEqual(initialState);
     });
 
+    test('show the LoadingComponent', () => {
+      expect(newsContainer.find('LoadingComponent').length).toBe(1);
+    });
+
     test('contains no NewsHeadlineComponents', () => {
       expect(newsContainer.find('NewsHeadlineComponent').length).toBe(0);
     });
@@ -66,6 +72,8 @@ describe('NewsContainer', () => {
     beforeEach(() => {
       newsContainer = shallow(<NewsContainer />);
       newsContainer.setState(readyState);
+
+      fetch.resetMocks();
     });
 
     test('renders a list of NewsHeadlineComponents', () => {
@@ -76,20 +84,42 @@ describe('NewsContainer', () => {
       expect(newsContainer.find('.news-show-more-button').length).toBe(1);
     });
 
-    test('does not render the show more button when there are more results', () => {
+    test('does not render the show more button when there are no more results', () => {
       newsContainer.setState(readyStateNoMoreResults);
       expect(newsContainer.find('.news-show-more-button').length).toBe(0);
     });
 
-    /**test('should call showMore when show more button is clicked', () => {
-      const showMoreSpy = jest.spyOn(NewsContainer.prototype, 'showMore');
-
+    test('mounting fetches and renders results', done => {
+      fetch.mockResponseOnce(JSON.stringify(mockResponse));
       const newsContainer = mount(<NewsContainer />);
-      newsContainer.setState(readyState);
 
-      newsContainer.find('.news-show-more-button').simulate('click');
-      expect(showMoreSpy).toHaveBeenCalledTimes(1);
-    });*/
+      expect(fetch.mock.calls.length).toEqual(1);
+
+      setImmediate(() => {
+        newsContainer.update();
+        expect(newsContainer.find('NewsHeadlineComponent').length).toBe(18);
+        done();
+      });
+    });
+
+    test('clicking showMore fetches and renders more results', done => {
+      fetch.mockResponseOnce(JSON.stringify(mockResponse));
+      const newsContainer = mount(<NewsContainer />);
+
+      setImmediate(() => {
+        newsContainer.update();
+        fetch.mockResponseOnce(JSON.stringify(mockResponse2));
+        newsContainer.find('.news-show-more-button').simulate('click');
+
+        expect(fetch.mock.calls.length).toEqual(2);
+
+        setImmediate(() => {
+          newsContainer.update();
+          expect(newsContainer.find('NewsHeadlineComponent').length).toBe(20);
+          done();
+        });
+      });
+    });
   });
 
   describe('handles errors', () => {
