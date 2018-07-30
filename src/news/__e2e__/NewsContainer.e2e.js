@@ -36,21 +36,20 @@ describe('News', () => {
     expect(items.length).toBeGreaterThan(0);
   });
 
-  /**test('clicking a headline launches the article in a new browser tab', async () => {
-    await page.waitForSelector('.news-headlines-container');
-    const items = await page.$$('.news-headlines-container a');
+  test(
+    'clicking a headline launches the article in a new browser tab',
+    async () => {
+      await page.waitForSelector('.news-headlines-container');
+      const items = await page.$$('.news-headlines-container a');
+      const itemHref = await page.evaluate(() => document.querySelector('.news-headlines-container a').href);
 
-    browser.on('targetchanged', () => {
-      console.log("tpp")
-    });
+      await items[0].tap();
+      await page.waitFor(4000); // allow some time for the new page to have launched
+      const pages = await browser.pages();
 
-    const navigationPromise = page.waitForNavigation();
-    await items[1].tap();
-    await navigationPromise; // The navigationPromise resolves after navigation has finished
-
-    expect(items.length).toBeGreaterThan(0);
-
-    //await page.waitForSelector('.atms-container');
-
-  });*/
+      expect(pages.length).toBe(3); // chromium welcome page, news page, the launched headline page
+      expect(pages[2].url()).toContain(itemHref); // used toContain because may have redirected (this might still fail!)
+    },
+    10000
+  );
 });
