@@ -15,6 +15,7 @@ redux-forms<br/>
 Semantic UI React<br/>
 StoryBook JS<br/>
 Jest, Enzyme, react-testing-library<br/>
-Puppeteer, jest-image-snapshot, BackstopJS<br/>
-Git Hooks using husky - prettier and unit tests on commit<br/>
+Puppeteer, jest-image-snapshot<br/>
+BackstopJS (Not part of Travis yet as need to get it running in a Docker container to avoid issues with different environments/machines<br/>
+Git Hooks using husky - prettier on commit<br/>
 Travis CI - runs all units tests and e2e tests<br/>

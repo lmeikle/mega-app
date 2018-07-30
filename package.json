@@ -92,7 +92,7 @@
     "test:e2e": "npm test -- -c jest-integration-config.json",
     "test:e2e:all": "npm test -- --all -c jest-integration-config.json",
     "test:e2e:debug": "npm test -- --e2edebug -c jest-integration-config.json",
-    "ci": "npm run test:all && npm run test:e2e:all && npm run backstop:test",
+    "ci": "npm run test:all && npm run test:e2e:all",
     "test:ci": "start-server-and-test dev http-get://localhost:3000 ci",
     "backstop:reference": "node ./node_modules/backstopjs/cli/index.js reference",
     "backstop:test": "node ./node_modules/backstopjs/cli/index.js test",
