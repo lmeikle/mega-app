@@ -39,6 +39,10 @@ const errorState = {
   error: 'There was an error'
 };
 
+function flushPromises() {
+  return new Promise(resolve => setImmediate(resolve));
+}
+
 describe('NewsContainer', () => {
   describe('initial', () => {
     let newsContainer;
@@ -89,36 +93,27 @@ describe('NewsContainer', () => {
       expect(newsContainer.find('.news-show-more-button').length).toBe(0);
     });
 
-    test('mounting fetches and renders results', done => {
+    test('mounting fetches and renders results, clicking showMore fetches and renders more results', async done => {
       fetch.mockResponseOnce(JSON.stringify(mockResponse));
       const newsContainer = mount(<NewsContainer />);
 
+      expect(newsContainer.find('LoadingComponent').length).toBe(1);
       expect(fetch.mock.calls.length).toEqual(1);
 
-      setImmediate(() => {
-        newsContainer.update();
-        expect(newsContainer.find('NewsHeadlineComponent').length).toBe(18);
-        done();
-      });
-    });
+      await flushPromises();
 
-    test('clicking showMore fetches and renders more results', done => {
-      fetch.mockResponseOnce(JSON.stringify(mockResponse));
-      const newsContainer = mount(<NewsContainer />);
+      newsContainer.update();
+      expect(newsContainer.find('NewsHeadlineComponent').length).toBe(18);
+      fetch.mockResponseOnce(JSON.stringify(mockResponse2));
+      newsContainer.find('.news-show-more-button').simulate('click');
 
-      setImmediate(() => {
-        newsContainer.update();
-        fetch.mockResponseOnce(JSON.stringify(mockResponse2));
-        newsContainer.find('.news-show-more-button').simulate('click');
+      expect(fetch.mock.calls.length).toEqual(2);
 
-        expect(fetch.mock.calls.length).toEqual(2);
+      await flushPromises();
 
-        setImmediate(() => {
-          newsContainer.update();
-          expect(newsContainer.find('NewsHeadlineComponent').length).toBe(20);
-          done();
-        });
-      });
+      newsContainer.update();
+      expect(newsContainer.find('NewsHeadlineComponent').length).toBe(20);
+      done();
     });
   });
 
