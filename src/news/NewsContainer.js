@@ -25,17 +25,19 @@ class NewsContainer extends Component {
     this.showMore();
   }
 
-  showMore = () => {
+  showMore = async () => {
     let { totalResults, headlines } = this.state;
     let page = ((headlines.length / totalResults) * totalResults) / NewsContainer.PAGE_SIZE;
-    fetchTopHeadlines(page + 1, NewsContainer.PAGE_SIZE)
-      .then(result =>
-        this.setState({
-          headlines: [...this.state.headlines, ...result.headlines],
-          totalResults: result.totalResults
-        })
-      )
-      .catch(error => this.setState({ error }));
+
+    try {
+      const result = await fetchTopHeadlines(page + 1, NewsContainer.PAGE_SIZE);
+      this.setState({
+        headlines: [...this.state.headlines, ...result.headlines],
+        totalResults: result.totalResults
+      });
+    } catch (error) {
+      this.setState({ error });
+    }
   };
 
   render() {
