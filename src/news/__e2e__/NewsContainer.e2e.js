@@ -52,4 +52,20 @@ describe('News', () => {
     },
     10000
   );
+
+  test('shows error message on fetch failure', async () => {
+    await page.setRequestInterception(true);
+    page.on('request', interceptedRequest => {
+      if (interceptedRequest.url().includes('apiKey')) {
+        interceptedRequest.abort();
+      } else {
+        interceptedRequest.continue();
+      }
+    });
+
+    await page.goto('http://localhost:3000/news');
+
+    const errorMessage = await page.$eval('.errorMessage', e => e.innerHTML);
+    expect(errorMessage).toContain('Failed to get top headlines due to');
+  });
 });

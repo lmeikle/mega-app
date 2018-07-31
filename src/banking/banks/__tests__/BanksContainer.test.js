@@ -32,12 +32,7 @@ describe('BanksContainer', () => {
 
     test('renders the loading component when fetching', () => {
       expect(banksContainer.find('LoadingComponent').exists()).toBe(true);
-    });
-
-    test('should call methodName during componentDidMount', () => {
-      const methodNameFake = jest.spyOn(BanksContainer.prototype, 'componentDidMount');
-      const wrapper = mount(<BanksContainer {...initialProps} />);
-      expect(methodNameFake).toHaveBeenCalledTimes(1);
+      expect(banksContainer.find('BanksComponent').exists()).toBe(false);
     });
   });
 
@@ -48,6 +43,7 @@ describe('BanksContainer', () => {
     });
 
     test('renders a list of BanksComponents when has data', () => {
+      expect(banksContainer.find('LoadingComponent').exists()).toBe(false);
       expect(banksContainer.find('BanksComponent').exists()).toBe(true);
     });
   });

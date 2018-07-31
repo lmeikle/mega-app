@@ -12,7 +12,7 @@ export async function fetchTopHeadlines(page, pageSize) {
       throw new Error('Something went wrong ...');
     }
   } catch (error) {
-    return error;
+    throw new Error('Something went wrong ...');
   }
 }
 

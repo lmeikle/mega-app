@@ -51,6 +51,12 @@ describe('Banking', () => {
     await page.close();
   });
 
+  test('renders list of banks', async () => {
+    const items = await page.$$('.banks-container a');
+
+    expect(items.length).toBeGreaterThan(0);
+  });
+
   test('renders list of nearest atms', async () => {
     const items = await page.$$('.banks-container a');
 
