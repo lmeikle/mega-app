@@ -1,3 +1,4 @@
+/* @flow */
 import paticipantStoreJson from './paticipant_store.json';
 
 /**
@@ -6,7 +7,7 @@ import paticipantStoreJson from './paticipant_store.json';
  * At present this is just read from a downloaded file, as there is not an actual API request available.
  * Still written with promises in case this changes in the future.
  */
-export function fetchBanksWithAtmAPIData() {
+export function fetchBanksWithAtmAPIData(): Promise<any> {
   return new Promise((resolve, reject) => {
     resolve(paticipantStoreJson.data);
   });

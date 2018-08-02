@@ -1,22 +1,22 @@
+/* @flow */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bool, func } from 'prop-types';
 import { getBanksWithAtmAPI, isFetching } from './BanksSelectors';
 import BanksActions from './BanksActions';
 import BanksComponent from './BanksComponent';
-import { banksWithAtmAPIType } from './BanksPropTypes';
+import type { BanksWithAtmAPI } from './BanksPropTypes';
 import LoadingComponent from '../../shared/loading/LoadingComponent';
+
+type Props = {
+  banksWithAtmAPI: BanksWithAtmAPI,
+  isFetching: boolean,
+  dispatch: Function
+};
 
 /**
  * Renders a list of banks listed in the that have an ATM API
  */
-export class BanksContainer extends Component {
-  static propTypes = {
-    banksWithAtmAPI: banksWithAtmAPIType,
-    isFetching: bool.isRequired,
-    dispatch: func.isRequired
-  };
-
+export class BanksContainer extends Component<Props> {
   static defaultProps = {
     banksWithAtmAPI: []
   };

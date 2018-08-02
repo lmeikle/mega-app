@@ -59,12 +59,15 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-plugin-styled-components": "^1.5.1",
+    "babel-preset-flow": "^6.23.0",
     "backstopjs": "^3.5.2",
     "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.3",
+    "flow-bin": "^0.77.0",
     "husky": "^1.0.0-rc.13",
     "jest-fetch-mock": "^1.6.2",
     "jest-image-snapshot": "^2.4.3",
@@ -87,6 +90,7 @@
     "dev": "concurrently --kill-others \"npm run start\" \"node ./server\"",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "flow": "flow",
     "test": "node scripts/test.js --env=jsdom",
     "test:all": "npm test -- --all",
     "test:coverage": "npm test -- --coverage",
@@ -94,7 +98,7 @@
     "test:e2e:all": "npm test -- --all -c jest-e2e-config.json",
     "test:e2e:debug": "npm test -- --e2edebug -c jest-e2e-config.json",
     "test:ci": "npm-run-all -p -r dev test:ci2",
-    "test:ci2": "wait-on http-get://localhost:3000 && npm run test:all && npm run test:e2e:all",
+    "test:ci2": "wait-on http-get://localhost:3000 && npm run flow && npm run test:all && npm run test:e2e:all",
     "backstop:reference": "node ./node_modules/backstopjs/cli/index.js reference",
     "backstop:test": "node ./node_modules/backstopjs/cli/index.js test",
     "backstop:approve": "node ./node_modules/backstopjs/cli/index.js approve",
@@ -149,7 +153,8 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      "react-app",
+      "flow"
     ]
   },
   "eslintConfig": {
