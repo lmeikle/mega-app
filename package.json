@@ -98,7 +98,7 @@
     "test:e2e:all": "npm test -- --all -c jest-e2e-config.json",
     "test:e2e:debug": "npm test -- --e2edebug -c jest-e2e-config.json",
     "test:ci": "npm-run-all -p -r dev test:ci2",
-    "test:ci2": "wait-on http-get://localhost:3000 && npm run flow && npm run test:all && npm run test:e2e:all",
+    "test:ci2": "wait-on http-get://localhost:3000 && npm run test:all && npm run test:e2e:all",
     "backstop:reference": "node ./node_modules/backstopjs/cli/index.js reference",
     "backstop:test": "node ./node_modules/backstopjs/cli/index.js test",
     "backstop:approve": "node ./node_modules/backstopjs/cli/index.js approve",

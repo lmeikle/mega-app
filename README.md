@@ -43,10 +43,11 @@ The app will launch on http://localhost:3000
 - Flow uncovers the same errors PropTypes would, except earlier in the development cycle, not at runtime.
 - The only con being you don’t get runtime errors, though some tools make it possible.
 
+- Get type errors simply by adding @flow to the top of the document (don't need to add any annotations)
+- The errors are shown in the IDE if you install plugins, or by running flow. (eg for atom ide-flowtype)
+
 - Only add to files where they add value...?
 - Seems alot more you can do with redux (https://flow.org/en/docs/react/redux/) but does it just add more boring boiler plate?
-
-- Add to IDE (eg for atom ide-flowtype)
 - use jscodeshift to convert all of your components to use Flow types at once?
   or There are some Babel plugins which will generate PropTypes from Flow types such as babel-plugin-react-flow-props-to-prop-types if you want both static and runtime checks
 - I have noticed doesnt work properly with redux connected containers.
