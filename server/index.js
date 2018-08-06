@@ -17,6 +17,10 @@ app.get('/banking/api', function(req, res) {
     .pipe(res);
 });
 
+app.post('/misc/ajaxtest', function(req, res) {
+  res.send('ajax test succeeded');
+});
+
 app.use(require('./filters/filterProxy'));
 
 app.listen(3001);
