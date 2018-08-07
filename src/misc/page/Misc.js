@@ -3,6 +3,8 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Canvas from '../canvas/Canvas';
 import CommentFeedContainer from '../commentfeed/CommentFeedContainer';
 import JQuery from '../jquery/JQuery';
+import JQGrid from '../jqgrid/JQGrid';
+import JQGridEdit from '../jqgrid/JQGridEdit';
 import './Misc.css';
 
 class Misc extends Component {
@@ -13,6 +15,8 @@ class Misc extends Component {
           <Route path={`${this.props.match.url}/canvas`} component={Canvas} />
           <Route path={`${this.props.match.url}/commentfeed`} component={CommentFeedContainer} />
           <Route path={`${this.props.match.url}/jquery`} component={JQuery} />
+          <Route path={`${this.props.match.url}/jqgrid`} component={JQGrid} />
+          <Route path={`${this.props.match.url}/jqgrid-edit`} component={JQGridEdit} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -32,6 +36,16 @@ class Misc extends Component {
                   <Link to={`${this.props.match.url}/jquery`}>
                     <div className="misc-item">
                       <div>jquery</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/jqgrid`}>
+                    <div className="misc-item">
+                      <div>jqGrid Basic Example</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/jqgrid-edit`}>
+                    <div className="misc-item">
+                      <div>jqGrid Add, Edit and Delete Examplet</div>
                     </div>
                   </Link>
                 </div>

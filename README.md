@@ -15,27 +15,6 @@ The app will launch on http://localhost:3000
 - Semantic UI React
 - StoryBook JS
 
-# Testing
-
-- Jest, Enzyme, react-testing-library
-- Puppeteer, jest-image-snapshot
-- BackstopJS (Not part of Travis yet as need to get it running in a Docker container to avoid issues with different environments/machines.
-
-# Git Hooks using husky
-
-- prettier on commit
-
-# Travis CI
-
-- runs all units tests and e2e tests
-
-# Deployed to Firebase
-
-- runs all units tests and e2e tests
-- https://mega-app-99f08.firebaseapp.com/news
-- https://console.firebase.google.com/project/mega-app-99f08/hosting/main
-- just run firebase deploy to redeploy
-
 # Flow (in banking/banks only at present)
 
 - Flow replaces the need for React’s PropTypes.
@@ -57,3 +36,31 @@ The app will launch on http://localhost:3000
   const connector: Connector<{}, Props> = connect(mapStateToProps);<br/>
   export default connector(BanksContainer);<br/>
   Still didnt work properly so removed it<br/>
+
+# jQuery and jqGrid
+
+- Purely for experimenting with, shouldnt be using them in a React app really.
+- jqGrid documents here: http://www.trirand.com/blog/
+- Using the Free version though https://github.com/free-jqgrid/jqGrid
+- Examples https://www.js-tutorials.com/javascript-tutorial/beautiful-jqgrid-example-demo-using-bootstrap-jquery-ui/
+
+# Testing
+
+- Jest, Enzyme, react-testing-library
+- Puppeteer, jest-image-snapshot
+- BackstopJS (Not part of Travis yet as need to get it running in a Docker container to avoid issues with different environments/machines.
+
+# Git Hooks using husky
+
+- prettier on commit
+
+# Travis CI
+
+- runs all units tests and e2e tests
+
+# Deployed to Firebase
+
+- runs all units tests and e2e tests
+- https://mega-app-99f08.firebaseapp.com/news
+- https://console.firebase.google.com/project/mega-app-99f08/hosting/main
+- just run firebase deploy to redeploy
