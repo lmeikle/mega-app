@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bool, func, string } from 'prop-types';
+import calculateDistance from '@lmeikle/calculate-distance-util';
 import { getAtms, getError, getName, isFetching } from './AtmsSelectors';
 import AtmsComponent from './AtmsComponent';
 import AtmsActions from './AtmsActions';
 import { atmsType } from './AtmsPropTypes';
 import LoadingComponent from '../../shared/loading/LoadingComponent';
-import calculateDistance from '../../shared/utils/calculateDistance';
 import getGeolocation from '../../shared/utils/getGeolocation';
 
 /**
