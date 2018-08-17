@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
 import { fetchTopHeadlines } from './NewsAPI';
 import NewsHeadlineComponent from './NewsHeadlineComponent';
-import LoadingComponent from '../shared/loading/LoadingComponent';
 
 /**
  * Renders a list of top news headlines

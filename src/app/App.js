@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Loadable from 'react-loadable';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
 import DetectLayout from '../responsive/higher-order-component/DetectLayout';
 import Home from '../home/Home';
-import LoadingComponent from '../shared/loading/LoadingComponent';
 import SideMenu from '../sidemenu/SideMenu';
 import './App.css';
 

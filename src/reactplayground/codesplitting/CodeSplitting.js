@@ -1,7 +1,7 @@
 import React from 'react';
 import Loadable from 'react-loadable';
+import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
 import AsyncComponent from './AsyncComponent';
-import LoadingComponent from '../../shared/loading/LoadingComponent';
 
 // using react-loadable library
 const MyLoadableComponent = Loadable({

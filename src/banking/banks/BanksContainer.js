@@ -1,11 +1,11 @@
 /* @flow */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
 import { getBanksWithAtmAPI, isFetching } from './BanksSelectors';
 import BanksActions from './BanksActions';
 import BanksComponent from './BanksComponent';
 import type { BanksWithAtmAPI } from './BanksPropTypes';
-import LoadingComponent from '../../shared/loading/LoadingComponent';
 
 type Props = {
   banksWithAtmAPI: BanksWithAtmAPI,
