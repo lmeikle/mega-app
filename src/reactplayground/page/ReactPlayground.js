@@ -7,6 +7,7 @@ import RenderProps from '../renderprops/RenderProps';
 import HigherOrderComponent from '../higherordercomponent/HigherOrderComponent';
 import MixingComponentPatterns from '../mixingcomponentpatterns/MixingComponentPatterns';
 import FruitAutocomplete from '../fruitautocomplete/FruitAutocomplete';
+import ErrorBoundaryExample from '../errorboundary/ErrorBoundaryExample';
 import icon from './icon.svg';
 import './ReactPlayground.css';
 
@@ -23,6 +24,7 @@ class ReactPlayground extends Component {
           <Route path={`${this.props.match.url}/higherordercomponent`} component={HigherOrderComponent} />
           <Route path={`${this.props.match.url}/mixingcomponentpatterns`} component={MixingComponentPatterns} />
           <Route path={`${this.props.match.url}/fruitautocomplete`} component={FruitAutocomplete} />
+          <Route path={`${this.props.match.url}/errorboundary`} component={ErrorBoundaryExample} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -62,6 +64,11 @@ class ReactPlayground extends Component {
                   <Link to={`${this.props.match.url}/fruitautocomplete`}>
                     <div className="react-playground-item">
                       <div>Fruit Autocomplete showing how to test components that use render props</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/errorboundary`}>
+                    <div className="react-playground-item">
+                      <div>Error Boundary Example</div>
                     </div>
                   </Link>
                 </div>
