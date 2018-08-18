@@ -106,14 +106,14 @@ export function getConfig() {
       className: 'responsive'
     },
     {
-      path: '/misc',
-      name: 'Misc',
-      className: 'misc'
-    },
-    {
       path: '/editors',
       name: 'Editors',
       className: 'editors'
+    },
+    {
+      path: '/misc',
+      name: 'Misc',
+      className: 'misc'
     }
   ];
 }
