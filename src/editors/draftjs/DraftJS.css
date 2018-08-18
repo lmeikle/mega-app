@@ -1,0 +1,19 @@
+.draft-js-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.draft-js-editor-container {
+  font-family: Helvetica, sans-serif;
+
+  margin: 40px auto 0;
+  position: relative;
+}
+
+.draft-js-editor {
+  border: 1px solid #ddd;
+  cursor: text;
+  font-size: 16px;
+  min-height: 40px;
+  padding: 10px;
+}

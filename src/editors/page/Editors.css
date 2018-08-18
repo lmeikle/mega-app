@@ -1,0 +1,14 @@
+.editors-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.editors-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #002742;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #fafafa;
+}

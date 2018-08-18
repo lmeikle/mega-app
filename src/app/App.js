@@ -37,6 +37,11 @@ const Misc = Loadable({
   loading: LoadingComponent
 });
 
+const Editors = Loadable({
+  loader: () => import('../editors/page/Editors'),
+  loading: LoadingComponent
+});
+
 class App extends Component {
   render() {
     const { isSmallLayout } = this.props;
@@ -54,6 +59,7 @@ class App extends Component {
                 <Route path="/news" component={News} />
                 <Route path="/responsive" component={Responsive} />
                 <Route path="/misc" component={Misc} />
+                <Route path="/editors" component={Editors} />
                 <Route path="/home" render={() => <Home config={getConfig()} />} />
                 <Route render={() => <Home config={getConfig()} />} />
               </Switch>
@@ -103,6 +109,11 @@ export function getConfig() {
       path: '/misc',
       name: 'Misc',
       className: 'misc'
+    },
+    {
+      path: '/editors',
+      name: 'Editors',
+      className: 'editors'
     }
   ];
 }
