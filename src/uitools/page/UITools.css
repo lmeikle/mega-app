@@ -1,9 +1,9 @@
-.editors-title {
+.ui-tools-title {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-.editors-item {
+.ui-tools-item {
   display: flex;
   align-items: center;
   border: 1px solid #002742;

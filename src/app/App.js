@@ -37,8 +37,8 @@ const Misc = Loadable({
   loading: LoadingComponent
 });
 
-const Editors = Loadable({
-  loader: () => import('../editors/page/Editors'),
+const UITools = Loadable({
+  loader: () => import('../uitools/page/UITools'),
   loading: LoadingComponent
 });
 
@@ -59,7 +59,7 @@ class App extends Component {
                 <Route path="/news" component={News} />
                 <Route path="/responsive" component={Responsive} />
                 <Route path="/misc" component={Misc} />
-                <Route path="/editors" component={Editors} />
+                <Route path="/uitools" component={UITools} />
                 <Route path="/home" render={() => <Home config={getConfig()} />} />
                 <Route render={() => <Home config={getConfig()} />} />
               </Switch>
@@ -106,9 +106,9 @@ export function getConfig() {
       className: 'responsive'
     },
     {
-      path: '/editors',
-      name: 'Editors',
-      className: 'editors'
+      path: '/uitools',
+      name: 'UI Tools',
+      className: 'uitools'
     },
     {
       path: '/misc',

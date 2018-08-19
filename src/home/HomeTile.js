@@ -7,7 +7,7 @@ import reactImage from './images/react.png';
 import newsImage from './images/news.png';
 import responsiveImage from './images/responsive.png';
 import miscImage from './images/misc.png';
-import editorsImage from './images/editors.svg';
+import uiToolsImage from './images/uitools.png';
 import styled, { css } from 'styled-components';
 
 const HomeTileWrapper = styled.div`
@@ -48,8 +48,8 @@ const HomeTileWrapper = styled.div`
       case 'misc': {
         return miscMixin;
       }
-      case 'editors': {
-        return editorsMixin;
+      case 'uitools': {
+        return uitoolsMixin;
       }
       default:
         break;
@@ -92,10 +92,10 @@ const miscMixin = css`
   background-position: center 15px;
 `;
 
-const editorsMixin = css`
-  background-image: url(${editorsImage});
+const uitoolsMixin = css`
+  background-image: url(${uiToolsImage});
   background-size: 65%;
-  background-position: 35px 15px;
+  background-position: center 15px;
 `;
 
 const HomeTile = ({ path, name, className }) => {
