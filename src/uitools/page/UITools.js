@@ -4,6 +4,7 @@ import DraftJS from '../draftjs/DraftJS';
 import SlateJS from '../slatejs/SlateJS';
 import ReactWindow from '../reactwindow/ReactWindow';
 import ToastUI from '../toastui/ToastUI';
+import ReactSelect from '../reactselect/ReactSelect';
 import './UITools.css';
 
 class UITools extends Component {
@@ -15,6 +16,7 @@ class UITools extends Component {
           <Route path={`${this.props.match.url}/slatejs`} component={SlateJS} />
           <Route path={`${this.props.match.url}/reactwindow`} component={ReactWindow} />
           <Route path={`${this.props.match.url}/toastui`} component={ToastUI} />
+          <Route path={`${this.props.match.url}/reactselect`} component={ReactSelect} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -39,6 +41,14 @@ class UITools extends Component {
                   <Link to={`${this.props.match.url}/toastui`}>
                     <div className="ui-tools-item">
                       <div>ToastUI - A powerful widget which allows you to visualize and edit data via its table representation.</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/reactselect`}>
+                    <div className="ui-tools-item">
+                      <div>
+                        ReactSelect - A flexible and beautiful Select Input control for ReactJS with multiselect, autocomplete, async and creatable
+                        support.
+                      </div>
                     </div>
                   </Link>
                 </div>

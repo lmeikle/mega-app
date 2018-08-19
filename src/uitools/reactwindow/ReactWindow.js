@@ -14,7 +14,7 @@ export default class ReactWindow extends Component {
     return (
       <div>
         <div className="react-window-title">ReactWindow</div>
-        <h3>Fixed Size ist</h3>
+        <h3>Fixed Size List</h3>
         <List className="List" height={150} itemCount={1000} itemSize={35} width={300} ref={this.listRef}>
           {({ index, style }) => (
             <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
