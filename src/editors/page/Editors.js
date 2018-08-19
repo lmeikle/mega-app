@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import DraftJS from '../draftjs/DraftJS';
 import SlateJS from '../slatejs/SlateJS';
+import ReactWindow from '../reactwindow/ReactWindow';
 import './Editors.css';
 
 class Editors extends Component {
@@ -11,6 +12,7 @@ class Editors extends Component {
         <Switch>
           <Route path={`${this.props.match.url}/draftjs`} component={DraftJS} />
           <Route path={`${this.props.match.url}/slatejs`} component={SlateJS} />
+          <Route path={`${this.props.match.url}/reactwindow`} component={ReactWindow} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -19,12 +21,17 @@ class Editors extends Component {
                 <div>
                   <Link to={`${this.props.match.url}/draftjs`}>
                     <div className="editors-item">
-                      <div>DraftJS</div>
+                      <div>DraftJS - A framework for building rich text editors in React</div>
                     </div>
                   </Link>
                   <Link to={`${this.props.match.url}/slatejs`}>
                     <div className="editors-item">
-                      <div>SlateJS</div>
+                      <div>SlateJS - A completely customizable framework for building rich text editors.</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/reactwindow`}>
+                    <div className="editors-item">
+                      <div>ReactWindow - React components for efficiently rendering large lists and tabular data</div>
                     </div>
                   </Link>
                 </div>
