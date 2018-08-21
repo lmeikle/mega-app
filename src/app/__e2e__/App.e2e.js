@@ -107,11 +107,6 @@ describe('App - iPhone', () => {
   test('screenshot matches', async () => {
     expect.extend({ toMatchImageSnapshot });
 
-    expect(image).toMatchImageSnapshot({
-      failureThreshold: '0.01',
-      failureThresholdType: 'percent'
-    });
-
     const image = await page.screenshot();
     expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPhone'));
   });
