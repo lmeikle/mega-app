@@ -57,7 +57,7 @@ describe('App - iPad', () => {
     const appPageContainer = await page.$eval('.app-page-container', el => (el ? true : false));
     const items = await page.$$('.app-page-container a');
     expect(appPageContainer).toBe(true);
-    expect(items.length).toBe(6);
+    expect(items.length).toBe(7);
   });
 
   test('side menu items load correctly', async () => {
