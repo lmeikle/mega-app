@@ -128,6 +128,37 @@ class Regex extends Component {
     var advancedRegex2 = /Red(?=Apple)/; // match will occur only if Red is followed by Apple.
     console.log(advancedRegex2.test('RedApple')); // true
     console.log(advancedRegex2.test('RedxApple')); // false
+
+    console.log('-----------------Practice /^(https?://)/ -----------------');
+    var practiceRegex1 = /^(https?:\/\/)/;
+    console.log(practiceRegex1.test('https://what')); // true
+    console.log(practiceRegex1.test('http://what')); // true
+    console.log(practiceRegex1.test('http:/what')); // false
+
+    console.log('-----------------Practice /[^ ]+$]/-----------------');
+    var practiceRegex2 = /[^ ]+$/;
+    console.log(practiceRegex2.test('dfgfdg')); // true
+    console.log(practiceRegex2.test('dfgdfg ')); // false
+
+    console.log('-----------------Practice Match any 10 digit number-----------------');
+    var practiceRegex3 = /^\d{10}$/;
+    console.log(practiceRegex3.test('1234569871')); // true
+    console.log(practiceRegex3.test('123324')); // false
+    console.log(practiceRegex3.test('1232354345345345345')); // false
+
+    console.log('-----------------Practice Match a date with following format DD-MM-YYYY or DD-MM-YY-----------------');
+    var practiceRegex4 = /^(\d{1,2}-){2}(\d{2})(\d{2})?$/;
+    console.log(practiceRegex4.test('12-12-1980')); // true
+    console.log(practiceRegex4.test('12-12-80')); // true
+    console.log(practiceRegex4.test('2-2-80')); // true
+    console.log(practiceRegex4.test('2-80')); // false
+
+    console.log('-----------------Practice Matching Anything But a Newline-----------------');
+    // The expression should match any string with a format like abc.def.ghi.jkl where each variable a, b, c, d, e, f, g, h, i, j, k, l can be any character except new line.
+    var practiceRegex5 = /^(.{3}\.){3}(.{3})$/;
+    console.log(practiceRegex5.test('abc.def.ghi.jkl')); // true
+    console.log(practiceRegex5.test('abc.defwerew.ghi.jkl')); // false
+    console.log(practiceRegex5.test('abc.def.ghi')); // false
   }
 
   render() {
