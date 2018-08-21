@@ -18,7 +18,7 @@ const isDebugging = () => {
 // jest-image-snapshot custom configuration in order to save screenshots and compare the with the baseline
 const getJestImageSnapshotConfig = filename => {
   return {
-    failureThreshold: '0.01',
+    failureThreshold: '1.5',
     failureThresholdType: 'percent',
     customSnapshotsDir: `${__dirname}/snapshots/`,
     customSnapshotIdentifier: filename,
@@ -106,6 +106,11 @@ describe('App - iPhone', () => {
 
   test('screenshot matches', async () => {
     expect.extend({ toMatchImageSnapshot });
+
+    expect(image).toMatchImageSnapshot({
+      failureThreshold: '0.01',
+      failureThresholdType: 'percent'
+    });
 
     const image = await page.screenshot();
     expect(image).toMatchImageSnapshot(getJestImageSnapshotConfig('App-iPhone'));
