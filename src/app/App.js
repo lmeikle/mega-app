@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Loadable from 'react-loadable';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
+import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
 import DetectLayout from '../responsive/higher-order-component/DetectLayout';
 import Home from '../home/Home';
 import SideMenu from '../sidemenu/SideMenu';

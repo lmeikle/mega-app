@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bool, func, string } from 'prop-types';
-import calculateDistance from '@lmeikle/calculate-distance-util';
-import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
+import { calculateDistance } from '@lmeikle/my-mono-repo-to-single-package';
+import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
 import { getAtms, getError, getName, isFetching } from './AtmsSelectors';
 import AtmsComponent from './AtmsComponent';
 import AtmsActions from './AtmsActions';
@@ -102,7 +102,9 @@ export class AtmsContainer extends Component {
         <div>
           The {AtmsContainer.NEAREST_ATM_QUANTITY} nearest {name} ATM's are:
         </div>
-        {nearestAtms.map(atm => <AtmsComponent key={atm.identification} {...atm} />)}
+        {nearestAtms.map(atm => (
+          <AtmsComponent key={atm.identification} {...atm} />
+        ))}
       </div>
     );
   }

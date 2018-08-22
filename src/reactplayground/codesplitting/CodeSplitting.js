@@ -1,6 +1,6 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
+import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
 import AsyncComponent from './AsyncComponent';
 
 // using react-loadable library

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
+import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
 import { fetchTopHeadlines } from './NewsAPI';
 import NewsHeadlineComponent from './NewsHeadlineComponent';
 
@@ -54,7 +54,11 @@ class NewsContainer extends Component {
     return (
       <div className="news-container">
         <div className="news-title">News</div>
-        <div className="news-headlines-container">{headlines.map(headline => <NewsHeadlineComponent key={headline.title} {...headline} />)}</div>
+        <div className="news-headlines-container">
+          {headlines.map(headline => (
+            <NewsHeadlineComponent key={headline.title} {...headline} />
+          ))}
+        </div>
         {headlines.length < totalResults && (
           <div className="news-show-more-button" onClick={this.showMore}>
             Show More

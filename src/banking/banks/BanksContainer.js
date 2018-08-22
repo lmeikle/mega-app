@@ -1,7 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { LoadingComponent } from '@lmeikle/simple-loading-spinner';
+import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
 import { getBanksWithAtmAPI, isFetching } from './BanksSelectors';
 import BanksActions from './BanksActions';
 import BanksComponent from './BanksComponent';
@@ -35,7 +35,9 @@ export class BanksContainer extends Component<Props> {
     return (
       <div className="banks-container">
         <div>Please select a bank</div>
-        {banksWithAtmAPI.map(bank => <BanksComponent key={bank.name} {...bank} />)}
+        {banksWithAtmAPI.map(bank => (
+          <BanksComponent key={bank.name} {...bank} />
+        ))}
       </div>
     );
   }
