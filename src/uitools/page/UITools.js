@@ -6,6 +6,7 @@ import ReactWindow from '../reactwindow/ReactWindow';
 import ToastUI from '../toastui/ToastUI';
 import ReactSelect from '../reactselect/ReactSelect';
 import ReactVirtualized from '../reactvirtualized/ReactVirtualized';
+import ReactMove from '../reactmove/ReactMove';
 import './UITools.css';
 
 class UITools extends Component {
@@ -19,6 +20,7 @@ class UITools extends Component {
           <Route path={`${this.props.match.url}/toastui`} component={ToastUI} />
           <Route path={`${this.props.match.url}/reactselect`} component={ReactSelect} />
           <Route path={`${this.props.match.url}/reactvirtualized`} component={ReactVirtualized} />
+          <Route path={`${this.props.match.url}/reactmove`} component={ReactMove} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -56,6 +58,11 @@ class UITools extends Component {
                   <Link to={`${this.props.match.url}/reactvirtualized`}>
                     <div className="ui-tools-item">
                       <div>ReactVirtualized - for efficiently rendering large lists and tabular data.</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/reactmove`}>
+                    <div className="ui-tools-item">
+                      <div>ReactMove - Beautiful, data-driven animations for React.</div>
                     </div>
                   </Link>
                 </div>
