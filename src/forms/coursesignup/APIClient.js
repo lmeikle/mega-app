@@ -4,7 +4,7 @@ export const ApiClient = {
       then: function(cb) {
         setTimeout(() => {
           cb(JSON.parse(localStorage.people || '[]'));
-        }, 1000);
+        }, 250);
       }
     };
   },
@@ -18,7 +18,7 @@ export const ApiClient = {
 
         localStorage.people = JSON.stringify(people);
         resolve({ success });
-      }, 1000);
+      }, 250);
     });
   },
 

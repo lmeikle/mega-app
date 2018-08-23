@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest, select } from 'redux-saga/effects';
 import { ApiClient } from './APIClient';
 import CourseSignupActions from './CourseSignupActions';
 
@@ -17,8 +17,9 @@ export function* watchFetchPeople() {
 function* savePeopleAsync(action) {
   try {
     yield put(CourseSignupActions.savePeopleRequest());
-    yield call(() => ApiClient.savePeople(action.people));
-    yield put(CourseSignupActions.savePeopleSuccess(action.people));
+    let people = yield select(state => state.courseSignup.people);
+    yield call(() => ApiClient.savePeople([...people, action.people]));
+    yield put(CourseSignupActions.savePeopleSuccess([...people, action.people]));
   } catch (e) {
     yield put(CourseSignupActions.savePeopleFailure(e));
   }

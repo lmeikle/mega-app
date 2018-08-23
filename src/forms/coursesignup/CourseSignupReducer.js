@@ -42,6 +42,10 @@ export function courseSignupReducer(state = initialState, action) {
         },
         saveStatus: 'SUCCESS'
       });
+    case CourseSignupActions.RESET:
+      return Object.assign({}, state, {
+        saveStatus: 'READY'
+      });
     default:
       return state;
   }

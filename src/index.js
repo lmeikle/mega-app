@@ -18,10 +18,10 @@ const composeEnhancers = composeWithDevTools({
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware]; // lets us dispatch() functions
 if (process.env.NODE_ENV !== 'production') {
-  middleware.push(require('redux-diff-logger'));
-  middleware.push(require('redux-logger').createLogger());
-  const { whyDidYouUpdate } = require('why-did-you-update');
-  whyDidYouUpdate(React);
+  //  middleware.push(require('redux-diff-logger'));
+  //  middleware.push(require('redux-logger').createLogger());
+  //  const { whyDidYouUpdate } = require('why-did-you-update');
+  //  whyDidYouUpdate(React);
 }
 
 const store = createStore(

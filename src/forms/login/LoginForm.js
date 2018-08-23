@@ -28,7 +28,7 @@ class LoginForm extends Component {
 
 LoginForm = reduxForm({
   form: 'login',
-  validateForm
+  validate: validateForm
 })(LoginForm);
 
 export default LoginForm;

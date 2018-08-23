@@ -6,6 +6,7 @@ const CourseSignupActions = {
   SAVE_PEOPLE_REQUEST: 'coursesignup/SAVE_PEOPLE_REQUEST',
   SAVE_PEOPLE_SUCCESS: 'coursesignup/SAVE_PEOPLE_SUCCESS',
   SAVE_PEOPLE_FAILURE: 'coursesignup/SAVE_PEOPLE_FAILURE',
+  RESET: 'coursesignup/RESET',
 
   fetchPeople() {
     return { type: CourseSignupActions.FETCH_PEOPLE };
@@ -33,6 +34,10 @@ const CourseSignupActions = {
 
   savePeopleFailure(error) {
     return { type: CourseSignupActions.SAVE_PEOPLE_FAILURE, error };
+  },
+
+  reset() {
+    return { type: CourseSignupActions.RESET };
   }
 };
 
