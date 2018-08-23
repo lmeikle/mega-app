@@ -61,7 +61,11 @@ The app will launch on http://localhost:3000
 
 # Deployed to Firebase
 
-- runs all units tests and e2e tests
-- https://mega-app-99f08.firebaseapp.com/news
+- https://mega-app-99f08.firebaseapp.com
 - https://console.firebase.google.com/project/mega-app-99f08/hosting/main
-- just run firebase deploy to redeploy
+
+To redeploy:
+
+- npm install -g firebase-tools (if not already installed)
+- npm run build
+- firebase deploy
