@@ -67,7 +67,7 @@ class CourseSignupContainerFormik extends Component {
 
           <br />
 
-          {<CourseSelectContainer values={values} handleBlur={handleBlur} errors={errors} touched={touched} handleChange={handleChange} />}
+          {<CourseSelectContainer {...this.props} />}
 
           <br />
           {

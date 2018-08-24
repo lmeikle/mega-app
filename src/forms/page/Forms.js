@@ -37,7 +37,10 @@ class Forms extends Component {
           />
           <Route path={`${this.props.match.url}/coursesignup`} render={() => <CourseSignupContainer />} />
           <Route path={`${this.props.match.url}/coursesignup-reduxform`} render={() => <CourseSignupContainerReduxForm />} />
-          <Route path={`${this.props.match.url}/coursesignup-formik`} render={() => <CourseSignupContainerFormik user={{ name: '', email: '' }} />} />
+          <Route
+            path={`${this.props.match.url}/coursesignup-formik`}
+            render={() => <CourseSignupContainerFormik user={{ name: '', email: '', department: '', course: '' }} />}
+          />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
