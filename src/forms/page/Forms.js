@@ -5,6 +5,7 @@ import LoginForm from '../login/LoginForm';
 import LoginFormUsingSemantic from '../loginusingsemantic/LoginForm';
 import CourseSignupContainer from '../coursesignup/CourseSignupContainer';
 import CourseSignupContainerReduxForm from '../coursesignup-reduxform/CourseSignupContainerReduxForm';
+import CourseSignupContainerFormik from '../coursesignup-formik/CourseSignupContainerFormik';
 import './Forms.css';
 
 class Forms extends Component {
@@ -35,14 +36,8 @@ class Forms extends Component {
             render={() => <LoginFormUsingSemantic onSubmit={this.submit} initialValues={this.getInitialValues()} />}
           />
           <Route path={`${this.props.match.url}/coursesignup`} render={() => <CourseSignupContainer />} />
-          <Route
-            path={`${this.props.match.url}/coursesignup-reduxform`}
-            render={() => (
-              <CourseSignupContainerReduxForm
-                onSubmit={inputs => window.alert('CourseSignupContainerReduxForm submitted: ' + JSON.stringify(inputs))}
-              />
-            )}
-          />
+          <Route path={`${this.props.match.url}/coursesignup-reduxform`} render={() => <CourseSignupContainerReduxForm />} />
+          <Route path={`${this.props.match.url}/coursesignup-formik`} render={() => <CourseSignupContainerFormik user={{ name: '', email: '' }} />} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -73,6 +68,13 @@ class Forms extends Component {
                   <Link to={`${this.props.match.url}/coursesignup-reduxform`}>
                     <div className="forms-item">
                       <div>Course sign up form - as above but using redux-form</div>
+                    </div>
+                  </Link>
+                </div>
+                <div>
+                  <Link to={`${this.props.match.url}/coursesignup-formik`}>
+                    <div className="forms-item">
+                      <div>Course sign up form - as above but using formik. (Build forms in React, without the tears)</div>
                     </div>
                   </Link>
                 </div>
