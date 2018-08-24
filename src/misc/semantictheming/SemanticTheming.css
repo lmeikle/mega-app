@@ -1,0 +1,17 @@
+.semantic-theming-title {
+  font-size: 20px;
+  margin: 20px;
+}
+
+.does-not-work {
+  color: red;
+}
+
+.ui.yellow.button.does-work,
+.ui.primary.button.does-work {
+  color: red;
+}
+
+.hack.hack.hack {
+  color: red;
+}

@@ -8,7 +8,7 @@ import App from './app/App';
 import registerServiceWorker from './registerServiceWorker';
 import { banking, bankingSagas } from './banking/';
 import { form, courseSignup, courseSignupSagas } from './forms/';
-import 'semantic-ui-css/semantic.min.css';
+import './semantic-ui-styles.js'; // rather than import 'semantic-ui-css/semantic.min.css'; we only import what we use
 
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 const composeEnhancers = composeWithDevTools({

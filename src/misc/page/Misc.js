@@ -8,6 +8,7 @@ import JQGridEdit from '../jqgrid/JQGridEdit';
 import NPMPackages from '../npmpackages/NPMPackages';
 import Regex from '../regex/Regex';
 import ReactIntl from '../reactintl/ReactIntl';
+import SemanticTheming from '../semantictheming/SemanticTheming';
 import './Misc.css';
 
 class Misc extends Component {
@@ -23,6 +24,7 @@ class Misc extends Component {
           <Route path={`${this.props.match.url}/npmpackages`} component={NPMPackages} />
           <Route path={`${this.props.match.url}/regex`} component={Regex} />
           <Route path={`${this.props.match.url}/reactintl`} component={ReactIntl} />
+          <Route path={`${this.props.match.url}/semantictheming`} component={SemanticTheming} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -67,6 +69,11 @@ class Misc extends Component {
                   <Link to={`${this.props.match.url}/reactintl`}>
                     <div className="misc-item">
                       <div>ReactIntl - an API to format dates, numbers, and strings, including pluralization and handling translations.</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/semantictheming`}>
+                    <div className="misc-item">
+                      <div>Semantic Theming</div>
                     </div>
                   </Link>
                 </div>
