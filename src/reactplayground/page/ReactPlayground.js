@@ -9,6 +9,7 @@ import MixingComponentPatterns from '../mixingcomponentpatterns/MixingComponentP
 import FruitAutocomplete from '../fruitautocomplete/FruitAutocomplete';
 import ErrorBoundaryExample from '../errorboundary/ErrorBoundaryExample';
 import Fragments from '../fragments/Fragments';
+import CompountComponents from '../compoundcomponents/CompountComponents';
 import icon from './icon.svg';
 import './ReactPlayground.css';
 
@@ -27,6 +28,7 @@ class ReactPlayground extends Component {
           <Route path={`${this.props.match.url}/fruitautocomplete`} component={FruitAutocomplete} />
           <Route path={`${this.props.match.url}/errorboundary`} component={ErrorBoundaryExample} />
           <Route path={`${this.props.match.url}/fragments`} component={Fragments} />
+          <Route path={`${this.props.match.url}/compoundcomponents`} component={CompountComponents} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -76,6 +78,11 @@ class ReactPlayground extends Component {
                   <Link to={`${this.props.match.url}/fragments`}>
                     <div className="react-playground-item">
                       <div>Fragments Example</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/compoundcomponents`}>
+                    <div className="react-playground-item">
+                      <div>Compount Components Example</div>
                     </div>
                   </Link>
                 </div>
