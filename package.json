@@ -5,6 +5,8 @@
   "dependencies": {
     "@lmeikle/my-mono-repo-to-single-package": "^1.4.0",
     "@lmeikle/my-tiny-npm-package": "^1.0.1",
+    "@types/react": "^16.4.12",
+    "@types/react-dom": "^16.0.7",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -88,6 +90,7 @@
     "yup": "^0.26.2"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^4.0.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-styled-components": "^1.5.1",
     "babel-preset-flow": "^6.23.0",
@@ -112,7 +115,9 @@
     "redux-diff-logger": "0.0.9",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.3",
+    "source-map-loader": "^0.2.4",
     "start-server-and-test": "^1.7.0",
+    "typescript": "^3.0.1",
     "why-did-you-update": "^0.1.1"
   },
   "scripts": {

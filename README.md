@@ -38,6 +38,19 @@ The app will launch on http://localhost:3000
   export default connector(BanksContainer);<br/>
   Still didnt work properly so removed it<br/>
 
+# Typescript
+
+    npm install --save-dev typescript awesome-typescript-loader source-map-loader
+    npm install --save @types/react @types/react-dom
+    node node_modules\typescript\bin\tsc --init
+
+    https://reactjs.org/docs/static-type-checking.html#typescript
+    https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json
+    https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
+
+    For stateless function components (SFCs) use ES2015 default initializers for SFCs:
+    	{ name = "world" }: Props
+
 # jQuery and jqGrid
 
 - Purely for experimenting with, shouldnt be using them in a React app really.

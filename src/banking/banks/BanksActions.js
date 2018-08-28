@@ -1,4 +1,3 @@
-/* @flow */
 const BanksActions = {
   GET_BANKS: 'banks/GET_BANKS',
   GET_BANKS_REQUESTED: 'banks/GET_BANKS_REQUESTED',
@@ -17,7 +16,7 @@ const BanksActions = {
     };
   },
 
-  getBanksSuccess(response: any) {
+  getBanksSuccess(response) {
     return {
       type: this.GET_BANKS_SUCCESS,
       payload: {
@@ -26,7 +25,7 @@ const BanksActions = {
     };
   },
 
-  getBanksFailed(error: string) {
+  getBanksFailed(error) {
     return {
       type: this.GET_BANKS_FAILED,
       payload: {

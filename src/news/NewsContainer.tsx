@@ -1,19 +1,32 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
 import { fetchTopHeadlines } from './NewsAPI';
 import NewsHeadlineComponent from './NewsHeadlineComponent';
 
+interface IProps {}
+
+interface IState {
+  totalResults: number;
+  headlines: Array<IHeadLineProps>;
+  error?: string;
+}
+
+export interface IHeadLineProps {
+  title: string;
+  date: string;
+  source: string;
+  url: string;
+}
+
 /**
  * Renders a list of top news headlines
  */
-class NewsContainer extends Component {
-  constructor(props) {
+class NewsContainer extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
-
     this.state = {
       totalResults: 0,
-      headlines: [],
-      error: null
+      headlines: []
     };
   }
 
@@ -26,7 +39,7 @@ class NewsContainer extends Component {
   }
 
   showMore = async () => {
-    let { totalResults, headlines } = this.state;
+    const { totalResults, headlines } = this.state;
     let page = ((headlines.length / totalResults) * totalResults) / NewsContainer.PAGE_SIZE;
 
     try {

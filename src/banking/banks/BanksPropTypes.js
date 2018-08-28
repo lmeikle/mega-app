@@ -1,5 +1,4 @@
-/* @flow */
-export type BanksWithAtmAPI = Array<{
-  name: string,
-  url: string
-}>;
+//export BanksWithAtmAPI = Array<{
+//  name: string,
+//  url: string
+//}>;

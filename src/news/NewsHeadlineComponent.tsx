@@ -1,11 +1,11 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { IHeadLineProps } from './NewsContainer';
 import './News.css';
 
 /**
  * Stateless component which renders a single news headline.
  */
-const NewsHeadlineComponent = ({ title, date, source, url }) => {
+const NewsHeadlineComponent = ({ title, date, source, url }: IHeadLineProps) => {
   return (
     <div className="news-headline">
       <a href={url} target="_blank" rel="noopener noreferrer">
@@ -18,14 +18,5 @@ const NewsHeadlineComponent = ({ title, date, source, url }) => {
     </div>
   );
 };
-
-NewsHeadlineComponent.propTypes = {
-  title: string.isRequired,
-  date: string.isRequired,
-  source: string.isRequired,
-  url: string.isRequired
-};
-
-NewsHeadlineComponent.defaultProps = {};
 
 export default NewsHeadlineComponent;

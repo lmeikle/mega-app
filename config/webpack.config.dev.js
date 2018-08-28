@@ -81,7 +81,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
+    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx', '.ts', '.tsx'],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -184,6 +184,10 @@ module.exports = {
               }
             ]
           },
+          // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+          { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+          // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+          { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
