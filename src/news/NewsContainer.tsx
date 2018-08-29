@@ -3,20 +3,20 @@ import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
 import { fetchTopHeadlines } from './NewsAPI';
 import NewsHeadlineComponent from './NewsHeadlineComponent';
 
-interface IProps {}
+type IProps = {};
 
-interface IState {
+type IState = {
   totalResults: number;
   headlines: Array<IHeadLineProps>;
   error?: string;
-}
+};
 
-export interface IHeadLineProps {
+export type IHeadLineProps = {
   title: string;
   date: string;
   source: string;
   url: string;
-}
+};
 
 /**
  * Renders a list of top news headlines

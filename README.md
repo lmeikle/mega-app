@@ -16,7 +16,48 @@ The app will launch on http://localhost:3000
 - StoryBook JS
 - SlateJS/DraftJS
 
-# Flow (in banking/banks only at present)
+# Typescript
+
+    npm install --save-dev typescript awesome-typescript-loader source-map-loader
+    npm install --save @types/react @types/react-dom
+    node node_modules\typescript\bin\tsc --init
+
+    https://reactjs.org/docs/static-type-checking.html#typescript
+    https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json
+    https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
+    https://github.com/sw-yx/react-typescript-cheatsheet
+
+    defaultProps:
+      For stateless function components (SFCs) use ES2015 default initializers for SFCs:
+        { name = "world" }: Props
+
+      For Components use static defaultProps and do not mark as optional
+
+    import React, { MouseEvent, ReactNode } from 'react';
+    type Props = {
+      onClick(e: MouseEvent<HTMLElement>): void
+      children?: ReactNode
+    }
+    const Button = ({ onClick: handleClick, children }: Props) => (
+      <button onClick={handleClick}>{children}</button>
+    )
+
+    import React, { MouseEvent, SFC } from 'react';
+    type Props2 = {
+      onClick(e: MouseEvent<HTMLElement>): void
+    }
+    const Button2:SFC<Props2> = ({ onClick: handleClick, children }) => (
+      <button onClick={handleClick}>{children}</button>
+    )
+
+# jQuery and jqGrid
+
+- Purely for experimenting with, shouldnt be using them in a React app really.
+- jqGrid documents here: http://www.trirand.com/blog/
+- Using the Free version though https://github.com/free-jqgrid/jqGrid
+- Examples https://www.js-tutorials.com/javascript-tutorial/beautiful-jqgrid-example-demo-using-bootstrap-jquery-ui/
+
+# Flow (in banking/banks only at present) REMOVED AND REPLACED WITH TYPESCRIPT
 
 - Flow replaces the need for React’s PropTypes.
 - You can catch property errors, get autocomplete info, and enforce better typing rules with flow.
@@ -37,26 +78,6 @@ The app will launch on http://localhost:3000
   const connector: Connector<{}, Props> = connect(mapStateToProps);<br/>
   export default connector(BanksContainer);<br/>
   Still didnt work properly so removed it<br/>
-
-# Typescript
-
-    npm install --save-dev typescript awesome-typescript-loader source-map-loader
-    npm install --save @types/react @types/react-dom
-    node node_modules\typescript\bin\tsc --init
-
-    https://reactjs.org/docs/static-type-checking.html#typescript
-    https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json
-    https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
-
-    For stateless function components (SFCs) use ES2015 default initializers for SFCs:
-    	{ name = "world" }: Props
-
-# jQuery and jqGrid
-
-- Purely for experimenting with, shouldnt be using them in a React app really.
-- jqGrid documents here: http://www.trirand.com/blog/
-- Using the Free version though https://github.com/free-jqgrid/jqGrid
-- Examples https://www.js-tutorials.com/javascript-tutorial/beautiful-jqgrid-example-demo-using-bootstrap-jquery-ui/
 
 # Testing
 
