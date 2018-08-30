@@ -8,7 +8,7 @@ const initialProps = {
 };
 
 const initialState = {
-  geolocation: null
+  geolocation: undefined
 };
 
 const readyProps = {
@@ -44,7 +44,7 @@ const readyProps = {
     }
   ],
   name: 'Barclays',
-  error: null
+  errorMessagepAtmsR: null
 };
 
 const readyState = {
@@ -54,7 +54,7 @@ const readyState = {
 const errorProps = {
   ...initialProps,
   isFetching: false,
-  error: 'There was an error'
+  errorMessage: 'There was an error'
 };
 
 const errorState = {

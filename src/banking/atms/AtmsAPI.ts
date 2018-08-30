@@ -1,4 +1,4 @@
-export async function fetchAtmData(url) {
+export async function fetchAtmData(url: string) {
   // when running locally we need to proxy the requests through our local server
   if (window.location.hostname === 'localhost') {
     url = 'api/?url=' + url;

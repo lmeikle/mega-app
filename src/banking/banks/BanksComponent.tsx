@@ -1,19 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
+import { BankProps } from './BanksPropTypes';
 import logo from './icon.svg';
 import './Banks.css';
-
-//type Props = {
-//  name: string,
-//  url: string
-//};
 
 /**
  * Stateless component which renders a single Bank component.
  * Clicking on it will show a list of closest ATM's for the selected bank.
  */
-const BanksComponent = ({ name, url }) => (
+const BanksComponent = ({ name, url }: BankProps) => (
   <Link to={{ pathname: '/banking/atms', state: { name, url } }}>
     <div className="banks-item">
       <img src={logo} className="banks-logo" alt="logo" />
@@ -22,7 +18,5 @@ const BanksComponent = ({ name, url }) => (
     </div>
   </Link>
 );
-
-BanksComponent.defaultProps = {};
 
 export default BanksComponent;

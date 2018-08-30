@@ -1,5 +1,5 @@
 import banks from '../BanksReducer';
-import BanksActions from '../BanksActions';
+import * as BanksActions from '../BanksActions';
 
 const initialState = {
   isFetching: true,
@@ -38,7 +38,7 @@ describe('BanksReducer', () => {
       banks(undefined, {
         type: BanksActions.GET_BANKS_SUCCESS,
         payload: {
-          response: [
+          data: [
             {
               name: 'Barclays Bank',
               brands: ['Barclays Bank'],

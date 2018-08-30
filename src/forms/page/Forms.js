@@ -10,7 +10,7 @@ import './Forms.css';
 
 class Forms extends Component {
   submit = inputs => {
-    if (['lmeikle34'].includes(inputs.username)) {
+    if (['lmeikle'].includes(inputs.username)) {
       throw new SubmissionError({
         username: 'Username already taken'
       });

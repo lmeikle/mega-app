@@ -1,4 +1,4 @@
-import BanksActions from '../BanksActions';
+import * as BanksActions from '../BanksActions';
 
 describe('BanksActions', () => {
   test('should create an action to get banks', () => {
@@ -16,14 +16,14 @@ describe('BanksActions', () => {
   });
 
   test('should create an action to say that get banks was successful', () => {
-    const response = {};
+    const data = [];
     const expectedAction = {
       type: BanksActions.GET_BANKS_SUCCESS,
       payload: {
-        response
+        data
       }
     };
-    expect(BanksActions.getBanksSuccess(response)).toEqual(expectedAction);
+    expect(BanksActions.getBanksSuccess(data)).toEqual(expectedAction);
   });
 
   test('should create an action to say that get banks failed', () => {

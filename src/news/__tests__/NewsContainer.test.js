@@ -7,8 +7,7 @@ import mockResponse2 from './mockResponse2.json';
 
 const initialState = {
   totalResults: 0,
-  headlines: [],
-  error: null
+  headlines: []
 };
 
 const readyState = {

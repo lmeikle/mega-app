@@ -1,11 +1,12 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
+import { StoreStateProps } from '../../index';
 import { fetchBanksWithAtmAPIData } from './BanksAPI';
 import { getBanksWithAtmAPI } from './BanksSelectors';
-import BanksActions from './BanksActions';
+import * as BanksActions from './BanksActions';
 
 export function* getBanksAsync() {
   try {
-    let banksWithAtmAPI = yield select(state => getBanksWithAtmAPI(state));
+    let banksWithAtmAPI = yield select((state: StoreStateProps) => getBanksWithAtmAPI(state));
     if (banksWithAtmAPI && banksWithAtmAPI.length > 0) {
       return;
     }

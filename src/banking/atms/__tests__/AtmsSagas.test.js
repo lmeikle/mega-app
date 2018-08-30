@@ -1,6 +1,6 @@
 import { runSaga } from 'redux-saga';
 import { call, put, select, takeLatest } from 'redux-saga/effects';
-import AtmsActions from '../AtmsActions';
+import * as AtmsActions from '../AtmsActions';
 import * as AtmsAPI from '../AtmsAPI';
 import { getAtmsAsync } from '../AtmsSagas';
 import * as AtmsSelectors from '../AtmsSelectors';

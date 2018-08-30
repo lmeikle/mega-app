@@ -1,39 +1,38 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bool, func, string } from 'prop-types';
+import { connect, DispatchProp } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 import { calculateDistance } from '@lmeikle/my-mono-repo-to-single-package';
 import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
-import { getAtms, getError, getName, isFetching } from './AtmsSelectors';
+import { StoreStateProps } from '../../index';
+import { getAtms, getErrorMessage, getName, isFetching } from './AtmsSelectors';
 import AtmsComponent from './AtmsComponent';
-import AtmsActions from './AtmsActions';
-import { atmsType } from './AtmsPropTypes';
+import * as AtmsActions from './AtmsActions';
+import { AtmProps } from './AtmsPropTypes';
 import getGeolocation from '../../shared/utils/getGeolocation';
+
+type MatchParams = {};
+interface IProps extends DispatchProp, RouteComponentProps<MatchParams> {
+  atms: Array<AtmProps>;
+  name?: string;
+  errorMessage?: string;
+  isFetching: boolean;
+}
+
+interface IState {
+  geolocation?: object;
+}
 
 /**
  * Renders the list of nearest atms for the selected bank
  */
-export class AtmsContainer extends Component {
-  constructor(props) {
+export class AtmsContainer extends Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
 
     this.state = {
-      geolocation: null
+      geolocation: undefined
     };
   }
-
-  static propTypes = {
-    atms: atmsType,
-    name: string,
-    error: string,
-    isFetching: bool.isRequired,
-    dispatch: func.isRequired
-  };
-
-  static defaultProps = {
-    atms: null,
-    name: null,
-    error: null
-  };
 
   static get NEAREST_ATM_QUANTITY() {
     return 10;
@@ -55,15 +54,15 @@ export class AtmsContainer extends Component {
     this.props.history.replace('/banking');
   }
 
-  static findNearestATMs(geolocation, atms, size) {
+  static findNearestATMs(geolocation: any, atms: Array<AtmProps>, size: number) {
     if (atms && geolocation) {
-      let atmsWithDistance = atms.map(atm => ({
+      let atmsWithDistance = atms.map((atm: AtmProps) => ({
         ...atm,
         distance: calculateDistance(
           geolocation.coords.latitude,
           geolocation.coords.longitude,
-          parseFloat(atm.coords.Latitude, 10),
-          parseFloat(atm.coords.Longitude, 10)
+          parseFloat(atm.coords.Latitude),
+          parseFloat(atm.coords.Longitude)
         )
       }));
 
@@ -80,13 +79,13 @@ export class AtmsContainer extends Component {
   }
 
   render() {
-    const { name, atms, error, isFetching } = this.props;
+    const { name, atms, errorMessage, isFetching } = this.props;
     const { geolocation } = this.state;
 
-    if (error) {
+    if (errorMessage) {
       return (
         <div className="errorMessage">
-          Failed to find nearest {name} ATM's due to: {error.toString()}
+          Failed to find nearest {name} ATM's due to: {errorMessage}
         </div>
       );
     }
@@ -102,7 +101,7 @@ export class AtmsContainer extends Component {
         <div>
           The {AtmsContainer.NEAREST_ATM_QUANTITY} nearest {name} ATM's are:
         </div>
-        {nearestAtms.map(atm => (
+        {nearestAtms.map((atm: AtmProps) => (
           <AtmsComponent key={atm.identification} {...atm} />
         ))}
       </div>
@@ -110,11 +109,11 @@ export class AtmsContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: StoreStateProps) => {
   return {
     atms: getAtms(state),
     name: getName(state),
-    error: getError(state),
+    errorMessage: getErrorMessage(state),
     isFetching: isFetching(state)
   };
 };

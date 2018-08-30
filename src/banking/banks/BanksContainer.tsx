@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, DispatchProp } from 'react-redux';
 import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
+import { StoreStateProps } from '../../index';
 import { getBanksWithAtmAPI, isFetching } from './BanksSelectors';
-import BanksActions from './BanksActions';
+import * as BanksActions from './BanksActions';
 import BanksComponent from './BanksComponent';
-//import { BanksWithAtmAPI } from './BanksPropTypes';
+import { BankProps } from './BanksPropTypes';
 
-//type Props = {
-//  banksWithAtmAPI: BanksWithAtmAPI,
-//  isFetching: boolean,
-//  dispatch: Function
-//};
+interface Props extends DispatchProp {
+  banksWithAtmAPI: Array<BankProps>;
+  isFetching: boolean;
+}
 
 /**
  * Renders a list of banks listed in the that have an ATM API
  */
-export class BanksContainer extends Component {
+export class BanksContainer extends Component<Props, object> {
   static defaultProps = {
     banksWithAtmAPI: []
   };
@@ -42,7 +42,7 @@ export class BanksContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: StoreStateProps) => {
   return {
     banksWithAtmAPI: getBanksWithAtmAPI(state),
     isFetching: isFetching(state)

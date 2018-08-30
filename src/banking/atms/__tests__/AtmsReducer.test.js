@@ -1,26 +1,24 @@
 import atms from '../AtmsReducer';
-import AtmsActions from '../AtmsActions';
+import * as AtmsActions from '../AtmsActions';
 import mocksAtmsResponse from './mockAtmsResponse.json';
 
 const initialState = {
   isFetching: true,
-  geolocation: null,
-  name: null,
-  url: null,
-  atmsCache: {},
-  error: null
+  url: '',
+  atmsCache: {}
 };
 
 const requestedState = {
   ...initialState,
   name: 'Barlays',
-  url: 'http://www.example.com'
+  url: 'http://www.example.com',
+  errorMessage: ''
 };
 
 const failedState = {
   ...initialState,
   isFetching: false,
-  error: 'something went wrong'
+  errorMessage: 'Error: something went wrong'
 };
 
 describe('AtmsReducer', () => {
@@ -66,7 +64,7 @@ describe('AtmsReducer', () => {
       atms(undefined, {
         type: AtmsActions.GET_ATMS_FAILED,
         payload: {
-          error: 'something went wrong'
+          error: new Error('something went wrong')
         }
       })
     ).toEqual(failedState);
@@ -75,7 +73,7 @@ describe('AtmsReducer', () => {
       atms(initialState, {
         type: AtmsActions.GET_ATMS_FAILED,
         payload: {
-          error: 'something went wrong'
+          error: new Error('something went wrong')
         }
       })
     ).toEqual(failedState);
