@@ -35,4 +35,7 @@ if (argv.indexOf('--coverage') >= 0 || argv.indexOf('--all') >= 0) {
   process.env.NODE_ENV = 'test';
 }
 
+//argv.push('--runInBand');
+//process.env.NODE_ENV = 'debug';
+
 jest.run(argv);

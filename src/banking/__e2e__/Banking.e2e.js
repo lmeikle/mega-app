@@ -57,20 +57,24 @@ describe('Banking', () => {
     expect(items.length).toBeGreaterThan(0);
   });
 
-  test('renders list of nearest atms', async () => {
-    const items = await page.$$('.banks-container a');
+  test(
+    'renders list of nearest atms',
+    async () => {
+      const items = await page.$$('.banks-container a');
 
-    const navigationPromise = page.waitForNavigation();
-    await items[1].tap();
-    await navigationPromise; // The navigationPromise resolves after navigation has finished
+      const navigationPromise = page.waitForNavigation();
+      await items[1].tap();
+      await navigationPromise; // The navigationPromise resolves after navigation has finished
 
-    await page.waitForSelector('.atms-container');
-    const atmItems = await page.$$('.atms-container a');
-    expect(atmItems.length).toBeGreaterThan(0);
+      await page.waitForSelector('.atms-container');
+      const atmItems = await page.$$('.atms-container a');
+      expect(atmItems.length).toBeGreaterThan(0);
 
-    const errorMessage = await page.$$('.errorMessage');
-    expect(errorMessage.length).toBe(0);
-  });
+      const errorMessage = await page.$$('.errorMessage');
+      expect(errorMessage.length).toBe(0);
+    },
+    10000
+  );
 
   test('shows error message on atms fetch failure', async () => {
     await page.setRequestInterception(true);

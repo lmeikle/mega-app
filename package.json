@@ -158,7 +158,8 @@
       "src/reactplayground/fruitautocomplete/**/*.{js,jsx,ts,tsx}",
       "src/misc/commentfeed/**/*.{js,jsx,ts,tsx}",
       "src/shared/**/*.{js,jsx,ts,tsx}",
-      "!src/*.{js,jsx,ts,tsx}"
+      "!src/*.{js,jsx,ts,tsx}",
+      "!src/**/__e2e__/*.{js,jsx,ts,tsx}"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
