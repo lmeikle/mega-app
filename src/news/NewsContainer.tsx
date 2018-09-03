@@ -22,13 +22,10 @@ export type IHeadLineProps = {
  * Renders a list of top news headlines
  */
 class NewsContainer extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props);
-    this.state = {
-      totalResults: 0,
-      headlines: []
-    };
-  }
+  state: IState = {
+    totalResults: 0,
+    headlines: []
+  };
 
   static get PAGE_SIZE() {
     return 5;
