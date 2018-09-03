@@ -26,11 +26,11 @@ class CourseSignupContainer extends Component {
     fieldErrors: {}
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.fetchPeople();
   }
 
-  componentWillReceiveProps(update) {
+  UNSAFE_componentWillReceiveProps(update) {
     this.setState({ fields: update.fields });
   }
 
@@ -102,11 +102,7 @@ class CourseSignupContainer extends Component {
 
           <br />
 
-          <CourseSelectContainer
-            department={this.state.fields.department}
-            course={this.state.fields.course}
-            onChange={this.onInputChange}
-          />
+          <CourseSelectContainer department={this.state.fields.department} course={this.state.fields.course} onChange={this.onInputChange} />
 
           <br />
 
@@ -153,4 +149,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CourseSignupContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CourseSignupContainer);

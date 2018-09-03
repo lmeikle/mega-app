@@ -16,7 +16,7 @@ class CourseSignupContainerFormik extends Component {
     onSubmit: PropTypes.func.isRequired
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchPeople();
   }
 

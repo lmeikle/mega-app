@@ -23,7 +23,7 @@ class CourseSelectContainer extends Component {
     _loading: false
   };
 
-  componentWillReceiveProps(update) {
+  UNSAFE_componentWillReceiveProps(update) {
     this.setState({
       department: update.department,
       course: update.course

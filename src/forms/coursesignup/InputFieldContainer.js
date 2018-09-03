@@ -16,7 +16,7 @@ class InputFieldContainer extends Component {
     error: false
   };
 
-  componentWillReceiveProps(update) {
+  UNSAFE_componentWillReceiveProps(update) {
     this.setState({ value: update.value });
   }
 

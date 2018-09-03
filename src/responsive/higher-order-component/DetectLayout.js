@@ -17,7 +17,7 @@ export default function DetectLayout(WrappedComponent) {
       };
     }
 
-    componentWillMount() {
+    componentDidMount() {
       window.addEventListener('resize', this._handleResize);
     }
 
