@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Dispatch } from 'redux';
 import { connect, DispatchProp } from 'react-redux';
 import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
 import { StoreStateProps } from '../../index';
@@ -10,6 +11,7 @@ import { BankProps } from './BanksPropTypes';
 interface Props extends DispatchProp {
   banksWithAtmAPI: Array<BankProps>;
   isFetching: boolean;
+  getBanks: () => void;
 }
 
 /**
@@ -21,7 +23,7 @@ export class BanksContainer extends Component<Props, object> {
   };
 
   componentDidMount() {
-    this.props.dispatch(BanksActions.getBanks());
+    this.props.getBanks();
   }
 
   render() {
@@ -49,4 +51,13 @@ const mapStateToProps = (state: StoreStateProps) => {
   };
 };
 
-export default connect(mapStateToProps)(BanksContainer);
+export function mapDispatchToProps(dispatch: Dispatch<BanksActions.BanksActionsProps>) {
+  return {
+    getBanks: () => dispatch(BanksActions.getBanks())
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BanksContainer);

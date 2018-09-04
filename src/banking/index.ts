@@ -12,7 +12,7 @@ export interface BankingStoreProps {
   banks: BanksStoreProps;
 }
 
-export const banking = combineReducers({
+export const banking = combineReducers<BankingStoreProps>({
   atms,
   banks
 });

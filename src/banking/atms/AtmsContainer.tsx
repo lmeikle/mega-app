@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Dispatch } from 'redux';
 import { connect, DispatchProp } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { calculateDistance } from '@lmeikle/my-mono-repo-to-single-package';
@@ -16,6 +17,7 @@ interface IProps extends DispatchProp, RouteComponentProps<MatchParams> {
   name?: string;
   errorMessage?: string;
   isFetching: boolean;
+  getAtms: (name: string, url: string) => void;
 }
 
 interface IState {
@@ -44,7 +46,7 @@ export class AtmsContainer extends Component<IProps, IState> {
       if (url) {
         getGeolocation().then(geolocation => this.setState({ geolocation }));
 
-        this.props.dispatch(AtmsActions.getAtms(name, url));
+        this.props.getAtms(name, url);
 
         return;
       }
@@ -118,4 +120,13 @@ const mapStateToProps = (state: StoreStateProps) => {
   };
 };
 
-export default connect(mapStateToProps)(AtmsContainer);
+export function mapDispatchToProps(dispatch: Dispatch<AtmsActions.AtmsActionsProps>) {
+  return {
+    getAtms: (name: string, url: string) => dispatch(AtmsActions.getAtms(name, url))
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AtmsContainer);
