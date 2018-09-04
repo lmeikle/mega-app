@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import { all } from 'redux-saga/effects';
 
 import atms, { AtmsStoreProps } from './atms/AtmsReducer';
-import banks, { BanksStoreProps } from './banks/BanksReducer';
+import { banks } from './banks/BanksReducer';
+import { BanksStoreProps } from './banks/BanksTypes';
 
 import { watchGetBanks } from './banks/BanksSagas';
 import { watchGetAtms } from './atms/AtmsSagas';

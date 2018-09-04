@@ -1,6 +1,6 @@
 import { runSaga } from 'redux-saga';
 import { call, put, select, takeLatest } from 'redux-saga/effects';
-import * as BanksActions from '../BanksActions';
+import { BanksActionTypes } from '../BanksTypes';
 import * as BanksAPI from '../BanksAPI';
 import { getBanksAsync } from '../BanksSagas';
 import * as BanksSelectors from '../BanksSelectors';
@@ -21,8 +21,8 @@ describe('BanksSagas', () => {
     ).done;
 
     const expectedActions = [
-      { type: BanksActions.GET_BANKS_REQUESTED },
-      { type: BanksActions.GET_BANKS_SUCCESS, payload: { data: [{ some: 'value' }] } }
+      { type: BanksActionTypes.GET_BANKS_REQUESTED },
+      { type: BanksActionTypes.GET_BANKS_SUCCESS, payload: { data: [{ some: 'value' }] } }
     ];
 
     expect(dispatched).toEqual(expectedActions);
@@ -47,7 +47,7 @@ describe('BanksSagas', () => {
       getBanksAsync
     ).done;
 
-    const expectedActions = [{ type: BanksActions.GET_BANKS_REQUESTED }, { type: BanksActions.GET_BANKS_FAILED, payload: { error: err } }];
+    const expectedActions = [{ type: BanksActionTypes.GET_BANKS_REQUESTED }, { type: BanksActionTypes.GET_BANKS_FAILED, payload: { error: err } }];
 
     expect(dispatched).toEqual(expectedActions);
 

@@ -6,6 +6,7 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { shallow, mount } from 'enzyme';
 import Banking from '../page/Banking';
+import { BanksActionTypes } from '../banks/BanksTypes';
 import { banking, bankingSagas } from '../';
 import mocksAtmsResponse from '../atms/__tests__/mockAtmsResponse.json';
 
@@ -180,7 +181,7 @@ describe('Banking', () => {
 
     await flushPromises();
 
-    expect(store.getActions()[0].type).toEqual('banks/GET_BANKS');
+    expect(store.getActions()[0].type).toEqual(BanksActionTypes.GET_BANKS);
     expect(store.getActions()[1].type).toEqual('atms/GET_ATMS');
     expect(store.getActions()[2].type).toEqual('atms/GET_ATMS_REQUESTED');
     expect(store.getActions()[3].type).toEqual('atms/GET_ATMS_SUCCESS');

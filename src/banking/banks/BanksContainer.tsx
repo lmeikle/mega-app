@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
 import { Dispatch } from 'redux';
-import { connect, DispatchProp } from 'react-redux';
+import { connect } from 'react-redux';
 import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
-import { StoreStateProps } from '../../index';
+import { StoreStateProps } from '../../configureStore';
 import { getBanksWithAtmAPI, isFetching } from './BanksSelectors';
-import * as BanksActions from './BanksActions';
+import { getBanks } from './BanksActions';
 import BanksComponent from './BanksComponent';
-import { BankProps } from './BanksPropTypes';
+import { BankProps, BanksActionsProps } from './BanksTypes';
 
-interface Props extends DispatchProp {
+// Separate state props + dispatch props to their own interfaces.
+// Props passed from mapStateToProps
+type PropsFromState = {
   banksWithAtmAPI: Array<BankProps>;
   isFetching: boolean;
+};
+
+// Props passed from mapDispatchToProps
+type PropsFromDispatch = {
   getBanks: () => void;
-}
+};
+
+// Component-specific props.
+type OtherProps = {};
+
+// Combine both state + dispatch props - as well as any props we want to pass - in a union type.
+type Props = PropsFromState & PropsFromDispatch & OtherProps;
 
 /**
  * Renders a list of banks listed in the that have an ATM API
@@ -51,9 +63,9 @@ const mapStateToProps = (state: StoreStateProps) => {
   };
 };
 
-export function mapDispatchToProps(dispatch: Dispatch<BanksActions.BanksActionsProps>) {
+export function mapDispatchToProps(dispatch: Dispatch<BanksActionsProps>) {
   return {
-    getBanks: () => dispatch(BanksActions.getBanks())
+    getBanks: () => dispatch(getBanks())
   };
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
-import { BankProps } from './BanksPropTypes';
+import { BankProps } from './BanksTypes';
 import logo from './icon.svg';
 import './Banks.css';
 

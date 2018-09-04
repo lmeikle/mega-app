@@ -4,7 +4,7 @@ import { connect, DispatchProp } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { calculateDistance } from '@lmeikle/my-mono-repo-to-single-package';
 import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
-import { StoreStateProps } from '../../index';
+import { StoreStateProps } from '../../configureStore';
 import { getAtms, getErrorMessage, getName, isFetching } from './AtmsSelectors';
 import AtmsComponent from './AtmsComponent';
 import * as AtmsActions from './AtmsActions';

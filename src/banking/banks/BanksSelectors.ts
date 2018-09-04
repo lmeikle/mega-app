@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { StoreStateProps } from '../../index';
+import { StoreStateProps } from '../../configureStore';
 
 const banksState = (state: StoreStateProps) => state.banking.banks;
 

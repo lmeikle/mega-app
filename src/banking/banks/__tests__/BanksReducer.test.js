@@ -1,5 +1,5 @@
-import banks from '../BanksReducer';
-import * as BanksActions from '../BanksActions';
+import { banks } from '../BanksReducer';
+import { BanksActionTypes } from '../BanksTypes';
 
 const initialState = {
   isFetching: true,
@@ -19,7 +19,7 @@ describe('BanksReducer', () => {
   test('should handle GET_BANKS_REQUESTED', () => {
     expect(
       banks(undefined, {
-        type: BanksActions.GET_BANKS_REQUESTED
+        type: BanksActionTypes.GET_BANKS_REQUESTED
       })
     ).toEqual(initialState);
 
@@ -27,7 +27,7 @@ describe('BanksReducer', () => {
       banks(
         { someState: 'whatever' },
         {
-          type: BanksActions.GET_BANKS_REQUESTED
+          type: BanksActionTypes.GET_BANKS_REQUESTED
         }
       )
     ).toEqual(initialState);
@@ -36,7 +36,7 @@ describe('BanksReducer', () => {
   test('should handle GET_BANKS_SUCCESS', () => {
     expect(
       banks(undefined, {
-        type: BanksActions.GET_BANKS_SUCCESS,
+        type: BanksActionTypes.GET_BANKS_SUCCESS,
         payload: {
           data: [
             {
@@ -69,7 +69,7 @@ describe('BanksReducer', () => {
   test('should handle GET_BANKS_FAILED', () => {
     expect(
       banks(undefined, {
-        type: BanksActions.GET_BANKS_FAILED
+        type: BanksActionTypes.GET_BANKS_FAILED
       })
     ).toEqual(failedState);
 
@@ -77,7 +77,7 @@ describe('BanksReducer', () => {
       banks(
         { someState: 'whatever' },
         {
-          type: BanksActions.GET_BANKS_FAILED
+          type: BanksActionTypes.GET_BANKS_FAILED
         }
       )
     ).toEqual(failedState);

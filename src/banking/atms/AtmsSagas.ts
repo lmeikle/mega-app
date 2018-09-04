@@ -1,5 +1,5 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
-import { StoreStateProps } from '../../index';
+import { StoreStateProps } from '../../configureStore';
 import { GetAtmsProps, getAtmsRequested, getAtmsSuccess, getAtmsFailed, GET_ATMS } from './AtmsActions';
 import { getAtmsCache } from './AtmsSelectors';
 import { fetchAtmData } from './AtmsAPI';

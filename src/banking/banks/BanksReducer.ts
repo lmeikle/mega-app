@@ -1,24 +1,20 @@
-import { BanksActionsProps, GET_BANKS_REQUESTED, GET_BANKS_SUCCESS, GET_BANKS_FAILED } from './BanksActions';
-import { BankProps } from './BanksPropTypes';
+import { Reducer } from 'redux';
+import { BanksActionTypes, BanksActionsProps, BanksStoreProps } from './BanksTypes';
 
-export type BanksStoreProps = {
-  isFetching: boolean;
-  banksWithAtmAPI: Array<BankProps>;
-};
-
-const BANKS_INITIAL_STATE = {
+const BANKS_INITIAL_STATE: BanksStoreProps = {
   isFetching: true,
   banksWithAtmAPI: []
 };
 
-export default function banks(state: BanksStoreProps = BANKS_INITIAL_STATE, action: BanksActionsProps) {
+//export default function banks
+const banksReducer: Reducer<BanksStoreProps> = (state: BanksStoreProps = BANKS_INITIAL_STATE, action: BanksActionsProps) => {
   switch (action.type) {
-    case GET_BANKS_REQUESTED:
+    case BanksActionTypes.GET_BANKS_REQUESTED:
       return {
         isFetching: true,
         banksWithAtmAPI: []
       };
-    case GET_BANKS_SUCCESS: {
+    case BanksActionTypes.GET_BANKS_SUCCESS: {
       const { data } = action.payload;
 
       let banksWithAtmAPI = [];
@@ -36,7 +32,7 @@ export default function banks(state: BanksStoreProps = BANKS_INITIAL_STATE, acti
         banksWithAtmAPI
       };
     }
-    case GET_BANKS_FAILED:
+    case BanksActionTypes.GET_BANKS_FAILED:
       return {
         isFetching: false,
         banksWithAtmAPI: []
@@ -44,4 +40,8 @@ export default function banks(state: BanksStoreProps = BANKS_INITIAL_STATE, acti
     default:
       return state;
   }
-}
+};
+
+// Instead of using default export, we use named exports. That way we can group these exports
+// inside the `index.js` folder.
+export { banksReducer as banks };

@@ -1,8 +1,9 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
-import { StoreStateProps } from '../../index';
+import { StoreStateProps } from '../../configureStore';
 import { fetchBanksWithAtmAPIData } from './BanksAPI';
 import { getBanksWithAtmAPI } from './BanksSelectors';
-import * as BanksActions from './BanksActions';
+import { getBanksRequested, getBanksSuccess, getBanksFailed } from './BanksActions';
+import { BanksActionTypes } from './BanksTypes';
 
 export function* getBanksAsync() {
   try {
@@ -11,14 +12,14 @@ export function* getBanksAsync() {
       return;
     }
 
-    yield put(BanksActions.getBanksRequested());
+    yield put(getBanksRequested());
     const response = yield call(fetchBanksWithAtmAPIData);
-    yield put(BanksActions.getBanksSuccess(response));
+    yield put(getBanksSuccess(response));
   } catch (e) {
-    yield put(BanksActions.getBanksFailed(e));
+    yield put(getBanksFailed(e));
   }
 }
 
 export function* watchGetBanks() {
-  yield takeLatest(BanksActions.GET_BANKS, getBanksAsync);
+  yield takeLatest(BanksActionTypes.GET_BANKS, getBanksAsync);
 }
