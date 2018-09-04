@@ -16,8 +16,10 @@ class InputFieldContainer extends Component {
     error: false
   };
 
-  UNSAFE_componentWillReceiveProps(update) {
-    this.setState({ value: update.value });
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.state.value !== this.props.value) {
+      this.setState({ value: this.props.value });
+    }
   }
 
   onChange = evt => {
@@ -32,11 +34,13 @@ class InputFieldContainer extends Component {
 
   onKeyDown = evt => {
     let capsLock = false;
-    if (evt.nativeEvent.getModifierState('CapsLock')) {
-      capsLock = true;
-    }
+    if (evt.nativeEvent instanceof KeyboardEvent) {
+      if (evt.nativeEvent.getModifierState('CapsLock')) {
+        capsLock = true;
+      }
 
-    this.setState({ capsLock });
+      this.setState({ capsLock });
+    }
   };
 
   render() {

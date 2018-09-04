@@ -23,11 +23,13 @@ class CourseSelectContainer extends Component {
     _loading: false
   };
 
-  UNSAFE_componentWillReceiveProps(update) {
-    this.setState({
-      department: update.department,
-      course: update.course
-    });
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.state.department !== this.props.department || this.state.course !== this.props.course) {
+      this.setState({
+        department: this.props.department,
+        course: this.props.course
+      });
+    }
   }
 
   onSelectDepartment = evt => {

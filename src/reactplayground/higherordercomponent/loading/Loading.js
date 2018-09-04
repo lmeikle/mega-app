@@ -20,8 +20,8 @@ const Loading = loadingProp => WrappedComponent => {
       this.startTimer = Date.now();
     }
 
-    UNSAFE_componentWillUpdate(nextProps) {
-      if (!isEmpty(nextProps[loadingProp])) {
+    componentDidUpdate(prevProps, prevState, snapshot) {
+      if (!isEmpty(this.props[loadingProp])) {
         this.endTimer = Date.now();
       }
     }

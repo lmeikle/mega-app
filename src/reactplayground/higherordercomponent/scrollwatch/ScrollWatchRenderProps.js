@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 class ScrollWatchRenderProps extends Component {
   state = { x: 0, y: 0 };
 
-  propTypes = { render: PropTypes.func.isRequired };
+  static propTypes = { render: PropTypes.func.isRequired };
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);

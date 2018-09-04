@@ -26,12 +26,14 @@ class CourseSignupContainer extends Component {
     fieldErrors: {}
   };
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     this.props.fetchPeople();
   }
 
-  UNSAFE_componentWillReceiveProps(update) {
-    this.setState({ fields: update.fields });
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.state.fields !== this.props.fields) {
+      this.setState({ fields: this.props.fields });
+    }
   }
 
   onFormSubmit = evt => {
@@ -41,7 +43,7 @@ class CourseSignupContainer extends Component {
 
     if (this.validate()) return;
 
-    this.props.onSubmit([...this.props.people, person]);
+    this.props.onSubmit(person);
   };
 
   onInputChange = ({ name, value, error }) => {
