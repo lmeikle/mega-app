@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import { AtmProps } from './AtmsPropTypes';
 import './Atms.css';
 
@@ -6,7 +6,7 @@ import './Atms.css';
  * Stateless component which renders a single ATM component.
  * Clicking on it will launch google maps using the ATM's coordinates
  */
-const AtmsComponent = ({ name, countryCode, address, coords, distance = 0, numOfAtms }: AtmProps) => {
+const AtmsComponent: SFC<AtmProps> = ({ name, countryCode, address, coords, distance = 0, numOfAtms }) => {
   const googleMapsUrl = `http://www.google.com/maps/place/${coords.Latitude},${coords.Longitude}`;
   return (
     <a href={googleMapsUrl} target="_blank">
