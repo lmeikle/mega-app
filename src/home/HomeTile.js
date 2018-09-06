@@ -20,13 +20,21 @@ const HomeTileWrapper = styled.div`
   padding: 5px;
   margin: 10px;
   background-color: #fafafa;
-  border: 2px solid #002742;
+  border: 2px solid ${props => props.theme.primary};
   border-radius: 10px;
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center 10px;
   font-weight: bold;
   font-size: 20px;
+
+  &:hover {
+    background-color: #ffffe0;
+  }
+
+  div {
+    color: ${props => props.theme.primary};
+  }
 
   ${props => {
     switch (props.className) {

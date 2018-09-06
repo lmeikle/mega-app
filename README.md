@@ -11,7 +11,7 @@ The app will launch on http://localhost:3000
 - Selectors
 - Cached API responses
   -redux-forms
-- Styled Components (not sure if I like it yet, also need to eject to be able to get readable class names)
+- Styled Components
 - Semantic UI React
 - StoryBook JS
 - SlateJS/DraftJS
