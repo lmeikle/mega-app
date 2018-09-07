@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import HomeTile from './HomeTile';
+import mega_logo from './images/mega_logo.svg';
+
+const HomeLogo = styled.img`
+  height: 50px;
+`;
 
 const HomeContainer = styled.div`
   display: flex;
@@ -28,6 +33,7 @@ class Home extends Component {
     let { config } = this.props;
     return (
       <HomeContainer>
+        <HomeLogo src={mega_logo} />
         <HomeTitle>What would you like to do today?</HomeTitle>
         <HomeTilesWrapper>
           {config &&
