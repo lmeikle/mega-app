@@ -50,7 +50,7 @@ export const MegaAppButton = styled.button`
     `};
 `;
 
-export const MegaAppBigButton = MegaAppButton.extend`
+export const MegaAppBigButton = styled(MegaAppButton)`
   height: 3rem;
   font-size: 2rem;
   width: 40vw;

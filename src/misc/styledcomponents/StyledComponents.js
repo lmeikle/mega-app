@@ -6,6 +6,11 @@ const Underline = styled.span`
   border-bottom: 4px solid ${props => props.theme.secondary};
 `;
 
+const PasswordInput = styled.input.attrs({
+  // Every <PasswordInput /> should be type="password"
+  type: 'password'
+})``;
+
 class StyledComponents extends Component {
   render() {
     return (
@@ -20,6 +25,9 @@ class StyledComponents extends Component {
         <br />
         <br />
         <Underline>Some underlined text</Underline>
+        <br />
+        <br />
+        <PasswordInput aria-hidden="true" />
       </div>
     );
   }
