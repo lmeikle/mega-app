@@ -10,11 +10,9 @@ The app will launch on http://localhost:3000
 - Centralized Prop Types
 - Selectors
 - Cached API responses
-  -redux-forms
 - Styled Components
 - Semantic UI React
 - StoryBook JS
-- SlateJS/DraftJS
 
 # Typescript
 
@@ -81,7 +79,7 @@ The app will launch on http://localhost:3000
 
 # Testing
 
-- Jest, Enzyme, react-testing-library
+- Jest, Enzyme, react-testing-library, Jest Styled Components
 - Puppeteer, jest-image-snapshot
 - BackstopJS (Not part of Travis yet as need to get it running in a Docker container to avoid issues with different environments/machines.)
 

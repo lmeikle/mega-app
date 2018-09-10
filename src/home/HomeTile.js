@@ -37,26 +37,26 @@ const HomeTileWrapper = styled.div`
   }
 
   ${props => {
-    switch (props.className) {
-      case 'banking': {
+    switch (props.name) {
+      case 'Banking': {
         return bankingMixin;
       }
-      case 'forms': {
+      case 'Forms': {
         return formsMixin;
       }
-      case 'react-playground': {
+      case 'React Playground': {
         return reactPlaygroundMixin;
       }
-      case 'news': {
+      case 'News': {
         return newsMixin;
       }
-      case 'responsive': {
+      case 'Responsive': {
         return responsiveMixin;
       }
-      case 'misc': {
+      case 'Misc': {
         return miscMixin;
       }
-      case 'uitools': {
+      case 'UI Tools': {
         return uitoolsMixin;
       }
       default:
@@ -106,10 +106,10 @@ const uitoolsMixin = css`
   background-position: center 15px;
 `;
 
-const HomeTile = ({ path, name, className }) => {
+const HomeTile = ({ path, name }) => {
   return (
     <Link to={{ pathname: path }}>
-      <HomeTileWrapper className={`${className}`}>
+      <HomeTileWrapper name={name}>
         <div>{name}</div>
       </HomeTileWrapper>
     </Link>

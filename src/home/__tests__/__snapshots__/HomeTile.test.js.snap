@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeTile renders correctly 1`] = `
+Array [
+  .c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  margin: 10px;
+  background-color: #fafafa;
+  border: 2px solid #002742;
+  border-radius: 10px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center 10px;
+  font-weight: bold;
+  font-size: 20px;
+  background-image: url(banking.png);
+  background-size: 60%;
+  background-position: center 15px;
+}
+
+.c0:hover {
+  background-color: #ffffe0;
+}
+
+.c0 div {
+  color: #002742;
+}
+
+<div
+    className="c0"
+    name="Banking"
+  >
+    <div>
+      Banking
+    </div>
+  </div>,
+  <div>
+    Banking
+  </div>,
+]
+`;
