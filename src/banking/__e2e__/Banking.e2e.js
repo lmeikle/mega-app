@@ -92,7 +92,15 @@ describe('Banking', () => {
     await items[1].tap(); // use 1 as I know it doesnt fail
     await navigationPromise; // The navigationPromise resolves after navigation has finished
 
-    const errorMessage = await page.$eval('.errorMessage', e => e.innerHTML);
-    expect(errorMessage).toContain('Failed to find nearest');
+    await page.waitForSelector('.errorMessage');
+    const errorMessageElementHandle = await page.$('.errorMessage');
+
+    // we can get any property like below, or just pass the Element Handle to the the page evaluate function
+    //let errorMessageProperty = await errorMessageElementHandle.getProperty('innerText'); //.jsonValue();
+    //let errorTextValue = await errorMessageProperty.jsonValue();
+    //console.log('errorTextValue', errorTextValue);
+
+    let errorText = await page.evaluate(e => e.innerText, errorMessageElementHandle);
+    expect(errorText).toContain('Failed to find nearest');
   });
 });
