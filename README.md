@@ -83,7 +83,7 @@ The app will launch on http://localhost:3000
 
 - Jest, Enzyme, react-testing-library
 - Puppeteer, jest-image-snapshot
-- BackstopJS (Not part of Travis yet as need to get it running in a Docker container to avoid issues with different environments/machines.
+- BackstopJS (Not part of Travis yet as need to get it running in a Docker container to avoid issues with different environments/machines.)
 
 # Git Hooks using husky
 
