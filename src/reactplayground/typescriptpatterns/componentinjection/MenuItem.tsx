@@ -1,5 +1,5 @@
 import React, { SFC } from 'react';
-import { ToggleableComponentProps } from '../renderprops/toggleable';
+import { ToggleableComponentProps } from '../renderprops/Toggleable';
 
 type MenuItemProps = { title: string };
 
