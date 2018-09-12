@@ -10,6 +10,7 @@ import Regex from '../regex/Regex';
 import ReactIntl from '../reactintl/ReactIntl';
 import SemanticTheming from '../semantictheming/SemanticTheming';
 import StyledComponents from '../styledcomponents/StyledComponents';
+import Tree from '../treeview/Tree';
 import './Misc.css';
 
 class Misc extends Component {
@@ -27,6 +28,7 @@ class Misc extends Component {
           <Route path={`${this.props.match.url}/reactintl`} component={ReactIntl} />
           <Route path={`${this.props.match.url}/semantictheming`} component={SemanticTheming} />
           <Route path={`${this.props.match.url}/styledcomponents`} component={StyledComponents} />
+          <Route path={`${this.props.match.url}/treeview`} component={Tree} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -81,6 +83,11 @@ class Misc extends Component {
                   <Link to={`${this.props.match.url}/styledcomponents`}>
                     <div className="misc-item">
                       <div>Styled Components</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/treeview`}>
+                    <div className="misc-item">
+                      <div>Tree View</div>
                     </div>
                   </Link>
                 </div>
