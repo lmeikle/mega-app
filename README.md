@@ -79,7 +79,7 @@ The app will launch on http://localhost:3000
 
 # Testing
 
-- Jest, Enzyme, react-testing-library, Jest Styled Components
+- Jest, Enzyme, react-testing-library, jest-dom, Jest Styled Components
 - Puppeteer, jest-image-snapshot
 - BackstopJS (Not part of Travis yet as need to get it running in a Docker container to avoid issues with different environments/machines.)
 

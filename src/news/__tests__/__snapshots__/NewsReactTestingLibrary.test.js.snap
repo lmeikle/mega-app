@@ -1,0 +1,606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`News when mounted makes a fetch request and displays the results 1`] = `
+<div
+  class="news-container"
+>
+  <div
+    class="news-title"
+  >
+    News
+  </div>
+  <div
+    class="news-headlines-container"
+  >
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://ca.sports.yahoo.com/news/terence-crawford-shows-hes-level-one-sided-beatdown-jeff-horn-051253278.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Terence Crawford shows he's on a level all on his own with one-sided beatdown of Jeff Horn
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Yahoo.com
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.washingtonpost.com/world/european-leaders-are-outraged-by-trump-over-g-7-statement-but-theyre-not-surprised/2018/06/10/e7f54887-9022-4adb-9fb1-092c33cb3e91_story.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          European leaders are outraged by Trump over G-7 statement. But they're not surprised.
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          The Washington Post
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.cnn.com/2018/06/10/politics/putin-trump-us-russia-arms-intl/index.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Putin ready to meet Trump over arms race concerns
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          CNN
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.hindustantimes.com/india-news/sco-summit-live-pm-modi-meets-xi-jinping-at-welcome-ceremony-in-china-s-qingdao/story-Xb9qGSR9ol0kXvHJxeGmzL.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          SCO summit LIVE: PM Modi says connectivity with neighbouring nations top priority
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Hindustantimes.com
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="http://www.foxnews.com/us/2018/06/10/helicopter-plunges-into-wisconsin-river-killing-man.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Helicopter plunges into Wisconsin river, killing man
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Fox News
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="http://www.foxnews.com/us/2018/06/10/soldier-killed-in-somalia-idd-as-8-year-army-veteran-from-arizona.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Soldier killed in Somalia ID'd as 8-year Army veteran from Arizona
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Fox News
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="http://www.latimes.com/sports/more/la-sp-belmont-cherwa-20180609-story.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          The shadow of American Pharoah lingers over Justify's Triple Crown
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Latimes.com
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.bbc.com/news/uk-politics-44428115"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Leave.EU 'downplayed Russian links'
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Bbc.com
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://mmajunkie.com/2018/06/twitter-reacts-cm-punk-ugly-loss-mike-jackson-ufc-225"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Twitter reacts to CM Punk's ugly, bloody loss to Mike Jackson at UFC 225
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Mmajunkie.com
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.cnn.com/2018/06/09/us/ice-undocumented-immigrant-mayor-cuomo-letter/index.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          NYC pizza delivery man given emergency stay after immigration detention
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          CNN
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.gamespot.com/articles/e3-2018-ea-play-press-conference-shows-the-loot-bo/1100-6459554/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          E3 2018: EA Play Press Conference Shows The Loot Box Backlash Paid Off
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          10/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Gamespot.com
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://pagesix.com/2018/06/09/anthony-bourdain-was-regularly-suicidal-after-end-of-first-marriage/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Anthony Bourdain was 'regularly suicidal' after end of first marriage
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          09/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Pagesix.com
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="http://www.businessinsider.com/chinese-hackers-reportedly-stole-a-bunch-of-us-undersea-warfare-data-2018-6"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Chinese hackers reportedly stole a bunch of highly sensitive undersea warfare data from a US Navy contractor
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          09/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Business Insider
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.reuters.com/article/us-g7-summit/trump-torpedoes-g7-effort-to-ease-trade-spat-threatens-auto-tariffs-idUSKCN1J50H3"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Trump torpedoes G7 effort to ease trade spat, threatens auto tariffs
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          09/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Reuters
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.cbsnews.com/news/search-teams-find-body-of-woman-missing-in-suspected-alligator-attack-davie-florida/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Search teams find body of woman missing in suspected alligator attack
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          09/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          CBS News
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="http://www.ibtimes.com/mystery-biblical-kings-3000-year-old-sculpted-head-unearthed-2689112"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          Mystery Biblical King's 3000-Year-Old Sculpted Head Unearthed
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          09/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          Ibtimes.com
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.washingtonpost.com/world/national-security/in-charging-senate-staffer-and-seizing-reporters-records-justice-dept-ignites-debate-over-leak-crackdown/2018/06/08/6967e630-6b36-11e8-bf8c-f9ed2e672adf_story.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          In charging Senate staffer and seizing reporter's records, Justice Dept. ignites debate over leak crackdown
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          08/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          The Washington Post
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-headline"
+    >
+      <a
+        href="https://www.washingtonpost.com/powerpost/youve-handed-us-an-issue-democrats-pounce-on-trump-administrations-health-care-move/2018/06/08/643505f0-6b34-11e8-bea7-c8eb28bc52b1_story.html"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="news-headline-title"
+          data-testid="NewsHeadlineComponent_title"
+        >
+          'You've handed us an issue': Democrats pounce on Trump administration's health-care move
+        </div>
+      </a>
+      <div
+        class="news-headline-date-and-source-container"
+      >
+        <div
+          class="news-headline-date"
+        >
+          08/06/2018
+        </div>
+        <div
+          class="news-headline-source"
+        >
+          The Washington Post
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="news-show-more-button"
+  >
+    Show More
+  </div>
+  <div
+    class="news-powered-by"
+  >
+    <a
+      href="https://newsapi.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Powered by News API
+    </a>
+  </div>
+</div>
+`;
+
+exports[`NewsHeadlineComponent renders correctly 1`] = `
+<div
+  class="news-headline"
+>
+  <a
+    href="https://www.cnn.com/2018/06/10/politics/putin-trump-us-russia-arms-intl/index.html"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <div
+      class="news-headline-title"
+      data-testid="NewsHeadlineComponent_title"
+    >
+      Putin ready to meet Trump over arms race concerns
+    </div>
+  </a>
+  <div
+    class="news-headline-date-and-source-container"
+  >
+    <div
+      class="news-headline-date"
+    >
+      10/06/2018
+    </div>
+    <div
+      class="news-headline-source"
+    >
+      CNN
+    </div>
+  </div>
+</div>
+`;

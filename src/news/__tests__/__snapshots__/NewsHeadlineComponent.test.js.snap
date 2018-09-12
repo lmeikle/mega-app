@@ -29,6 +29,7 @@ ShallowWrapper {
         >
           <div
             className="news-headline-title"
+            data-testid="NewsHeadlineComponent_title"
           >
             Putin ready to meet Trump over arms race concerns
           </div>
@@ -59,6 +60,7 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="news-headline-title"
+            data-testid="NewsHeadlineComponent_title"
           >
             Putin ready to meet Trump over arms race concerns
           </div>,
@@ -74,6 +76,7 @@ ShallowWrapper {
           "props": Object {
             "children": "Putin ready to meet Trump over arms race concerns",
             "className": "news-headline-title",
+            "data-testid": "NewsHeadlineComponent_title",
           },
           "ref": null,
           "rendered": "Putin ready to meet Trump over arms race concerns",
@@ -146,6 +149,7 @@ ShallowWrapper {
           >
             <div
               className="news-headline-title"
+              data-testid="NewsHeadlineComponent_title"
             >
               Putin ready to meet Trump over arms race concerns
             </div>
@@ -176,6 +180,7 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="news-headline-title"
+              data-testid="NewsHeadlineComponent_title"
             >
               Putin ready to meet Trump over arms race concerns
             </div>,
@@ -191,6 +196,7 @@ ShallowWrapper {
             "props": Object {
               "children": "Putin ready to meet Trump over arms race concerns",
               "className": "news-headline-title",
+              "data-testid": "NewsHeadlineComponent_title",
             },
             "ref": null,
             "rendered": "Putin ready to meet Trump over arms race concerns",
