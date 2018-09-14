@@ -19,7 +19,7 @@ import './Misc.css';
 class Misc extends Component {
   render() {
     return (
-      <div>
+      <div style={{ overflow: 'auto', height: '100%' }}>
         <Switch>
           <Route path={`${this.props.match.url}/canvas`} component={Canvas} />
           <Route path={`${this.props.match.url}/commentfeed`} component={CommentFeedContainer} />
