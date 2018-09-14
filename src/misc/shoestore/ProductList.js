@@ -12,11 +12,14 @@ export const Product = ({ name, brand }) => {
 
 export default class ProductList extends Component {
   render() {
-    const { products, onProductSelect } = this.props;
+    const { products, onProductSelect, filter = '' } = this.props;
+
+    let filterRegex = new RegExp(filter.toLowerCase(), 'g');
+    let filteredProducts = products.filter(product => filterRegex.test(product.name.toLowerCase()));
 
     return (
       <div>
-        {products.map(product => (
+        {filteredProducts.map(product => (
           <div
             key={product.id}
             onClick={() => {
