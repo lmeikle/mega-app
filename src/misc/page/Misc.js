@@ -10,6 +10,7 @@ import Regex from '../regex/Regex';
 import ReactIntl from '../reactintl/ReactIntl';
 import SemanticTheming from '../semantictheming/SemanticTheming';
 import StyledComponents from '../styledcomponents/StyledComponents';
+import StyledComponentsDebuggable from '../styledcomponents/StyledComponentsDebuggable';
 import JokeGenerator from '../jokegenerator/JokeGenerator';
 import Tree from '../treeview/Tree';
 import ShoeStore from '../shoestore/ShoeStore';
@@ -30,6 +31,7 @@ class Misc extends Component {
           <Route path={`${this.props.match.url}/reactintl`} component={ReactIntl} />
           <Route path={`${this.props.match.url}/semantictheming`} component={SemanticTheming} />
           <Route path={`${this.props.match.url}/styledcomponents`} component={StyledComponents} />
+          <Route path={`${this.props.match.url}/styledcomponentsdebuggable`} component={StyledComponentsDebuggable} />
           <Route path={`${this.props.match.url}/treeview`} component={Tree} />
           <Route path={`${this.props.match.url}/jokegenerator`} component={JokeGenerator} />
           <Route path={`${this.props.match.url}/shoestore`} component={ShoeStore} />
@@ -87,6 +89,11 @@ class Misc extends Component {
                   <Link to={`${this.props.match.url}/styledcomponents`}>
                     <div className="misc-item">
                       <div>Styled Components</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/styledcomponentsdebuggable`}>
+                    <div className="misc-item">
+                      <div>Styled Components - Debuggable alternative</div>
                     </div>
                   </Link>
                   <Link to={`${this.props.match.url}/treeview`}>
