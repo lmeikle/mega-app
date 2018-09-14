@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 
-export const Button = styled('span')`
+export const Button = styled.span`
   cursor: pointer;
   color: ${props => (props.reversed ? (props.active ? 'white' : '#aaa') : props.active ? 'black' : '#ccc')};
 `;
@@ -13,7 +13,7 @@ export const Icon = styled(({ className, ...rest }) => {
   vertical-align: text-bottom;
 `;
 
-export const Menu = styled('div')`
+export const Menu = styled.div`
   & > * {
     display: inline-block;
   }

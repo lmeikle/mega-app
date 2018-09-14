@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Loadable from 'react-loadable';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { LoadingComponent } from '@lmeikle/my-mono-repo-to-single-package';
+import LoadingComponentV2 from '../shared/components/loading/LoadingComponentV2';
 import DetectLayout from '../responsive/higher-order-component/DetectLayout';
 import Home from '../home/Home';
 import SideMenu from '../sidemenu/SideMenu';
@@ -9,37 +9,37 @@ import './App.css';
 
 const Banking = Loadable({
   loader: () => import('../banking/page/Banking'),
-  loading: LoadingComponent
+  loading: LoadingComponentV2
 });
 
 const Forms = Loadable({
   loader: () => import('../forms/page/Forms'),
-  loading: LoadingComponent
+  loading: LoadingComponentV2
 });
 
 const ReactPlayground = Loadable({
   loader: () => import('../reactplayground/page/ReactPlayground'),
-  loading: LoadingComponent
+  loading: LoadingComponentV2
 });
 
 const News = Loadable({
   loader: () => import('../news/NewsContainer'),
-  loading: LoadingComponent
+  loading: LoadingComponentV2
 });
 
 const Responsive = Loadable({
   loader: () => import('../responsive/page/Responsive'),
-  loading: LoadingComponent
+  loading: LoadingComponentV2
 });
 
 const Misc = Loadable({
   loader: () => import('../misc/page/Misc'),
-  loading: LoadingComponent
+  loading: LoadingComponentV2
 });
 
 const UITools = Loadable({
   loader: () => import('../uitools/page/UITools'),
-  loading: LoadingComponent
+  loading: LoadingComponentV2
 });
 
 class App extends Component {
