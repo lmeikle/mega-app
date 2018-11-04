@@ -26,3 +26,4 @@ yarn-error.log*
 /.vs/slnx.sqlite
 /.vs
 /.vscode
+/.idea

@@ -10,6 +10,7 @@ import ReactMove from '../reactmove/ReactMove';
 import ReactVis from '../reactvis/ReactVis';
 import ReactToastify from '../react-toastify/ReactToastify';
 import ReactToastNotifications from '../react-toast-notifications/ReactToastNotifications';
+import EdiText from '../editext/EdiText';
 import './UITools.css';
 
 class UITools extends Component {
@@ -27,6 +28,7 @@ class UITools extends Component {
           <Route path={`${this.props.match.url}/reactvis`} component={ReactVis} />
           <Route path={`${this.props.match.url}/react-toastify`} component={ReactToastify} />
           <Route path={`${this.props.match.url}/react-toast-notifications`} component={ReactToastNotifications} />
+          <Route path={`${this.props.match.url}/editext`} component={EdiText} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -84,6 +86,11 @@ class UITools extends Component {
                   <Link to={`${this.props.match.url}/react-toast-notifications`}>
                     <div className="ui-tools-item">
                       <div>React Toast Notifications - another one.</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/editext`}>
+                    <div className="ui-tools-item">
+                      <div>EdiText Example.</div>
                     </div>
                   </Link>
                 </div>
