@@ -207,13 +207,7 @@ module.exports = {
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
           },
           // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-          {
-            test: /\.tsx?$/,
-            loader: 'awesome-typescript-loader',
-            options: {
-              transpileOnly: true
-            }
-          },
+          { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
           // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
           { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
           // "file" loader makes sure assets end up in the `build` folder.

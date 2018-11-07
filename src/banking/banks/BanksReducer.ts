@@ -15,6 +15,7 @@ const banksReducer: Reducer<BanksStoreProps> = (state: BanksStoreProps = BANKS_I
         banksWithAtmAPI: []
       };
     case BanksActionTypes.GET_BANKS_SUCCESS: {
+      // @ts-ignore
       const { data } = action.payload;
 
       let banksWithAtmAPI = [];
