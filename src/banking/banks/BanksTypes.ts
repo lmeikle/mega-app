@@ -4,22 +4,25 @@
 // Define however naming conventions you'd like for your action types, but
 // personally, I use the `@@context/ACTION_TYPE` convention, to follow the convention
 // of Redux's `@@INIT` action.
-export const enum BanksActionTypes {
-  GET_BANKS = '@@banks/GET_BANKS',
-  GET_BANKS_REQUESTED = '@@banks/GET_BANKS_REQUESTED',
-  GET_BANKS_SUCCESS = '@@banks/GET_BANKS_SUCCESS',
-  GET_BANKS_FAILED = '@@banks/GET_BANKS_FAILED'
-}
+export const BanksActionTypes = {
+  GET_BANKS: '@@banks/GET_BANKS',
+  GET_BANKS_REQUESTED: '@@banks/GET_BANKS_REQUESTED',
+  GET_BANKS_SUCCESS: '@@banks/GET_BANKS_SUCCESS',
+  GET_BANKS_FAILED: '@@banks/GET_BANKS_FAILED'
+};
 
 export type GetBanksActionProps = {
+  // @ts-ignore
   type: BanksActionTypes.GET_BANKS;
 };
 
 export type GetBanksRequestedActionProps = {
+  // @ts-ignore
   type: BanksActionTypes.GET_BANKS_REQUESTED;
 };
 
 export type GetBanksSuccessActionProps = {
+  // @ts-ignore
   type: BanksActionTypes.GET_BANKS_SUCCESS;
   payload: {
     data: Array<any>;
@@ -27,6 +30,7 @@ export type GetBanksSuccessActionProps = {
 };
 
 export type GetBanksFailedActionProps = {
+  // @ts-ignore
   type: BanksActionTypes.GET_BANKS_FAILED;
   payload: {
     error: Error;
