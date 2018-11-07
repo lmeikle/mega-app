@@ -4,6 +4,13 @@ const initialState = { show: false };
 
 type State = Readonly<typeof initialState>;
 
+export type ToggleableComponentProps<P extends object = object> = {
+  show: State['show'];
+  toggle: Toggleable['toggle']; // using lookup types!
+} & P;
+
+type RenderCallback = (args: ToggleableComponentProps) => JSX.Element;
+
 const defaultProps = { props: {} as { [name: string]: any } };
 type Props = Partial<
   {
@@ -13,13 +20,6 @@ type Props = Partial<
   } & DefaultProps
 >;
 type DefaultProps = typeof defaultProps;
-
-type RenderCallback = (args: ToggleableComponentProps) => JSX.Element;
-
-export type ToggleableComponentProps<P extends object = object> = {
-  show: State['show'];
-  toggle: Toggleable['toggle']; // using lookup types!
-} & P;
 
 export class Toggleable extends Component<Props, State> {
   readonly state: State = initialState;
@@ -43,6 +43,7 @@ export class Toggleable extends Component<Props, State> {
       return render(renderProps);
     }
 
+    // @ts-ignore
     return typeof children === 'function' ? children(renderProps) : null;
   }
 }

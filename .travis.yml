@@ -3,6 +3,8 @@ language: node_js
 node_js:
   - stable
 
+cache: npm
+
 install:
   - npm install
 
@@ -12,7 +14,18 @@ before_install:
 sudo: required
 
 addons:
- chrome: stable
+  chrome: stable
 
 script:
   - npm run test:ci
+  - npm run build
+
+deploy:
+  provider: s3
+  access_key_id: 'AKIAJLR27VIYSQTONFXQ'
+  secret_access_key:
+    secure: aJM430n+z+9dJqnZo+1cBo3hnvHfKca1h30JxDc1p44HHPqbljzoe9LkkGXl/Nu4Y/Jb8siTpK9eOgA4g6VAwD2XvOEDtJP35vjODe4f3+pyLQkNhemYG5s0N++WA3iZhdRnEkVQg6tMuMdtNH8shMgdMveS07Xei5HNrt3OXQoeIVpNwR4HFoJdAlbeIErnASj6UAHQpzjLjdeD2M4XdnFEKGsPPZdYrW5LCi9M23miQTS7thiT/ms60+FlpCkvkklr/n92nAvQRRdqCdZE0zZo/Ko/OH5x9pjBjrckhja+oL8IbtF/HFXMSFdXKdhgacNTTzr7tb6Dcd6Z1NYkDoVaWgwyjpzvgEfhFG0fNGSrMimwT1eil3NXBGUpPhXEGsYge2m6+EmUTe+ghZ+kZVFX1zMaXxCpHC57L8UvcbvuzIfBulnRO2znEyX1LRJojknzqfxVGdhEUG89Xv13uAGH1/H5ScmJINnMA9JcDpZZWUlJAPThfgDBg2cc3tDXuTbAL6U9DtHoacoAhnqF0KSpSns5/eHZcCvRh2+cxk6YvfaU3qTv4Y8KS2/XaeVXRaDEXOpTwih0q+xkwfYIOyrDMhM0JQUBN/obZX0mqmyeVOniLN9DuEtIfgAq47KCP2gsQLWlk/NQe80vp/u3q1Au265Z5SE/6123SqAb2VY=
+  bucket: 'lmeikle-mega-app'
+  skip_cleanup: true
+  local_dir: build
+  acl: public_read
