@@ -78,3 +78,5 @@ To redeploy:
 - firebase deploy
 
 # Deployed to AWS by TravisCI
+
+http://lmeikle-mega-app.s3-website.eu-west-2.amazonaws.com
