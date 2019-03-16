@@ -14,6 +14,7 @@ import StyledComponentsDebuggable from '../styledcomponents/StyledComponentsDebu
 import JokeGenerator from '../jokegenerator/JokeGenerator';
 import Tree from '../treeview/Tree';
 import ShoeStore from '../shoestore/ShoeStore';
+import SwipeableList from '../swipeablelist/SwipeableList';
 import './Misc.css';
 
 class Misc extends Component {
@@ -35,6 +36,7 @@ class Misc extends Component {
           <Route path={`${this.props.match.url}/treeview`} component={Tree} />
           <Route path={`${this.props.match.url}/jokegenerator`} component={JokeGenerator} />
           <Route path={`${this.props.match.url}/shoestore`} component={ShoeStore} />
+          <Route path={`${this.props.match.url}/swipeablelist`} component={SwipeableList} />
           <Route
             path={`${this.props.match.url}/`}
             render={() => (
@@ -109,6 +111,11 @@ class Misc extends Component {
                   <Link to={`${this.props.match.url}/shoestore`}>
                     <div className="misc-item">
                       <div>Shoe Store - to practice TDD</div>
+                    </div>
+                  </Link>
+                  <Link to={`${this.props.match.url}/swipeablelist`}>
+                    <div className="misc-item">
+                      <div>Swipeable List</div>
                     </div>
                   </Link>
                 </div>
