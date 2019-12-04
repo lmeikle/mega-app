@@ -41,5 +41,6 @@ export const configureStore = (): Store<StoreStateProps> => {
   sagaMiddleware.run(bankingSagas);
   sagaMiddleware.run(courseSignupSagas);
 
+  // @ts-ignore
   return store;
 };
