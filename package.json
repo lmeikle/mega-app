@@ -31,7 +31,7 @@
     "downshift": "1.31.16",
     "draft-js": "^0.10.5",
     "emotion": "^9.2.6",
-    "eslint": "4.10.0",
+    "eslint": "4.18.2",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
